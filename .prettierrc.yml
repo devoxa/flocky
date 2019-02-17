@@ -1,0 +1,9 @@
+arrowParens: 'always'
+bracketSpacing: true
+endOfLine: 'lf'
+jsxSingleQuote: true
+parser: 'typescript'
+printWidth: 80
+semi: false
+singleQuote: true
+tabWidth: 2

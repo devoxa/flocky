@@ -44,7 +44,7 @@ function parseModule(path: string): ModuleFile | false {
 }
 
 function parseModuleName(path: string): string {
-  return path.replace(/^.*\/(.*)\.ts$/, '$1')
+  return path.replace(/^.*\/(.*)\/index\.ts$/, '$1')
 }
 
 function parseModuleDocs(path: string): string | false {

@@ -9,14 +9,17 @@ echo "Compiling TypeScript into JavaScript"
 tsc
 
 echo "Copying JavaScript and definition files"
+FILES=$(ls -d ./src/*/ | cut -d '/' -f 3)
 cp src/index.js build/
 cp src/index.d.ts build/
-cp src/*/*.js build/
-cp src/*/*.d.ts build/
-rm -f build/*.spec.js
-rm -f build/*.spec.d.ts
+while read -r FILE; do
+  cp "src/$FILE/index.js" "build/$FILE.js"
+  cp "src/$FILE/index.d.ts" "build/$FILE.d.ts"
+done <<< "$FILES"
 
 echo "Removing temporary build artifacts"
+rm -f build/*.spec.js
+rm -f build/*.spec.d.ts
 rm -f src/*.js
 rm -f src/*.d.ts
 rm -f src/*/*.js

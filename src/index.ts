@@ -1,5 +1,7 @@
-import _sum from './sum/sum'
+import _sum = require('./sum')
+import _min = require('./min')
 
 export = {
-  sum: _sum
+  sum: _sum,
+  min: _min
 }

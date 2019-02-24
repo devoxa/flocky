@@ -83,6 +83,17 @@ sum([1, 2, 3]) // -> 6
 ## Available Methods
 
 <!-- START GENERATED FROM FILES -->
+### flocky.min
+
+Compute the minimum of the values in an array
+
+**Example**
+
+```js
+flocky.min([1, 4, 2, -3, 0])
+// -> -3
+```
+
 ### flocky.sum
 
 Compute the sum of the values in an array

@@ -87,8 +87,6 @@ sum([1, 2, 3]) // -> 6
 
 Compute the minimum of the values in an array
 
-**Example**
-
 ```js
 flocky.min([1, 4, 2, -3, 0])
 // -> -3
@@ -97,8 +95,6 @@ flocky.min([1, 4, 2, -3, 0])
 ### flocky.sum
 
 Compute the sum of the values in an array
-
-**Example**
 
 ```js
 flocky.sum([1, 4, 2, -3, 0])

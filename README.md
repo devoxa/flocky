@@ -1,6 +1,10 @@
-<!-- Logo and Title -->
+<!-- Logo -->
+<p align="center">
+  <img height="150" src="./logo.png">
+</p>
+
+<!-- Title -->
 <h1 align="center">
-  <img height="150" src="./logo.png"><br>
   flocky
 </h1>
 

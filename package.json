@@ -10,7 +10,7 @@
     "url": "git+https://github.com/queicherius/flocky.git"
   },
   "scripts": {
-    "test": "jest",
+    "test": "jest --runInBand",
     "lint": "prettier --list-different 'src/**/*.ts'",
     "format": "prettier --write 'src/**/*.ts'",
     "build": "./build.sh",

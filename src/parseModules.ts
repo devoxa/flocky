@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import glob from 'glob'
 
-const EXAMPLE_REGEX = /```js.*?```/gs
+const EXAMPLE_REGEX = /```js\n(.*?)\n```/s
 
 interface ModuleFile {
   path: string
@@ -59,30 +59,25 @@ function parseModuleDocs(path: string): string | false {
 }
 
 function parseExamples(docs: string): Array<Example> {
-  let examples = []
+  let exampleMatch = docs.match(EXAMPLE_REGEX)
+  if (!exampleMatch) return []
 
-  let match
-  while ((match = EXAMPLE_REGEX.exec(docs))) {
-    let exampleLines = match[0].split('\n')
+  return exampleMatch[1].split('\n\n').map(parseExample)
+}
 
-    // Remove the first and last line (the ``` parts)
-    const example = exampleLines.slice(1, exampleLines.length - 1).join('\n')
+function parseExample(example: string): Example {
+  // Get the code (the parts without "// -> " at the start)
+  const code = example
+    .split('\n')
+    .filter((x) => !x.startsWith('// -> '))
+    .join('\n')
 
-    // Get the code (the parts without "// -> " at the start)
-    const code = example
-      .split('\n')
-      .filter((x) => !x.startsWith('// -> '))
-      .join('\n')
+  // Get the expected output (the parts with "// -> " at the start)
+  const expected = example
+    .split('\n')
+    .filter((x) => x.startsWith('// -> '))
+    .map((x) => x.replace('// -> ', ''))
+    .join('\n')
 
-    // Get the expected output (the parts with "// -> " at the start)
-    const expected = example
-      .split('\n')
-      .filter((x) => x.startsWith('// -> '))
-      .map((x) => x.replace('// -> ', ''))
-      .join('\n')
-
-    examples.push({ code, expected: JSON.parse(expected) })
-  }
-
-  return examples
+  return { code, expected: JSON.parse(expected) }
 }

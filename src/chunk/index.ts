@@ -1,4 +1,6 @@
 /**
+ * ### `flocky.chunk(array, size)`
+ *
  * Splits an array of elements into groups of `size`.
  * If the array can't be split evenly, the final chunk will be the remaining elements.
  *

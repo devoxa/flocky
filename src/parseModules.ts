@@ -35,12 +35,7 @@ function parseModule(path: string): ModuleFile | false {
 
   const examples = parseExamples(docs)
 
-  return {
-    path,
-    name,
-    docs: `### flocky.${name}\n\n` + docs,
-    examples
-  }
+  return { path, name, docs, examples }
 }
 
 function parseModuleName(path: string): string {

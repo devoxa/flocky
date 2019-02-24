@@ -46,7 +46,8 @@
 
 <!-- Quicklinks -->
 <p align="center">
-  <a href="#how-to-use">How To Use</a> •
+  <a href="#installation">Installation</a> •
+  <a href="#usage">Usage</a> •
   <a href="#available-methods">Available Methods</a> •
   <a href="#contributing">Contributing</a> •
   <a href="#license">License</a>
@@ -54,30 +55,88 @@
 
 <br>
 
-## How To Use
-
-To use this library, first you need to install it using your favorite package manager.
+## Installation
 
 ```bash
-# With "npm"
-$ npm install --save flocky
+# Using `npm`
+npm install --save flocky
 
-# With "yarn"
-$ yarn add flocky
+# Using `yarn`
+yarn add flocky
 ```
 
-This library is optimized for modern browsers, but most methods can also be used for Node.JS.
+## Usage
 
-There are two different ways to import the library:
+### Importing the full library
+
+**TypeScript**
+
+```ts
+// Using CommonJS
+import flocky = require('flocky')
+flocky.sum([1, 2, 3])
+
+// Using ES6 modules
+// (!) This requires "allowSyntheticDefaultImports" and "esModuleInterop" set to "true"
+import flocky from 'flocky'
+flocky.sum([1, 2, 3])
+
+// Using ES6 modules
+// (!) This still imports the full library into your bundle
+import {sum} from 'flocky'
+sum([1, 2, 3])
+```
+
+**JavaScript**
 
 ```js
-// Import the full library, use bundle shaking to remove unused parts
-import flocky from 'flocky'
-flocky.sum([1, 2, 3]) // -> 6
+// Using CommonJS
+const flocky = require('flocky')
+flocky.sum([1, 2, 3])
 
-// Import only the specific parts of the library you are using
+// Using CommonJS
+// (!) This still imports the full library into your bundle
+const {sum} = require('flocky')
+sum([1, 2, 3])
+
+// Using ES6 modules
+// (!) This requires transformation with a tool like Babel
+import flocky from 'flocky'
+flocky.sum([1, 2, 3])
+
+// Using ES6 modules
+// (!) This requires transformation with a tool like Babel
+// (!) This still imports the full library into your bundle
+import {sum} from 'flocky'
+sum([1, 2, 3])
+```
+
+### Importing specific parts of the library
+
+**TypeScript**
+
+```ts
+// Using CommonJS
+import sum = require('flocky/sum')
+sum([1, 2, 3])
+
+// Using ES6 modules
+// (!) This requires "allowSyntheticDefaultImports" and "esModuleInterop" set to "true"
 import sum from 'flocky/sum'
-sum([1, 2, 3]) // -> 6
+sum([1, 2, 3])
+```
+
+**JavaScript**
+
+```js
+// Using CommonJS
+const sum = require('flocky/sum')
+sum([1, 2, 3])
+
+// Using ES6 modules
+// (!) This requires transformation with a tool like Babel
+import sum from 'flocky/sum'
+sum([1, 2, 3])
 ```
 
 ## Available Methods

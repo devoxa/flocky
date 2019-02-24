@@ -22,5 +22,6 @@ rm -f src/*.d.ts
 rm -f src/*/*.js
 rm -f src/*/*.d.ts
 
-echo "Build finished"
-exit 0
+echo "Copying meta files"
+cp package.json build/
+cp README.md build/

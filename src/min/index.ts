@@ -1,5 +1,5 @@
 /**
- * ### flocky.min(array)
+ * ### min(array)
  *
  * Compute the minimum of the values in an array
  *

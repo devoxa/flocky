@@ -1,5 +1,5 @@
 /**
- * ### flocky.sum(array)
+ * ### sum(array)
  *
  * Compute the sum of the values in an array
  *

@@ -32,14 +32,14 @@ yarn test
 echo "Updating README"
 yarn generate-docs
 
-echo "Building package"
-yarn build
-
 echo "Bumping the package version"
 yarn version "$1"
 
+echo "Building package"
+yarn build
+
 echo "Publishing package"
-yarn publish build/
+yarn publish build/ --non-interactive
 
 echo "Pushing to Github"
 git push

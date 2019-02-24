@@ -1,11 +1,12 @@
 import parseModules from './parseModules'
-import flocky from './index'
+import _flocky from './index'
 
-const _ = flocky
+// This is here because the "import" is not a global variable for "eval"
+const flocky = _flocky
 
 describe('index file', () => {
   it('exports the modules', () => {
-    expect(Object.keys(_)).toEqual(['sum'])
+    expect(Object.keys(flocky)).toEqual(['sum'])
   })
 })
 

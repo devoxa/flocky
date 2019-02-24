@@ -1,13 +1,22 @@
 {
   "name": "flocky",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "description": "A TypeScript and JavaScript utility library with ... at the core.",
+  "main": "index.js",
+  "author": "queicherius@gmail.com",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/queicherius/flocky.git"
+  },
+
   "scripts": {
-    "build": "sh build.sh",
     "test": "jest",
     "format": "prettier 'src/**/*.ts' --write",
+    "build": "sh build.sh",
     "generate-docs": "ts-node src/generateDocs.ts"
   },
+
   "devDependencies": {
     "@types/glob": "^7.1.1",
     "@types/jest": "^24.0.5",

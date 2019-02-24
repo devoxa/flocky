@@ -38,7 +38,7 @@ function parseModule(path: string): ModuleFile | false {
   return {
     path,
     name,
-    docs: `### _.${name}\n\n` + docs,
+    docs: `### flocky.${name}\n\n` + docs,
     examples
   }
 }

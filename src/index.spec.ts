@@ -6,7 +6,7 @@ const flocky = _flocky
 
 describe('index file', () => {
   it('exports the modules', () => {
-    expect(Object.keys(flocky)).toEqual(['sum', 'min'])
+    expect(Object.keys(flocky)).toEqual(['chunk', 'min', 'sum'])
   })
 })
 

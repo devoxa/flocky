@@ -142,6 +142,16 @@ sum([1, 2, 3])
 ## Available Methods
 
 <!-- START GENERATED FROM FILES -->
+### flocky.chunk
+
+Splits an array of elements into groups of `size`.
+If the array can't be split evenly, the final chunk will be the remaining elements.
+
+```js
+flocky.chunk([1, 2, 3, 4, 5, 6, 7], 3)
+// -> [[1, 2, 3], [4, 5, 6], [7]]
+```
+
 ### flocky.min
 
 Compute the minimum of the values in an array

@@ -142,7 +142,7 @@ sum([1, 2, 3])
 ## Available Methods
 
 <!-- START GENERATED FROM FILES -->
-### `flocky.chunk(array, size)`
+### flocky.chunk(array, size)
 
 Splits an array of elements into groups of `size`.
 If the array can't be split evenly, the final chunk will be the remaining elements.
@@ -152,7 +152,7 @@ flocky.chunk([1, 2, 3, 4, 5, 6, 7], 3)
 // -> [[1, 2, 3], [4, 5, 6], [7]]
 ```
 
-### `flocky.min(array)`
+### flocky.min(array)
 
 Compute the minimum of the values in an array
 
@@ -161,7 +161,7 @@ flocky.min([1, 4, 2, -3, 0])
 // -> -3
 ```
 
-### `flocky.sum(array)`
+### flocky.sum(array)
 
 Compute the sum of the values in an array
 

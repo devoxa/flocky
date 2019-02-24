@@ -50,7 +50,9 @@ function parseModuleName(path: string): string {
 function parseModuleDocs(path: string): string | false {
   const fileContent = fs.readFileSync(path, 'utf-8')
 
+  // istanbul ignore next
   if (!fileContent.includes('/**')) {
+    console.log(`[WARNING] The module at path '${path}' has no JSDoc`)
     return false
   }
 

@@ -15,14 +15,14 @@
 
 <!-- Badges -->
 <p align="center">
-  <a href="https://npmjs.com/flocky">
+  <a href="https://www.npmjs.com/package/flocky">
     <img
       src="https://img.shields.io/npm/v/flocky.svg?style=flat-square"
       alt="Package Version"
     />
   </a>
 
-  <a href="https://travis-ci.org/queicherius/flocky">
+  <a href="https://travis-ci.org/queicherius/flocky/branches">
     <img
       src="https://img.shields.io/travis/queicherius/flocky/master.svg?style=flat-square"
       alt="Build Status"
@@ -51,6 +51,8 @@
   <a href="#contributing">Contributing</a> •
   <a href="#license">License</a>
 </p>
+
+<br>
 
 ## How To Use
 

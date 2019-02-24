@@ -152,9 +152,18 @@ flocky.chunk([1, 2, 3, 4, 5, 6, 7], 3)
 // -> [[1, 2, 3], [4, 5, 6], [7]]
 ```
 
+### max(array)
+
+Compute the maximum of the values in an array.
+
+```js
+flocky.max([1, 4, 2, -3, 0])
+// -> 4
+```
+
 ### min(array)
 
-Compute the minimum of the values in an array
+Compute the minimum of the values in an array.
 
 ```js
 flocky.min([1, 4, 2, -3, 0])
@@ -163,7 +172,7 @@ flocky.min([1, 4, 2, -3, 0])
 
 ### sum(array)
 
-Compute the sum of the values in an array
+Compute the sum of the values in an array.
 
 ```js
 flocky.sum([1, 4, 2, -3, 0])

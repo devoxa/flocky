@@ -1,7 +1,7 @@
 /**
  * ### sum(array)
  *
- * Compute the sum of the values in an array
+ * Compute the sum of the values in an array.
  *
  * ```js
  * flocky.sum([1, 4, 2, -3, 0])

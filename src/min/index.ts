@@ -1,7 +1,7 @@
 /**
  * ### min(array)
  *
- * Compute the minimum of the values in an array
+ * Compute the minimum of the values in an array.
  *
  * ```js
  * flocky.min([1, 4, 2, -3, 0])

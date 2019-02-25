@@ -161,6 +161,18 @@ flocky.chunk([1, 2, 3, 4, 5, 6, 7], 3)
 // -> [[1, 2, 3], [4, 5, 6], [7]]
 ```
 
+### clone(value)
+
+Create a deep clone of `value`.
+This only supports types native to JSON, so all primitive types, arrays and objects.
+
+```js
+const original = [{ "a": 1 }, { "b": 2 }]
+const clone = flocky.clone(original)
+original[0] === clone[0]
+// -> false
+```
+
 ### max(array)
 
 Compute the maximum of the values in an array.

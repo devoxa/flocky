@@ -142,10 +142,19 @@ sum([1, 2, 3])
 ## Available Methods
 
 <!-- START GENERATED FROM FILES -->
+### average(array)
+
+Compute the average of the values in an array.
+
+```js
+flocky.average([1, 4, 2, -4, 0])
+// -> 0.6
+```
+
 ### chunk(array, size)
 
-Splits an array of elements into groups of `size`.
-If the array can't be split evenly, the final chunk will be the remaining elements.
+Split an array of elements into groups of `size`.
+If the array can't be split evenly, the final chunk will contain the remaining elements.
 
 ```js
 flocky.chunk([1, 2, 3, 4, 5, 6, 7], 3)
@@ -175,13 +184,13 @@ flocky.min([1, 4, 2, -3, 0])
 Compute the sum of the values in an array.
 
 ```js
-flocky.sum([1, 4, 2, -3, 0])
-// -> 4
+flocky.sum([1, 4, 2, -4, 0])
+// -> 3
 ```
 
 ### unique(array, identity?)
 
-Creates a duplicate-free version of an array, in which only the first occurrence of each element is kept.
+Create a duplicate-free version of an array, in which only the first occurrence of each element is kept.
 The order of result values is determined by the order they occur in the array.
 You can pass an optional `identity` function to select the identifying part of objects.
 

@@ -1,7 +1,7 @@
 /**
  * ### chunk(array, size)
  *
- * Splits an array of elements into groups of `size`.
+ * Split an array of elements into groups of `size`.
  * If the array can't be split evenly, the final chunk will contain the remaining elements.
  *
  * ```js

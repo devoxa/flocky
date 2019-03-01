@@ -4,6 +4,7 @@ export = {
   clone: require('./clone'),
   max: require('./max'),
   min: require('./min'),
+  random: require('./random'),
   roundTo: require('./roundTo'),
   shuffle: require('./shuffle'),
   sleep: require('./sleep'),

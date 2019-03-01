@@ -6,4 +6,10 @@ describe('min', () => {
     expect(min([9, 4, 3, 7, 79, -60])).toEqual(-60)
     expect(min([])).toEqual(Infinity)
   })
+
+  it('does not mutate the input', () => {
+    const input = [1, 2, 3]
+    min(input)
+    expect(input).toEqual([1, 2, 3])
+  })
 })

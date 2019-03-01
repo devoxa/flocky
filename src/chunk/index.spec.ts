@@ -34,4 +34,10 @@ describe('chunk', () => {
       [{ a: '5' }, { a: '6' }, { a: '7' }]
     ])
   })
+
+  it('does not mutate the input', () => {
+    const input = [1, 2, 3]
+    chunk(input, 1)
+    expect(input).toEqual([1, 2, 3])
+  })
 })

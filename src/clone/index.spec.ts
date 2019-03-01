@@ -28,4 +28,10 @@ describe('clone', () => {
     expect(original).toEqual([{ a: 1 }, { b: 1 }])
     expect(cloned).toEqual([{ a: 2 }, { b: 1 }])
   })
+
+  it('does not mutate the input', () => {
+    const input = [1, 2, 3]
+    clone(input)
+    expect(input).toEqual([1, 2, 3])
+  })
 })

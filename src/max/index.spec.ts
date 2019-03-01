@@ -6,4 +6,10 @@ describe('max', () => {
     expect(max([9, 4, 3, 7, 79, -60])).toEqual(79)
     expect(max([])).toEqual(-Infinity)
   })
+
+  it('does not mutate the input', () => {
+    const input = [1, 2, 3]
+    max(input)
+    expect(input).toEqual([1, 2, 3])
+  })
 })

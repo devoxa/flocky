@@ -31,4 +31,10 @@ describe('unique', () => {
 
     expect(unique(input, (element) => element.id)).toEqual(expected)
   })
+
+  it('does not mutate the input', () => {
+    const input = [1, 2, 3, 1]
+    unique(input)
+    expect(input).toEqual([1, 2, 3, 1])
+  })
 })

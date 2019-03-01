@@ -191,6 +191,30 @@ flocky.min([1, 4, 2, -3, 0])
 // -> -3
 ```
 
+### roundTo(number, precision)
+
+Round a floating point number to `precision` decimal places.
+
+```js
+flocky.roundTo(3.141592653589, 4)
+// -> 3.1416
+
+flocky.roundTo(1.005, 2)
+// -> 1.01
+
+flocky.roundTo(1111.1, -2)
+// -> 1100
+```
+
+<details>
+  <summary>Details</summary>
+
+  This method avoids floating-point errors by adjusting the exponent part of
+  the string representation of a number instead of multiplying and dividing
+  with powers of 10. The implementation is based on [this example](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round$revision/1383484#A_better_solution)
+  by Lam Wei Li.
+</details>
+
 ### sleep(ms)
 
 Return a promise that waits for `ms` milliseconds before resolving.

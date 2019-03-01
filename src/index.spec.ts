@@ -1,5 +1,6 @@
 import parseModules from './parseModules'
 import _flocky from './index'
+import { mathRandom } from './testHelpers'
 
 // This is here because the "import" is not a global variable for "eval"
 const flocky = _flocky
@@ -11,8 +12,15 @@ describe('index file', () => {
 })
 
 describe('documentation examples', () => {
-  const modules = parseModules()
+  beforeEach(() => {
+    mathRandom.setup()
+  })
 
+  afterEach(() => {
+    mathRandom.reset()
+  })
+
+  const modules = parseModules()
   modules.forEach((module) => {
     const { name, examples } = module
 

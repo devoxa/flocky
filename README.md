@@ -215,6 +215,16 @@ flocky.roundTo(1111.1, -2)
   by Lam Wei Li.
 </details>
 
+### shuffle(array)
+
+Creates an array of shuffled values, using a version of the
+[Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm).
+
+```js
+flocky.shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+// -> [3, 7, 2, 1, 10, 4, 6, 9, 5, 8]
+```
+
 ### sleep(ms)
 
 Return a promise that waits for `ms` milliseconds before resolving.

@@ -2,7 +2,7 @@
  * ### random(lower, upper, float?)
  *
  * Generate a random number between `lower` and `upper` (inclusive).
- * If `float` is true or `lower` or `upper` is a float, a floating-point number is returned instead of an integer.
+ * If `float` is true or `lower` or `upper` is a float, a float is returned instead of an integer.
  *
  * ```js
  * flocky.random(1, 10)

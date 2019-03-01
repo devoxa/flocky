@@ -15,7 +15,7 @@
  * ```
  *
  * <details>
- *   <summary>Details</summary>
+ *   <summary>Implementation Details</summary>
  *
  *   This method avoids floating-point errors by adjusting the exponent part of
  *   the string representation of a number instead of multiplying and dividing

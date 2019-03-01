@@ -2,7 +2,7 @@
  * ### clone(value)
  *
  * Create a deep clone of `value`.
- * This only supports types native to JSON, so all primitive types, arrays and objects.
+ * This method only supports types native to JSON, so all primitive types, arrays and objects.
  *
  * ```js
  * const original = [{ "a": 1 }, { "b": 2 }]

@@ -164,7 +164,7 @@ flocky.chunk([1, 2, 3, 4, 5, 6, 7], 3)
 ### clone(value)
 
 Create a deep clone of `value`.
-This only supports types native to JSON, so all primitive types, arrays and objects.
+This method only supports types native to JSON, so all primitive types, arrays and objects.
 
 ```js
 const original = [{ "a": 1 }, { "b": 2 }]
@@ -207,7 +207,7 @@ flocky.roundTo(1111.1, -2)
 ```
 
 <details>
-  <summary>Details</summary>
+  <summary>Implementation Details</summary>
 
   This method avoids floating-point errors by adjusting the exponent part of
   the string representation of a number instead of multiplying and dividing
@@ -237,7 +237,7 @@ flocky.sum([1, 4, 2, -4, 0])
 
 Create a duplicate-free version of an array, in which only the first occurrence of each element is kept.
 The order of result values is determined by the order they occur in the array.
-You can pass an optional `identity` function to select the identifying part of objects.
+Can be passed an optional `identity` function to select the identifying part of objects.
 
 ```js
 flocky.unique([1, 1, 2, 4, 2, 1, 6])

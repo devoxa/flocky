@@ -191,6 +191,15 @@ flocky.min([1, 4, 2, -3, 0])
 // -> -3
 ```
 
+### sleep(ms)
+
+Return a promise that waits for `ms` milliseconds before resolving.
+
+```js
+async flocky.sleep(50)
+// -> undefined
+```
+
 ### sum(array)
 
 Compute the sum of the values in an array.

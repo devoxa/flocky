@@ -18,8 +18,9 @@ describe('documentation examples', () => {
 
     describe(name, () => {
       examples.forEach((example, index: number) => {
-        it(`Example #${index + 1}`, () => {
-          expect(eval(example.code)).toEqual(example.expected)
+        it(`Example #${index + 1}`, async () => {
+          const actual = await eval(example.code)
+          expect(actual).toEqual(example.expected)
         })
       })
     })

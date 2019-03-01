@@ -70,6 +70,7 @@ function parseExample(example: string): Example {
   const code = example
     .split('\n')
     .filter((x) => !x.startsWith('// -> '))
+    .map((x) => x.replace('async ', ''))
     .join('\n')
 
   // Get the expected output (the parts with "// -> " at the start)
@@ -79,5 +80,8 @@ function parseExample(example: string): Example {
     .map((x) => x.replace('// -> ', ''))
     .join('\n')
 
-  return { code, expected: JSON.parse(expected) }
+  return {
+    code,
+    expected: expected === 'undefined' ? undefined : JSON.parse(expected)
+  }
 }

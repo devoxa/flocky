@@ -6,6 +6,7 @@ export = {
   min: require('./min'),
   random: require('./random'),
   roundTo: require('./roundTo'),
+  sample: require('./sample'),
   shuffle: require('./shuffle'),
   sleep: require('./sleep'),
   sum: require('./sum'),

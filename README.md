@@ -194,7 +194,7 @@ flocky.min([1, 4, 2, -3, 0])
 ### random(lower, upper, float?)
 
 Generate a random number between `lower` and `upper` (inclusive).
-If `float` is true or `lower` or `upper` is a float, a floating-point number is returned instead of an integer.
+If `float` is true or `lower` or `upper` is a float, a float is returned instead of an integer.
 
 ```js
 flocky.random(1, 10)
@@ -230,6 +230,15 @@ flocky.roundTo(1111.1, -2)
   with powers of 10. The implementation is based on [this example](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round$revision/1383484#A_better_solution)
   by Lam Wei Li.
 </details>
+
+### sample(array)
+
+Gets a random element from the array.
+
+```js
+flocky.sample([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+// -> 8
+```
 
 ### shuffle(array)
 

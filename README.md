@@ -173,6 +173,15 @@ original[0] === clone[0]
 // -> false
 ```
 
+### identifier()
+
+Generate a random identifier with UUID v4 format.
+
+```js
+flocky.identifier()
+// -> "bfc8d57e-b9ab-4245-836e-d1fd99602e30"
+```
+
 ### max(array)
 
 Compute the maximum of the values in an array.

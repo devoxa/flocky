@@ -10,6 +10,7 @@ export = {
   sample: require('./sample'),
   shuffle: require('./shuffle'),
   sleep: require('./sleep'),
+  slugify: require('./slugify'),
   sum: require('./sum'),
   unique: require('./unique')
 }

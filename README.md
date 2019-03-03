@@ -268,6 +268,15 @@ async flocky.sleep(50)
 // -> undefined
 ```
 
+### slugify(string)
+
+Generates a URL-safe slug of a string.
+
+```js
+flocky.slugify(' Issue #123 is _important_! :)')
+// -> "issue-123-is-important"
+```
+
 ### sum(array)
 
 Compute the sum of the values in an array.

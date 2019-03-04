@@ -216,6 +216,15 @@ flocky.random(2.5, 3.5)
 // -> 3.2341312319841373
 ```
 
+### randomString(length)
+
+Generate a random alphanumeric string with length `length`.
+
+```js
+flocky.randomString(5)
+// -> "tfl0g"
+```
+
 ### roundTo(number, precision)
 
 Round a floating point number to `precision` decimal places.

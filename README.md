@@ -225,7 +225,7 @@ flocky.hash({id: 'AAA', name: 'BBB'})
   - https://github.com/whitequark/murmurhash3-js/blob/master/murmurhash3.js
 </details>
 
-<sup>[Source](./src/hash/index.ts) • Minify: 544 B • Minify & GZIP: 340 B<sup>
+<sup>[Source](./src/hash/index.ts) • [Benchmark](./src/hash/BENCHMARK.md) • Minify: 544 B • Minify & GZIP: 340 B<sup>
 
 ### identifier()
 
@@ -341,7 +341,7 @@ flocky.roundTo(1111.1, -2)
 
 ### sample(array)
 
-Gets a random element from the array.
+Get a random element from the `array`.
 
 ```js
 flocky.sample([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
@@ -352,7 +352,7 @@ flocky.sample([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 ### shuffle(array)
 
-Creates an array of shuffled values, using a version of the
+Create an array of shuffled values, using a version of the
 [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm).
 
 ```js
@@ -375,7 +375,7 @@ async flocky.sleep(50)
 
 ### slugify(string)
 
-Generates a URL-safe slug of a string.
+Generate a URL-safe slug of a string.
 
 ```js
 flocky.slugify(' Issue #123 is _important_! :)')

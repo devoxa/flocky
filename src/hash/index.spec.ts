@@ -1,13 +1,5 @@
 import hash from './index'
 
-function makeString(length: number): string {
-  let text = ''
-  for (let i = 0; i < length; i++) {
-    text += 'A'
-  }
-  return text
-}
-
 describe('hash', () => {
   it('consistently hashes the input', () => {
     expect(hash('Never gonna give you up')).toEqual('x1bvo9jc')
@@ -22,16 +14,5 @@ describe('hash', () => {
 
     expect(hash({ object: true })).toEqual('x1qx0xkp')
     expect(hash(['array'])).toEqual('xr7mzub')
-  })
-
-  it('is fast for a lot of data', () => {
-    const string = makeString(1024 * 1024) // ~1MB of data
-
-    const start = new Date().getTime()
-    const result = hash(string)
-    const durationMs = new Date().getTime() - start
-
-    expect(result).toEqual('xhowk3l')
-    expect(durationMs).toBeLessThan(30)
   })
 })

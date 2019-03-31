@@ -75,7 +75,7 @@ function parseModuleDocs(filePath: string, name: string): string {
     `Minify & GZIP: ${moduleMinZipSize}`
   ]
 
-  return fileContent + `\n<sup>${subText.join(' | ')}<sup>\n`
+  return fileContent + `\n<sup>${subText.join(' • ')}<sup>\n`
 }
 
 function parseExamples(filePath: string, docs: string): Array<Example> {

@@ -48,7 +48,7 @@
 <p align="center">
   <a href="#installation">Installation</a> •
   <a href="#usage">Usage</a> •
-  <a href="#available-methods">Available Methods</a> •
+  <a href="#api-reference">API Reference</a> •
   <a href="#contributing">Contributing</a> •
   <a href="#license">License</a>
 </p>

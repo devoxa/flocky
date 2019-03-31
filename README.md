@@ -139,7 +139,7 @@ import sum from 'flocky/sum'
 sum([1, 2, 3])
 ```
 
-## Available Methods
+## API Reference
 
 <!-- START GENERATED FROM FILES -->
 ### average(array)
@@ -151,6 +151,8 @@ flocky.average([1, 4, 2, -4, 0])
 // -> 0.6
 ```
 
+<sup>[Source](./src/average/index.ts) | Minify: 110 B | Minify & GZIP: 94 B<sup>
+
 ### chunk(array, size)
 
 Split an array of elements into groups of `size`.
@@ -160,6 +162,8 @@ If the array can't be split evenly, the final chunk will contain the remaining e
 flocky.chunk([1, 2, 3, 4, 5, 6, 7], 3)
 // -> [[1, 2, 3], [4, 5, 6], [7]]
 ```
+
+<sup>[Source](./src/chunk/index.ts) | Minify: 119 B | Minify & GZIP: 112 B<sup>
 
 ### clone(value)
 
@@ -173,6 +177,8 @@ original[0] === clone[0]
 // -> false
 ```
 
+<sup>[Source](./src/clone/index.ts) | Minify: 89 B | Minify & GZIP: 87 B<sup>
+
 ### identifier()
 
 Generate a random identifier with UUID v4 format.
@@ -181,6 +187,8 @@ Generate a random identifier with UUID v4 format.
 flocky.identifier()
 // -> "bfc8d57e-b9ab-4245-836e-d1fd99602e30"
 ```
+
+<sup>[Source](./src/identifier/index.ts) | Minify: 276 B | Minify & GZIP: 205 B<sup>
 
 ### max(array)
 
@@ -191,6 +199,8 @@ flocky.max([1, 4, 2, -3, 0])
 // -> 4
 ```
 
+<sup>[Source](./src/max/index.ts) | Minify: 78 B | Minify & GZIP: 83 B<sup>
+
 ### min(array)
 
 Compute the minimum of the values in an array.
@@ -199,6 +209,8 @@ Compute the minimum of the values in an array.
 flocky.min([1, 4, 2, -3, 0])
 // -> -3
 ```
+
+<sup>[Source](./src/min/index.ts) | Minify: 78 B | Minify & GZIP: 83 B<sup>
 
 ### omit(object, keys)
 
@@ -210,6 +222,8 @@ flocky.omit(object, ['a'])
 // -> { "b": 2, "c": 3 }
 ```
 
+<sup>[Source](./src/omit/index.ts) | Minify: 166 B | Minify & GZIP: 137 B<sup>
+
 ### pick(object, keys)
 
 Create an object composed of the specified `keys`.
@@ -219,6 +233,8 @@ const object = { 'a': 1, 'b': 2, 'c': 3 }
 flocky.pick(object, ['a', 'c'])
 // -> { "a": 1, "c": 3 }
 ```
+
+<sup>[Source](./src/pick/index.ts) | Minify: 104 B | Minify & GZIP: 100 B<sup>
 
 ### random(lower, upper, float?)
 
@@ -236,6 +252,8 @@ flocky.random(2.5, 3.5)
 // -> 3.2341312319841373
 ```
 
+<sup>[Source](./src/random/index.ts) | Minify: 251 B | Minify & GZIP: 147 B<sup>
+
 ### randomString(length)
 
 Generate a random alphanumeric string with length `length`.
@@ -244,6 +262,8 @@ Generate a random alphanumeric string with length `length`.
 flocky.randomString(5)
 // -> "tfl0g"
 ```
+
+<sup>[Source](./src/randomString/index.ts) | Minify: 257 B | Minify & GZIP: 217 B<sup>
 
 ### roundTo(number, precision)
 
@@ -269,6 +289,8 @@ flocky.roundTo(1111.1, -2)
   by Lam Wei Li.
 </details>
 
+<sup>[Source](./src/roundTo/index.ts) | Minify: 234 B | Minify & GZIP: 164 B<sup>
+
 ### sample(array)
 
 Gets a random element from the array.
@@ -277,6 +299,8 @@ Gets a random element from the array.
 flocky.sample([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 // -> 8
 ```
+
+<sup>[Source](./src/sample/index.ts) | Minify: 99 B | Minify & GZIP: 97 B<sup>
 
 ### shuffle(array)
 
@@ -288,6 +312,8 @@ flocky.shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 // -> [3, 7, 2, 1, 10, 4, 6, 9, 5, 8]
 ```
 
+<sup>[Source](./src/shuffle/index.ts) | Minify: 170 B | Minify & GZIP: 144 B<sup>
+
 ### sleep(ms)
 
 Return a promise that waits for `ms` milliseconds before resolving.
@@ -296,6 +322,8 @@ Return a promise that waits for `ms` milliseconds before resolving.
 async flocky.sleep(50)
 // -> undefined
 ```
+
+<sup>[Source](./src/sleep/index.ts) | Minify: 108 B | Minify & GZIP: 95 B<sup>
 
 ### slugify(string)
 
@@ -306,6 +334,8 @@ flocky.slugify(' Issue #123 is _important_! :)')
 // -> "issue-123-is-important"
 ```
 
+<sup>[Source](./src/slugify/index.ts) | Minify: 134 B | Minify & GZIP: 123 B<sup>
+
 ### sum(array)
 
 Compute the sum of the values in an array.
@@ -314,6 +344,8 @@ Compute the sum of the values in an array.
 flocky.sum([1, 4, 2, -4, 0])
 // -> 3
 ```
+
+<sup>[Source](./src/sum/index.ts) | Minify: 93 B | Minify & GZIP: 84 B<sup>
 
 ### unique(array, identity?)
 
@@ -332,6 +364,8 @@ const input = [{id: 1, a: 1}, {id: 1, a: 2}, {id: 2, a: 3}, {id: 1, a: 4}]
 flocky.unique(input, (element) => element.id)
 // -> [{"id": 1, "a": 1}, {"id": 2, "a": 3}]
 ```
+
+<sup>[Source](./src/unique/index.ts) | Minify: 312 B | Minify & GZIP: 158 B<sup>
 
 <!-- END GENERATED FROM FILES -->
 

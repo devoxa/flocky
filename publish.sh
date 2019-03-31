@@ -29,14 +29,15 @@ fi
 echo "Running tests"
 yarn test
 
-echo "Building package"
-yarn build
-
 echo "Generating API reference for README"
+yarn build
 yarn generate-docs
 
 echo "Bumping the package version"
 yarn version "$1"
+
+echo "Building package"
+yarn build
 
 echo "Publishing package"
 yarn publish build/ --non-interactive

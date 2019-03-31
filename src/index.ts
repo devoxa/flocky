@@ -5,6 +5,7 @@ export = {
   identifier: require('./identifier'),
   max: require('./max'),
   min: require('./min'),
+  pick: require('./pick'),
   random: require('./random'),
   randomString: require('./randomString'),
   roundTo: require('./roundTo'),

@@ -200,6 +200,16 @@ flocky.min([1, 4, 2, -3, 0])
 // -> -3
 ```
 
+### pick(object, keys)
+
+Create an object composed of the specified object `keys`.
+
+```js
+const object = { 'a': 1, 'b': 2, 'c': 3 }
+flocky.pick(object, ['a', 'c'])
+// -> { "a": 1, "c": 3 }
+```
+
 ### random(lower, upper, float?)
 
 Generate a random number between `lower` and `upper` (inclusive).
@@ -309,7 +319,7 @@ flocky.unique(['foo', 'bar', 'foo', 'foobar'])
 // -> ["foo", "bar", "foobar"]
 
 const input = [{id: 1, a: 1}, {id: 1, a: 2}, {id: 2, a: 3}, {id: 1, a: 4}]
-flocky.unique(input, (x) => x.id)
+flocky.unique(input, (element) => element.id)
 // -> [{"id": 1, "a": 1}, {"id": 2, "a": 3}]
 ```
 

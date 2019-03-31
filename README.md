@@ -179,6 +179,26 @@ original[0] === clone[0]
 
 <sup>[Source](./src/clone/index.ts) • Minify: 89 B • Minify & GZIP: 87 B<sup>
 
+### get(object, path, defaultValue?)
+
+Get the value at a `path` of an `object` (with an optional `defaultValue`)
+
+```js
+const object = {a: {b: {c: 1}}}
+flocky.get(object, 'a.b.c')
+// -> 1
+
+const object = {a: {b: {c: 1}}}
+flocky.get(object, 'x.x.x')
+// -> undefined
+
+const object = {a: {b: {c: 1}}}
+flocky.get(object, 'x.x.x', 'default')
+// -> "default"
+```
+
+<sup>[Source](./src/get/index.ts) • Minify: 378 B • Minify & GZIP: 247 B<sup>
+
 ### identifier()
 
 Generate a random identifier with UUID v4 format.

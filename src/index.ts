@@ -2,6 +2,7 @@ export = {
   average: require('./average'),
   chunk: require('./chunk'),
   clone: require('./clone'),
+  get: require('./get'),
   identifier: require('./identifier'),
   max: require('./max'),
   min: require('./min'),

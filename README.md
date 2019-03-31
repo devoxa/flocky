@@ -199,6 +199,34 @@ flocky.get(object, 'x.x.x', 'default')
 
 <sup>[Source](./src/get/index.ts) • [Benchmark](./src/get/BENCHMARK.md) • Minify: 378 B • Minify & GZIP: 247 B<sup>
 
+### hash(data)
+
+Create a Murmur3 hash representation of the passed in data.
+
+**This function is not cryptographically secure, use [bcrypt](https://www.npmjs.com/package/bcrypt) for anything security related.**
+
+```js
+flocky.hash('some really long string')
+// -> "x1nr7uiv"
+
+flocky.hash({id: 'AAA', name: 'BBB'})
+// -> "x16mynva"
+```
+
+<details>
+  <summary>Implementation Details</summary>
+
+  This method uses Murmur3 because it is small, fast and has fairly good
+  collision characteristics (about 1 in 36000).
+
+  - https://softwareengineering.stackexchange.com/questions/49550
+  - https://github.com/VowpalWabbit/vowpal_wabbit/wiki/murmur2-vs-murmur3
+  - https://en.wikipedia.org/wiki/MurmurHash
+  - https://github.com/whitequark/murmurhash3-js/blob/master/murmurhash3.js
+</details>
+
+<sup>[Source](./src/hash/index.ts) • Minify: 544 B • Minify & GZIP: 340 B<sup>
+
 ### identifier()
 
 Generate a random identifier with UUID v4 format.

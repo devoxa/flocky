@@ -3,6 +3,7 @@ export = {
   chunk: require('./chunk'),
   clone: require('./clone'),
   get: require('./get'),
+  hash: require('./hash'),
   identifier: require('./identifier'),
   max: require('./max'),
   min: require('./min'),

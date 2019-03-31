@@ -1,7 +1,7 @@
 /**
  * ### pick(object, keys)
  *
- * Create an object composed of the specified object `keys`.
+ * Create an object composed of the specified `keys`.
  *
  * ```js
  * const object = { 'a': 1, 'b': 2, 'c': 3 }

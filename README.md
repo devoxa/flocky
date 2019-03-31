@@ -200,9 +200,19 @@ flocky.min([1, 4, 2, -3, 0])
 // -> -3
 ```
 
+### omit(object, keys)
+
+Create an object composed of all existing keys that are not specified in `keys`.
+
+```js
+const object = { 'a': 1, 'b': 2, 'c': 3 }
+flocky.omit(object, ['a'])
+// -> { "b": 2, "c": 3 }
+```
+
 ### pick(object, keys)
 
-Create an object composed of the specified object `keys`.
+Create an object composed of the specified `keys`.
 
 ```js
 const object = { 'a': 1, 'b': 2, 'c': 3 }

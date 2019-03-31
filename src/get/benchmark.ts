@@ -1,0 +1,33 @@
+import Benchmark from '../benchmarkHelper'
+import lodash from 'lodash'
+import get from './index'
+
+const OBJECT = { foo: { bar: { herp: 123 } } }
+
+let benchmark = new Benchmark('get')
+
+benchmark.add({
+  library: 'lodash',
+  input: 'array path',
+  func: () => lodash.get(OBJECT, ['foo', 'bar', 'herp' + Math.random()])
+})
+
+benchmark.add({
+  library: 'lodash',
+  input: 'string path',
+  func: () => lodash.get(OBJECT, 'foo.bar.herp' + Math.random())
+})
+
+benchmark.add({
+  library: 'flocky',
+  input: 'array path',
+  func: () => get(OBJECT, ['foo', 'bar', 'herp' + Math.random()])
+})
+
+benchmark.add({
+  library: 'flocky',
+  input: 'string path',
+  func: () => get(OBJECT, 'foo.bar.herp' + Math.random())
+})
+
+benchmark.run()

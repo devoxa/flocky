@@ -11,23 +11,26 @@ const END_TOKEN = '<!-- END GENERATED FROM FILES -->'
 // Parse the module documentations
 let modules = parseModules().sort((a, b) => a.name.localeCompare(b.name))
 
-// Generate the minified size of each module
+// Generate the subtext for each module (source link, benchmark link, module size)
 modules = modules.map((module) => {
-  const moduleBuildPath = path.join(__dirname, `../build/${module.name}.js`)
-  const moduleContent = fs.readFileSync(moduleBuildPath, 'utf-8')
-  const moduleContentMin = terser.minify(moduleContent).code || ''
-  const moduleContentMinZip = pako.deflate(moduleContentMin)
+  let subText = []
 
-  const moduleMinSize = fileSize(moduleContentMin.length)
-  const moduleMinZipSize = fileSize(moduleContentMinZip.length)
+  // Link to the source
+  subText.push(`[Source](./src/${module.name}/index.ts)`)
 
-  // Insert the subtext
-  const subText = [
-    `[Source](./src/${module.name}/index.ts)`,
-    `Minify: ${moduleMinSize}`,
-    `Minify & GZIP: ${moduleMinZipSize}`
-  ]
+  // Link to the benchmark
+  const benchmarkPath = path.join(__dirname, `./${module.name}/BENCHMARK.md`)
+  const hasBenchmark = fs.existsSync(benchmarkPath)
+  if (hasBenchmark) {
+    subText.push(`[Benchmark](./src/${module.name}/BENCHMARK.md)`)
+  }
 
+  // Calculate the module
+  const sizes = calculateModuleSizes(module.name)
+  subText.push(`Minify: ${sizes.minSize}`)
+  subText.push(`Minify & GZIP: ${sizes.minZipSize}`)
+
+  // Append to the docs for this module
   module.docs += `\n<sup>${subText.join(' • ')}<sup>\n`
   return module
 })
@@ -40,3 +43,21 @@ README = README.replace(
 )
 
 fs.writeFileSync('./README.md', README, 'utf-8')
+
+// ----------------------------------------------------------------------------
+
+function calculateModuleSizes(name: string) {
+  const content = fs.readFileSync(
+    path.join(__dirname, `../build/${name}.js`),
+    'utf-8'
+  )
+
+  const contentMin = terser.minify(content).code || ''
+  const contentMinZip = pako.deflate(contentMin)
+
+  return {
+    size: fileSize(content.length),
+    minSize: fileSize(contentMin.length),
+    minZipSize: fileSize(contentMinZip.length)
+  }
+}

@@ -38,11 +38,14 @@ describe('random (fuzzing)', () => {
   })
 
   it('generates valid integers with minimum and maximum bounds', () => {
+    const isInBounds = (x: number) =>
+      x >= Number.MIN_SAFE_INTEGER && x <= Number.MAX_SAFE_INTEGER
+
     for (let i = 0; i !== ITERATIONS; i++) {
       const number = random(Number.MIN_SAFE_INTEGER, Number.MAX_SAFE_INTEGER)
 
       expect(Number.isNaN(number)).toBeFalsy()
-      expect(number >= Number.MIN_SAFE_INTEGER && number <= Number.MAX_SAFE_INTEGER).toBeTruthy()
+      expect(isInBounds(number)).toBeTruthy()
     }
   })
 })

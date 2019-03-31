@@ -1,7 +1,7 @@
 /**
  * ### shuffle(array)
  *
- * Creates an array of shuffled values, using a version of the
+ * Create an array of shuffled values, using a version of the
  * [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm).
  *
  * ```js

@@ -1,7 +1,7 @@
 /**
  * ### slugify(string)
  *
- * Generates a URL-safe slug of a string.
+ * Generate a URL-safe slug of a string.
  *
  * ```js
  * flocky.slugify(' Issue #123 is _important_! :)')

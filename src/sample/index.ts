@@ -1,7 +1,7 @@
 /**
  * ### sample(array)
  *
- * Gets a random element from the array.
+ * Get a random element from the `array`.
  *
  * ```js
  * flocky.sample([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])

@@ -201,7 +201,7 @@ flocky.get(object, 'x.x.x', 'default')
 
 ### hash(data)
 
-Create a Murmur3 hash representation of the passed in data.
+Create a hashed string representation of the passed in data.
 
 **This function is not cryptographically secure, use [bcrypt](https://www.npmjs.com/package/bcrypt) for anything security related.**
 

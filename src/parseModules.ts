@@ -1,9 +1,6 @@
 import fs from 'fs'
 import path from 'path'
 import glob from 'glob'
-import terser from 'terser'
-import pako from 'pako'
-import fileSize from 'filesize'
 
 const EXAMPLE_REGEX = /```js\n(.*?)\n```/s
 
@@ -26,9 +23,7 @@ export = function parseModules(): Array<ModuleFile> {
 }
 
 function getModulePaths() {
-  return glob
-    .sync(path.join(__dirname, '../src/*/*.ts'))
-    .filter((file) => !file.endsWith('.spec.ts'))
+  return glob.sync(path.join(__dirname, '../src/*/index.ts'))
 }
 
 function parseModule(filePath: string): ModuleFile | false {
@@ -53,29 +48,11 @@ function parseModuleDocs(filePath: string, name: string): string {
   }
 
   // Parse the initial comment as the documentation
-  fileContent = fileContent
+  return fileContent
     .split('\n')
     .filter((line) => line.startsWith(' *'))
     .map((line) => line.replace(/^ \*[ \/]?/, ''))
     .join('\n')
-
-  // Grab the minified size of the generated file
-  const moduleBuildPath = path.join(__dirname, `../build/${name}.js`)
-  const moduleContent = fs.readFileSync(moduleBuildPath, 'utf-8')
-  const moduleContentMin = terser.minify(moduleContent).code || ''
-  const moduleContentMinZip = pako.deflate(moduleContentMin)
-
-  const moduleMinSize = fileSize(moduleContentMin.length)
-  const moduleMinZipSize = fileSize(moduleContentMinZip.length)
-
-  // Insert the subtext
-  const subText = [
-   `[Source](./src/${name}/index.ts)`,
-    `Minify: ${moduleMinSize}`,
-    `Minify & GZIP: ${moduleMinZipSize}`
-  ]
-
-  return fileContent + `\n<sup>${subText.join(' • ')}<sup>\n`
 }
 
 function parseExamples(filePath: string, docs: string): Array<Example> {

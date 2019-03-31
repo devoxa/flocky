@@ -1,6 +1,6 @@
 {
   "name": "flocky",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "A TypeScript and JavaScript utility library with ... at the core.",
   "main": "index.js",
   "author": "queicherius@gmail.com",

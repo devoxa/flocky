@@ -95,7 +95,7 @@ describe('get', () => {
     expect(get(object, 'foo.bar.1.herp', 'the default')).toEqual('the default')
     expect(get(object, 'foo.sup[0].herp', 'the default')).toEqual('the default')
     expect(get(object, 'foo.sup.0.herp', 'the default')).toEqual('the default')
-    expect(get(object, 'foo.bar[0].flerp', 'the default')).toEqual('the default')
+    expect(get(object, 'foo.bar[0].flerp', 'default')).toEqual('default')
     expect(get(object, 'foo.bar.0.flerp', 'the default')).toEqual('the default')
     expect(object).toEqual({ foo: { bar: [{ herp: 123 }] } })
   })

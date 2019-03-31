@@ -13,14 +13,14 @@ const CHARACTERS =
   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
 function randomString(length: number): string {
-  let text = ''
+  let string = ''
 
   for (let i = 0; i !== length; i++) {
     const index = Math.floor(Math.random() * CHARACTERS.length)
-    text += CHARACTERS.charAt(index)
+    string += CHARACTERS.charAt(index)
   }
 
-  return text
+  return string
 }
 
 export = randomString

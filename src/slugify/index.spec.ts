@@ -9,5 +9,6 @@ describe('slugify', () => {
       '123-0sdg-asofinasg-d-f23xxx-948'
     )
     expect(slugify('unicode ♥ is ☢')).toEqual('unicode-is')
+    expect(slugify('---trim---')).toEqual('trim')
   })
 })

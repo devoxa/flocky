@@ -13,7 +13,7 @@
  * // -> ["foo", "bar", "foobar"]
  *
  * const input = [{id: 1, a: 1}, {id: 1, a: 2}, {id: 2, a: 3}, {id: 1, a: 4}]
- * flocky.unique(input, (x) => x.id)
+ * flocky.unique(input, (element) => element.id)
  * // -> [{"id": 1, "a": 1}, {"id": 2, "a": 3}]
  * ```
  */

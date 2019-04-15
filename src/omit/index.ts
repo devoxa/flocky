@@ -10,13 +10,7 @@
  * ```
  */
 
-// "Omit" type that returns an object T with the keys K omitted
-// This is achieved by returning all keys of T by default and then
-// overwriting the keys U with "never" types
-type Omit<T extends object, U extends keyof T> = Pick<
-  T,
-  ({ [P in keyof T]: P } & { [P in U]: never })[keyof T]
->
+type Omit<T, U> = Pick<T, Exclude<keyof T, U>>
 
 function omit<T extends object, U extends keyof T>(
   object: T,

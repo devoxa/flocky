@@ -197,7 +197,7 @@ flocky.get(object, 'x.x.x', 'default')
 // -> "default"
 ```
 
-<sup>[Source](./src/get/index.ts) • [Benchmark](./src/get/BENCHMARK.md) • Minify: 378 B • Minify & GZIP: 247 B<sup>
+<sup>[Source](./src/get/index.ts) • [Benchmark](./src/get/BENCHMARK.md) • Minify: 409 B • Minify & GZIP: 270 B<sup>
 
 ### hash(data)
 

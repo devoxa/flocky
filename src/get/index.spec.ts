@@ -25,13 +25,17 @@ describe('get', () => {
 
   it('should return `undefined` if part of an path of an object is falsy', () => {
     let object = { foo: null }
+    expect(get(object, 'foo')).toEqual(null)
     expect(get(object, 'foo.bar')).toEqual(undefined)
+    expect(get(object, 'bar')).toEqual(undefined)
 
     // Does not mutate input
     expect(object).toEqual({ foo: null })
 
     let object2 = { foo: false }
+    expect(get(object2, 'foo')).toEqual(false)
     expect(get(object2, 'foo.bar')).toEqual(undefined)
+    expect(get(object2, 'bar')).toEqual(undefined)
 
     // Does not mutate input
     expect(object2).toEqual({ foo: false })
@@ -39,6 +43,7 @@ describe('get', () => {
 
   it('should return `undefined` if part of an path of an object is not an object', () => {
     let object = { foo: 'herp?' }
+    expect(get(object, 'foo')).toEqual('herp?')
     expect(get(object, 'foo.bar')).toEqual(undefined)
 
     // Does not mutate input
@@ -48,6 +53,10 @@ describe('get', () => {
   it('should return the default if the path of an object does not exist', () => {
     let object = { foo: { bar: { herp: 123 } } }
     expect(get(object, 'foo.sup.flerp', 'the default')).toEqual('the default')
+
+    let object2 = { foo: { bar: { herp: null } } }
+    expect(get(object2, 'foo.bar.herp.derp', 'default')).toEqual('default')
+    expect(get(object2, 'foo.bar.herp', null)).toEqual(null)
 
     // Does not mutate input
     expect(object).toEqual({ foo: { bar: { herp: 123 } } })

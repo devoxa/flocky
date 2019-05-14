@@ -35,7 +35,8 @@ function get(
   // B) If the path is a string, convert it into an array by migrating
   //    array-style `[foo]` accessors into object-style `.foo` accessors
   const arrayPath = Array.isArray(path) ? path : parsePath(path)
-  return getWithArrayPath(object, arrayPath, defaultValue)
+  const result = getWithArrayPath(object, arrayPath)
+  return result !== undefined ? result : defaultValue
 }
 
 function parsePath(path: string): Array<string> {
@@ -45,22 +46,16 @@ function parsePath(path: string): Array<string> {
     .split('.')
 }
 
-function getWithArrayPath(
-  object: object,
-  path: Array<string | number>,
-  defaultValue?: any
-): any {
+function getWithArrayPath(object: object, path: Array<string | number>): any {
+  const length = path.length
+  let index = 0
   let current: any = object
 
-  for (let i = 0; i !== path.length; i++) {
-    current = current[path[i]]
-
-    if (current == null) {
-      return defaultValue
-    }
+  while (current != null && index < length) {
+    current = current[path[index++]]
   }
 
-  return current
+  return index === length ? current : undefined
 }
 
 export = get

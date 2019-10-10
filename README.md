@@ -10,7 +10,7 @@
 
 <!-- Description -->
 <h4 align="center"> 
-  A TypeScript and JavaScript utility library with ... at the core.
+  A TypeScript and JavaScript utility library with clarity and efficiency at the core.
 </h4>
 
 <!-- Badges -->

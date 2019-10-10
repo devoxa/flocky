@@ -1,7 +1,7 @@
 {
   "name": "flocky",
   "version": "0.1.20",
-  "description": "A TypeScript and JavaScript utility library with ... at the core.",
+  "description": "A TypeScript and JavaScript utility library with clarity and efficiency at the core.",
   "main": "index.js",
   "author": "queicherius@gmail.com",
   "license": "MIT",

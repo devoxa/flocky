@@ -1,6 +1,7 @@
 export = {
   average: require('./average'),
   chunk: require('./chunk'),
+  compact: require('./compact'),
   clone: require('./clone'),
   get: require('./get'),
   hash: require('./hash'),

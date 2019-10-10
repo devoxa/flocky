@@ -151,7 +151,7 @@ flocky.average([1, 4, 2, -4, 0])
 // -> 0.6
 ```
 
-<sup>[Source](./src/average/index.ts) • Minify: 110 B • Minify & GZIP: 94 B<sup>
+<sup>[Source](./src/average/index.ts) • Minify: 112 B • Minify & GZIP: 95 B<sup>
 
 ### chunk(array, size)
 
@@ -178,6 +178,17 @@ original[0] === clone[0]
 ```
 
 <sup>[Source](./src/clone/index.ts) • Minify: 89 B • Minify & GZIP: 87 B<sup>
+
+### compact(array)
+
+Create an array with all falsy (`false`, `null`, `0`, `""`, `undefined`, `NaN`) values removed.
+
+```js
+flocky.compact([1, 2, 3, null, 4, false, 0, NaN, 5])
+// -> [1, 2, 3, 4, 5]
+```
+
+<sup>[Source](./src/compact/index.ts) • Minify: 81 B • Minify & GZIP: 82 B<sup>
 
 ### get(object, path, defaultValue?)
 
@@ -270,7 +281,7 @@ flocky.omit(object, ['a'])
 // -> { "b": 2, "c": 3 }
 ```
 
-<sup>[Source](./src/omit/index.ts) • Minify: 166 B • Minify & GZIP: 137 B<sup>
+<sup>[Source](./src/omit/index.ts) • Minify: 170 B • Minify & GZIP: 139 B<sup>
 
 ### pick(object, keys)
 
@@ -282,7 +293,7 @@ flocky.pick(object, ['a', 'c'])
 // -> { "a": 1, "c": 3 }
 ```
 
-<sup>[Source](./src/pick/index.ts) • Minify: 104 B • Minify & GZIP: 100 B<sup>
+<sup>[Source](./src/pick/index.ts) • Minify: 106 B • Minify & GZIP: 101 B<sup>
 
 ### random(lower, upper, float?)
 
@@ -371,7 +382,7 @@ async flocky.sleep(50)
 // -> undefined
 ```
 
-<sup>[Source](./src/sleep/index.ts) • Minify: 108 B • Minify & GZIP: 95 B<sup>
+<sup>[Source](./src/sleep/index.ts) • Minify: 110 B • Minify & GZIP: 99 B<sup>
 
 ### slugify(string)
 
@@ -393,7 +404,7 @@ flocky.sum([1, 4, 2, -4, 0])
 // -> 3
 ```
 
-<sup>[Source](./src/sum/index.ts) • Minify: 93 B • Minify & GZIP: 84 B<sup>
+<sup>[Source](./src/sum/index.ts) • Minify: 95 B • Minify & GZIP: 86 B<sup>
 
 ### unique(array, identity?)
 
@@ -413,7 +424,7 @@ flocky.unique(input, (element) => element.id)
 // -> [{"id": 1, "a": 1}, {"id": 2, "a": 3}]
 ```
 
-<sup>[Source](./src/unique/index.ts) • Minify: 312 B • Minify & GZIP: 158 B<sup>
+<sup>[Source](./src/unique/index.ts) • Minify: 318 B • Minify & GZIP: 160 B<sup>
 
 <!-- END GENERATED FROM FILES -->
 

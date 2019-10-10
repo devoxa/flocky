@@ -3,6 +3,10 @@
  *
  * Get the value at a `path` of an `object` (with an optional `defaultValue`)
  *
+ * :warning: **Using this method will ignore type information, and you will have
+ * to type the return type yourself. If you can, it is always better to access
+ * properties directly, for example with the "optional chaining" operator.**
+ *
  * ```js
  * const object = {a: {b: {c: 1}}}
  * flocky.get(object, 'a.b.c')

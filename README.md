@@ -181,7 +181,7 @@ original[0] === clone[0]
 
 ### compact(array)
 
-Create an array with all falsy (`false`, `null`, `0`, `""`, `undefined`, `NaN`) values removed.
+Create an array with all falsy (`undefined`, `null`, `false`, `0`, `NaN`, `''`) values removed.
 
 ```js
 flocky.compact([1, 2, 3, null, 4, false, 0, NaN, 5])
@@ -193,6 +193,10 @@ flocky.compact([1, 2, 3, null, 4, false, 0, NaN, 5])
 ### get(object, path, defaultValue?)
 
 Get the value at a `path` of an `object` (with an optional `defaultValue`)
+
+:warning: **Using this method will ignore type information, and you will have
+to type the return type yourself. If you can, it is always better to access
+properties directly, for example with the "optional chaining" operator.**
 
 ```js
 const object = {a: {b: {c: 1}}}
@@ -214,7 +218,8 @@ flocky.get(object, 'x.x.x', 'default')
 
 Create a hashed string representation of the passed in data.
 
-**This function is not cryptographically secure, use [bcrypt](https://www.npmjs.com/package/bcrypt) for anything security related.**
+:warning: **This function is not cryptographically secure, use [bcrypt](https://www.npmjs.com/package/bcrypt)
+for anything security related.**
 
 ```js
 flocky.hash('some really long string')

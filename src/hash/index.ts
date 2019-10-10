@@ -3,7 +3,8 @@
  *
  * Create a hashed string representation of the passed in data.
  *
- * **This function is not cryptographically secure, use [bcrypt](https://www.npmjs.com/package/bcrypt) for anything security related.**
+ * :warning: **This function is not cryptographically secure, use [bcrypt](https://www.npmjs.com/package/bcrypt)
+ * for anything security related.**
  *
  * ```js
  * flocky.hash('some really long string')

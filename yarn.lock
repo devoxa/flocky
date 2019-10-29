@@ -335,10 +335,12 @@
   resolved "https://registry.yarnpkg.com/@types/events/-/events-3.0.0.tgz#2862f3f58a9a7f7c3e78d79f130dd4d71c25c2a7"
   integrity sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
 
-"@types/filesize@^4.2.0":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@types/filesize/-/filesize-4.2.0.tgz#5ef6403b33bc00c718bc6f88d2a0e172df0a110a"
-  integrity sha512-cGnXW1YH24LI6iCWFjaJ9nVX/WX3d1XzIjJuniZWMD+hpGBWDECCeh8H4MwTg17IMKRU1pfjwfI8crok7b2fEA==
+"@types/filesize@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@types/filesize/-/filesize-5.0.0.tgz#c6c252b5b514a5d1948bc9bcb76f4f780570c481"
+  integrity sha512-zgn1Kmm6VfqruG9STpwpZiSnpzHjF9hlvHVw+5hhM20xRCOIgjxnXJxOoLuZ/aWS6v/M5d6fvXFbbVQfBe4cMg==
+  dependencies:
+    filesize "*"
 
 "@types/glob@^7.1.1":
   version "7.1.1"
@@ -1235,7 +1237,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-filesize@^5.0.3:
+filesize@*, filesize@^5.0.3:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/filesize/-/filesize-5.0.3.tgz#2fa284185e9d2e8edbec2915b4dadce4043aac31"
   integrity sha512-RM123v6KPqgZJmVCh4rLvCo8tLKr4sgD92DeZ+AuoUE8teGZJHKs1cTORwETcpIJSlGsz2WYdwKDQUXby5hNqQ==

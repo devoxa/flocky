@@ -24,7 +24,7 @@
  * </details>
  */
 
-function roundTo(number: number, precision: number): number {
+export function roundTo(number: number, precision: number): number {
   const isNegative = number < 0
 
   // We can only work with positive numbers in the next steps, use the absolute
@@ -51,5 +51,3 @@ function shift(number: number, exponent: number): number {
   const [numberBase, numberExponent] = `${number}e`.split('e')
   return Number(`${numberBase}e${Number(numberExponent) + exponent}`)
 }
-
-export = roundTo

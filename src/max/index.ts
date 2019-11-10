@@ -9,8 +9,6 @@
  * ```
  */
 
-function max(array: Array<number>): number {
+export function max(array: Array<number>): number {
   return Math.max.apply(null, array)
 }
-
-export = max

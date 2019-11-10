@@ -25,7 +25,7 @@
 const REPLACE_EMPTY = /]|^\[/g
 const REPLACE_DOT = /\.?\[/g
 
-function get(
+export function get(
   object: object | null | undefined,
   path: string | Array<string | number>,
   defaultValue?: any
@@ -61,5 +61,3 @@ function getWithArrayPath(object: object, path: Array<string | number>): any {
 
   return index === length ? current : undefined
 }
-
-export = get

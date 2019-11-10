@@ -1,5 +1,5 @@
-import shuffle from './index'
 import { mathRandom } from '../testHelpers'
+import { shuffle } from './index'
 
 describe('shuffle', () => {
   beforeEach(() => {

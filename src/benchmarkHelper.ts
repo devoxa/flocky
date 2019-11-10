@@ -1,8 +1,8 @@
+import { Event, Suite } from 'benchmark'
 import fs from 'fs'
 import path from 'path'
-import { Suite, Event } from 'benchmark'
-import unique from './unique'
-import max from './max'
+import { max } from './max'
+import { unique } from './unique'
 
 interface BenchmarkSample {
   library: string
@@ -76,7 +76,7 @@ class Benchmark {
   }
 
   generateResultTable(): string {
-    let table = []
+    let table: string[] = []
 
     const inputs = unique(this.results.map((x) => x.input))
     const libraries = unique(this.results.map((x) => x.library))

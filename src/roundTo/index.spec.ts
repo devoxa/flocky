@@ -1,4 +1,4 @@
-import roundTo from './index'
+import { roundTo } from './index'
 
 describe('roundTo', () => {
   it('rounds the number to the expected precision', () => {

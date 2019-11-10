@@ -10,7 +10,7 @@
  * ```
  */
 
-function shuffle<T>(array: Array<T>): Array<T> {
+export function shuffle<T>(array: Array<T>): Array<T> {
   // Create a copy of the array so we don't mutate the input
   array = array.concat()
 
@@ -38,5 +38,3 @@ function shuffle<T>(array: Array<T>): Array<T> {
 
   return array
 }
-
-export = shuffle

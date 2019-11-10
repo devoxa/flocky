@@ -9,12 +9,10 @@
  * ```
  */
 
-function slugify(string: string): string {
+export function slugify(string: string): string {
   return string
     .trim()
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, '-') // Replace all clusters of non-word characters with a single "-"
     .replace(/^-|-$/g, '') // Trim "-" from start and end
 }
-
-export = slugify

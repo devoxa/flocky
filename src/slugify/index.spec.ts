@@ -1,4 +1,4 @@
-import slugify from './index'
+import { slugify } from './index'
 
 describe('slugify', () => {
   it('generates correct slugs', () => {

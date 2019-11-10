@@ -10,8 +10,8 @@
  * ```
  */
 
-function chunk<T>(array: Array<T>, size: number): Array<Array<T>> {
-  let chunked = []
+export function chunk<T>(array: Array<T>, size: number): Array<Array<T>> {
+  let chunked: Array<Array<T>> = []
 
   for (let i = 0; i < array.length; i += size) {
     chunked.push(array.slice(i, i + size))
@@ -19,5 +19,3 @@ function chunk<T>(array: Array<T>, size: number): Array<Array<T>> {
 
   return chunked
 }
-
-export = chunk

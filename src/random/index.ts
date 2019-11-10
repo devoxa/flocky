@@ -16,7 +16,11 @@
  * ```
  */
 
-function randomNumber(lower: number, upper: number, float?: boolean): number {
+export function randomNumber(
+  lower: number,
+  upper: number,
+  float?: boolean
+): number {
   if (float || lower % 1 || upper % 1) {
     return randomFloat(lower, upper)
   }
@@ -31,5 +35,3 @@ function randomFloat(lower: number, upper: number): number {
 function randomInteger(lower: number, upper: number): number {
   return Math.floor(Math.random() * (upper - lower + 1) + lower)
 }
-
-export = randomNumber

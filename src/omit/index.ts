@@ -12,7 +12,7 @@
 
 type Omit<T, U> = Pick<T, Exclude<keyof T, U>>
 
-function omit<T extends object, U extends keyof T>(
+export function omit<T extends object, U extends keyof T>(
   object: T,
   keys: Array<U>
 ): Omit<T, U> {
@@ -27,5 +27,3 @@ function omit<T extends object, U extends keyof T>(
 
   return result as Omit<T, U>
 }
-
-export = omit

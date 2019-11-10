@@ -12,7 +12,7 @@
 const CHARACTERS =
   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
-function randomString(length: number): string {
+export function randomString(length: number): string {
   let string = ''
 
   for (let i = 0; i !== length; i++) {
@@ -22,5 +22,3 @@ function randomString(length: number): string {
 
   return string
 }
-
-export = randomString

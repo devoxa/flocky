@@ -1,8 +1,8 @@
+import fileSize from 'filesize'
 import fs from 'fs'
+import pako from 'pako'
 import path from 'path'
 import terser from 'terser'
-import pako from 'pako'
-import fileSize from 'filesize'
 import parseModules from './parseModules'
 
 const START_TOKEN = '<!-- START GENERATED FROM FILES -->'
@@ -13,7 +13,7 @@ let modules = parseModules().sort((a, b) => a.name.localeCompare(b.name))
 
 // Generate the subtext for each module (source link, benchmark link, module size)
 modules = modules.map((module) => {
-  let subText = []
+  let subText: string[] = []
 
   // Link to the source
   subText.push(`[Source](./src/${module.name}/index.ts)`)

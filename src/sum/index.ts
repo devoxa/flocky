@@ -9,8 +9,6 @@
  * ```
  */
 
-function sum(array: Array<number>): number {
+export function sum(array: Array<number>): number {
   return array.reduce((a, b) => a + b, 0)
 }
-
-export = sum

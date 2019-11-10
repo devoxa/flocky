@@ -1,4 +1,4 @@
-import get from './index'
+import { get } from './index'
 
 describe('get', () => {
   it('should work with the path of an object', () => {

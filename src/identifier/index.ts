@@ -9,7 +9,7 @@
  * ```
  */
 
-function identifier(): string {
+export function identifier(): string {
   let seed = Date.now()
   let uuid = ''
 
@@ -51,5 +51,3 @@ function identifier(): string {
 
   return uuid
 }
-
-export = identifier

@@ -27,8 +27,6 @@ interface JSONObject {
 
 interface JSONArray extends Array<JSONValue> {}
 
-function clone<T extends JSONValue>(value: T): T {
+export function clone<T extends JSONValue>(value: T): T {
   return JSON.parse(JSON.stringify(value))
 }
-
-export = clone

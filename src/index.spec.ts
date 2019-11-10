@@ -1,9 +1,6 @@
+import flocky from './index'
 import parseModules from './parseModules'
-import _flocky from './index'
 import { dateNow, mathRandom } from './testHelpers'
-
-// This is here because the "import" is not a global variable for "eval"
-const flocky = _flocky
 
 describe('index file', () => {
   it('exports the modules', () => {

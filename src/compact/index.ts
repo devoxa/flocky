@@ -11,8 +11,6 @@
 
 type Falsy = undefined | null | false | 0 | ''
 
-function compact<T>(array: Array<T | Falsy>): Array<T> {
+export function compact<T>(array: Array<T | Falsy>): Array<T> {
   return array.filter(Boolean) as Array<T>
 }
-
-export = compact

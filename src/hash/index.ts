@@ -27,7 +27,7 @@
  * </details>
  */
 
-function hash(data: any): string {
+export function hash(data: any): string {
   // Convert any data into a string
   data = JSON.stringify(data)
 
@@ -79,5 +79,3 @@ function mul32(m: number, n: number) {
 
   return (((nHigh * m) | 0) + ((nLow * m) | 0)) | 0
 }
-
-export = hash

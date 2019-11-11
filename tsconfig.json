@@ -2,7 +2,7 @@
   "compilerOptions": {
     /* Basic Options */
     "target": "es5",
-    "module": "commonjs",
+    "module": "es2015",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": false,
     "noEmitOnError": true,

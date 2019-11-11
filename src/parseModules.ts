@@ -1,6 +1,6 @@
 import fs from 'fs'
-import path from 'path'
 import glob from 'glob'
+import path from 'path'
 
 const EXAMPLE_REGEX = /```js\n(.*?)\n```/s
 
@@ -16,7 +16,7 @@ interface Example {
   expected: any
 }
 
-export = function parseModules(): Array<ModuleFile> {
+export function parseModules(): Array<ModuleFile> {
   return getModulePaths()
     .map(parseModule)
     .filter((x): x is ModuleFile => Boolean(x))

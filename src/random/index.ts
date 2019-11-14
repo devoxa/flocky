@@ -16,11 +16,7 @@
  * ```
  */
 
-export function random (
-  lower: number,
-  upper: number,
-  float?: boolean
-): number {
+export function random(lower: number, upper: number, float?: boolean): number {
   if (float || lower % 1 || upper % 1) {
     return randomFloat(lower, upper)
   }

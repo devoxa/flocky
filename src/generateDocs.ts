@@ -48,7 +48,7 @@ fs.writeFileSync('./README.md', README, 'utf-8')
 
 function calculateModuleSizes(name: string) {
   const content = fs.readFileSync(
-    path.join(__dirname, `../build/${name}.js`),
+    path.join(__dirname, `../build/es6/${name}.js`),
     'utf-8'
   )
 

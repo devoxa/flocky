@@ -50,7 +50,6 @@ function build() {
     // We are disallowing a full import of index because that creates bundles
     // that are not tree shakable.
     let content = fs.readFileSync(`build/es6/index.js`, 'utf-8')
-    content = content.replace(/import .*;\n/g, '')
     content = content.replace(/export default .*;\n/s, '')
     fs.writeFileSync(`build/es6/index.js`, content, 'utf-8')
   }
@@ -62,8 +61,7 @@ function build() {
     const files = ['build/index.d.ts', 'build/es6/index.d.ts']
     for (const file of files) {
       let content = fs.readFileSync(file, 'utf-8')
-      content = content.replace(/import .*;\n/g, '')
-      content = content.replace(/declare const .*;\n/s, '')
+      content = content.replace(/declare const _default.*;\n/s, '')
       fs.writeFileSync(file, content, 'utf-8')
     }
   }

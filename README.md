@@ -69,7 +69,7 @@ npm install --save flocky
 
 <details>
 <summary><strong>CommonJS Modules</strong></summary>
-<br>
+
 ```js
 // Importing the full library
 const flocky = require('flocky')
@@ -84,11 +84,12 @@ const sum = require('flocky/sum')
 const { sum } = require('flocky/sum')
 sum([1, 2, 3])
 ```
+
 </details>
 
 <details>
 <summary><strong>ES6 Modules</strong></summary>
-<br>
+
 ```js
 // Importing the full library (tree shakable!)
 import * as flocky from 'flocky'
@@ -106,12 +107,13 @@ sum([1, 2, 3])
 // Note that the following is NOT allowed (because it does not create tree shakable bundles)
 // /!\ import flocky from 'flocky'
 ```
+
 </details>
 
 <details>
 <summary><strong>TypeScript</strong></summary>
-<br>
-```js
+
+```ts
 // Importing the full library (tree shakable!)
 import * as flocky from 'flocky'
 flocky.sum([1, 2, 3])
@@ -128,6 +130,7 @@ sum([1, 2, 3])
 // Note that the following is NOT allowed (because it does not create tree shakable bundles)
 // /!\ import flocky from 'flocky'
 ```
+
 </details>
 
 ## API Reference

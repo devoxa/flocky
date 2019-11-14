@@ -13,7 +13,7 @@ let modules = parseModules().sort((a, b) => a.name.localeCompare(b.name))
 
 // Generate the subtext for each module (source link, benchmark link, module size)
 modules = modules.map((module) => {
-  let subText: string[] = []
+  let subText: Array<string> = []
 
   // Link to the source
   subText.push(`[Source](./src/${module.name}/index.ts)`)

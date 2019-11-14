@@ -76,7 +76,7 @@ export default class Benchmark {
   }
 
   generateResultTable(): string {
-    let table: string[] = []
+    let table: Array<string> = []
 
     const inputs = unique(this.results.map((x) => x.input))
     const libraries = unique(this.results.map((x) => x.library))

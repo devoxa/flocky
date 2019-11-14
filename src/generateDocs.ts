@@ -3,7 +3,7 @@ import fs from 'fs'
 import pako from 'pako'
 import path from 'path'
 import terser from 'terser'
-import parseModules from './parseModules'
+import { parseModules } from './parseModules'
 
 const START_TOKEN = '<!-- START GENERATED FROM FILES -->'
 const END_TOKEN = '<!-- END GENERATED FROM FILES -->'

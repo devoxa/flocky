@@ -16,7 +16,7 @@ interface BenchmarkResult {
   opsPerSec: number
 }
 
-class Benchmark {
+export default class Benchmark {
   private readonly name: string
   private suite: Suite
   private results: Array<BenchmarkResult>
@@ -103,5 +103,3 @@ class Benchmark {
     return table.join('\n')
   }
 }
-
-export = Benchmark

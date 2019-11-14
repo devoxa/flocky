@@ -13,7 +13,8 @@
     "test": "jest --runInBand",
     "lint": "prettier --list-different 'src/**/*.ts'",
     "format": "prettier --write 'src/**/*.ts'",
-    "build": "./build.sh",
+    "build": "node tasksfile.js build",
+    "task": "node tasksfile.js",
     "generate-docs": "ts-node src/generateDocs.ts",
     "benchmark": "run(){ ts-node src/$1/benchmark.ts; }; run"
   },
@@ -33,6 +34,7 @@
     "lodash": "^4.17.15",
     "pako": "^1.0.10",
     "prettier": "^1.18.2",
+    "tasksfile": "^5.1.0",
     "terser": "^4.3.8",
     "ts-jest": "^24.1.0",
     "ts-node": "^8.4.1",

@@ -4,5 +4,5 @@ node_js:
 branches:
   only: 
     - master
-script: yarn test --coverage && yarn lint
+script: yarn build && yarn test --coverage && yarn lint
 after_script: "curl -s https://codecov.io/bash | bash"

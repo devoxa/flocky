@@ -100,12 +100,12 @@ import { sum } from 'flocky'
 sum([1, 2, 3])
 
 // Importing only part of the library (in case you are not using tree shaking)
-import sum from 'flocky'
-import { sum } from 'flocky'
+import { sum } from 'flocky/es6/sum'
+import sum from 'flocky/es6/sum'
 sum([1, 2, 3])
 
-// Note that the following is NOT allowed (because it does not create tree shakable bundles)
-// /!\ import flocky from 'flocky'
+// /!\ Note that the following is NOT allowed (because it does not create tree shakable bundles)
+// import flocky from 'flocky'
 ```
 
 </details>
@@ -127,8 +127,8 @@ import { sum } from 'flocky'
 import sum from 'flocky'
 sum([1, 2, 3])
 
-// Note that the following is NOT allowed (because it does not create tree shakable bundles)
-// /!\ import flocky from 'flocky'
+// /!\ Note that the following is NOT allowed (because it does not create tree shakable bundles)
+// import flocky from 'flocky'
 ```
 
 </details>

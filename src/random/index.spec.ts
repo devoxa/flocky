@@ -1,5 +1,5 @@
 import { mathRandom } from '../testHelpers'
-import { randomNumber as random } from './index'
+import { random } from './index'
 
 describe('random', () => {
   beforeEach(() => {

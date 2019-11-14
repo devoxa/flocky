@@ -9,7 +9,7 @@ import { max } from './max'
 import { min } from './min'
 import { omit } from './omit'
 import { pick } from './pick'
-import { randomNumber } from './random'
+import { random } from './random'
 import { randomString } from './randomString'
 import { roundTo } from './roundTo'
 import { sample } from './sample'
@@ -22,8 +22,8 @@ import { unique } from './unique'
 export default {
   average,
   chunk,
-  compact,
   clone,
+  compact,
   get,
   hash,
   identifier,
@@ -31,7 +31,7 @@ export default {
   min,
   omit,
   pick,
-  random: randomNumber,
+  random,
   randomString,
   roundTo,
   sample,

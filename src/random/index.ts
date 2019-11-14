@@ -16,7 +16,7 @@
  * ```
  */
 
-export function randomNumber(
+export function random (
   lower: number,
   upper: number,
   float?: boolean

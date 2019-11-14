@@ -13,3 +13,5 @@ export function sample<T>(array: Array<T>): T {
   const index = Math.floor(Math.random() * array.length)
   return array[index]
 }
+
+export default sample

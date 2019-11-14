@@ -22,3 +22,5 @@ export function randomString(length: number): string {
 
   return string
 }
+
+export default randomString

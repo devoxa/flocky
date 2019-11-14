@@ -2,12 +2,13 @@
   "compilerOptions": {
     /* Basic Options */
     "target": "es5",
-    "module": "es2015",
+    "module": "commonjs",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": false,
     "noEmitOnError": true,
     "declaration": true,
     "newLine": "lf",
+    "outDir": "tscBuild",
 
     /* Type-Checking Options */
     "strict": true,

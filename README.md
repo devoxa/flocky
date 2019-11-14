@@ -58,86 +58,77 @@
 ## Installation
 
 ```bash
-# Using `npm`
-npm install --save flocky
-
 # Using `yarn`
 yarn add flocky
+
+# Using `npm`
+npm install --save flocky
 ```
 
-## Usage
+## Import
 
-### Importing the full library
-
-**TypeScript**
-
-```ts
-// Using CommonJS
-import flocky = require('flocky')
-flocky.sum([1, 2, 3])
-
-// Using ES6 modules
-// (!) This requires "allowSyntheticDefaultImports" and "esModuleInterop" set to "true"
-import flocky from 'flocky'
-flocky.sum([1, 2, 3])
-
-// Using ES6 modules
-// (!) This still imports the full library into your bundle
-import {sum} from 'flocky'
-sum([1, 2, 3])
-```
-
-**JavaScript**
-
+<details>
+<summary><strong>CommonJS Modules</strong></summary>
+<br>
 ```js
-// Using CommonJS
+// Importing the full library
 const flocky = require('flocky')
 flocky.sum([1, 2, 3])
 
-// Using CommonJS
-// (!) This still imports the full library into your bundle
-const {sum} = require('flocky')
+// Importing the full library, with a named import
+const { sum } = require('flocky')
 sum([1, 2, 3])
 
-// Using ES6 modules
-// (!) This requires transformation with a tool like Babel
-import flocky from 'flocky'
+// Importing only part of the library
+const sum = require('flocky/sum')
+const { sum } = require('flocky/sum')
+sum([1, 2, 3])
+```
+</details>
+
+<details>
+<summary><strong>ES6 Modules</strong></summary>
+<br>
+```js
+// Importing the full library (tree shakable!)
+import * as flocky from 'flocky'
 flocky.sum([1, 2, 3])
 
-// Using ES6 modules
-// (!) This requires transformation with a tool like Babel
-// (!) This still imports the full library into your bundle
-import {sum} from 'flocky'
+// Importing the full library, with a named import (tree shakable!)
+import { sum } from 'flocky'
 sum([1, 2, 3])
+
+// Importing only part of the library (in case you are not using tree shaking)
+import sum from 'flocky'
+import { sum } from 'flocky'
+sum([1, 2, 3])
+
+// Note that the following is NOT allowed (because it does not create tree shakable bundles)
+// /!\ import flocky from 'flocky'
 ```
+</details>
 
-### Importing specific parts of the library
-
-**TypeScript**
-
-```ts
-// Using CommonJS
-import sum = require('flocky/sum')
-sum([1, 2, 3])
-
-// Using ES6 modules
-// (!) This requires "allowSyntheticDefaultImports" and "esModuleInterop" set to "true"
-import sum from 'flocky/sum'
-sum([1, 2, 3])
-```
-
-**JavaScript**
-
+<details>
+<summary><strong>TypeScript</strong></summary>
+<br>
 ```js
-// Using CommonJS
-const sum = require('flocky/sum')
+// Importing the full library (tree shakable!)
+import * as flocky from 'flocky'
+flocky.sum([1, 2, 3])
+
+// Importing the full library, with a named import (tree shakable!)
+import { sum } from 'flocky'
 sum([1, 2, 3])
 
-// Using ES6 modules
-// (!) This requires transformation with a tool like Babel
-import sum from 'flocky/sum'
+// Importing only part of the library (in case you are not using tree shaking)
+import { sum } from 'flocky'
+import sum from 'flocky'
 sum([1, 2, 3])
+
+// Note that the following is NOT allowed (because it does not create tree shakable bundles)
+// /!\ import flocky from 'flocky'
 ```
+</details>
 
 ## API Reference
 

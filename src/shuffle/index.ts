@@ -38,3 +38,5 @@ export function shuffle<T>(array: Array<T>): Array<T> {
 
   return array
 }
+
+export default shuffle

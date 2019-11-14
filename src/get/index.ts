@@ -61,3 +61,5 @@ function getWithArrayPath(object: object, path: Array<string | number>): any {
 
   return index === length ? current : undefined
 }
+
+export default get

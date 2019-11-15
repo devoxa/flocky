@@ -13,9 +13,9 @@
  *   'id'
  * )
  * // -> {
- * // ->   "1": { "id": 1, "name": "Stanley", "age": 64 },
- * // ->   "2": { "id": 2, "name": "Juliet", "age": 57 },
- * // ->   "3": { "id": 3, "name": "Alex", "age": 19 }
+ * // ->   1: { id: 1, name: 'Stanley', age: 64 },
+ * // ->   2: { id: 2, name: 'Juliet', age: 57 },
+ * // ->   3: { id: 3, name: 'Alex', age: 19 }
  * // -> }
  *
  * flocky.toMap(
@@ -27,11 +27,7 @@
  *   'name',
  *   'age'
  * )
- * // -> {
- * // ->   "Stanley": 64,
- * // ->   "Juliet": 57,
- * // ->   "Alex": 19
- * // -> }
+ * // -> { Stanley: 64, Juliet: 57, Alex: 19 }
  * ```
  */
 

@@ -4,9 +4,9 @@
  * Create an object composed of all existing keys that are not specified in `keys`.
  *
  * ```js
- * const object = { 'a': 1, 'b': 2, 'c': 3 }
+ * const object = { a: 1, b: 2, c: 3 }
  * flocky.omit(object, ['a'])
- * // -> { "b": 2, "c": 3 }
+ * // -> { b: 2, c: 3 }
  * ```
  */
 

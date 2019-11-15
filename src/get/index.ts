@@ -18,7 +18,7 @@
  *
  * const object = {a: {b: {c: 1}}}
  * flocky.get(object, 'x.x.x', 'default')
- * // -> "default"
+ * // -> 'default'
  * ```
  */
 

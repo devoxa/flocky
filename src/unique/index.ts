@@ -10,11 +10,11 @@
  * // -> [1, 2, 4, 6]
  *
  * flocky.unique(['foo', 'bar', 'foo', 'foobar'])
- * // -> ["foo", "bar", "foobar"]
+ * // -> ['foo', 'bar', 'foobar']
  *
- * const input = [{id: 1, a: 1}, {id: 1, a: 2}, {id: 2, a: 3}, {id: 1, a: 4}]
+ * const input = [{ id: 1, a: 1 }, { id: 1, a: 2 }, { id: 2, a: 3 }, { id: 1, a: 4 }]
  * flocky.unique(input, (element) => element.id)
- * // -> [{"id": 1, "a": 1}, {"id": 2, "a": 3}]
+ * // -> [{ id: 1, a: 1 }, { id: 2, a: 3 }]
  * ```
  */
 

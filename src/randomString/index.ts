@@ -5,7 +5,7 @@
  *
  * ```js
  * flocky.randomString(5)
- * // -> "tfl0g"
+ * // -> 'tfl0g'
  * ```
  */
 

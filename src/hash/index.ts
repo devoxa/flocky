@@ -8,10 +8,10 @@
  *
  * ```js
  * flocky.hash('some really long string')
- * // -> "x1nr7uiv"
+ * // -> 'x1nr7uiv'
  *
  * flocky.hash({id: 'AAA', name: 'BBB'})
- * // -> "x16mynva"
+ * // -> 'x16mynva'
  * ```
  *
  * <details>

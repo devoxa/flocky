@@ -5,7 +5,7 @@
  *
  * ```js
  * flocky.slugify(' Issue #123 is _important_! :)')
- * // -> "issue-123-is-important"
+ * // -> 'issue-123-is-important'
  * ```
  */
 

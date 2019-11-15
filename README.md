@@ -165,7 +165,7 @@ Create a deep clone of `value`.
 This method only supports types native to JSON, so all primitive types, arrays and objects.
 
 ```js
-const original = [{ "a": 1 }, { "b": 2 }]
+const original = [{ a: 1 }, { b: 2 }]
 const clone = flocky.clone(original)
 original[0] === clone[0]
 // -> false
@@ -178,7 +178,7 @@ original[0] === clone[0]
 Create an array with all falsy (`undefined`, `null`, `false`, `0`, `NaN`, `''`) values removed.
 
 ```js
-flocky.compact([1, 2, 3, null, 4, false, 0, NaN, 5])
+flocky.compact([1, 2, 3, null, 4, false, 0, NaN, 5, ''])
 // -> [1, 2, 3, 4, 5]
 ```
 
@@ -203,7 +203,7 @@ flocky.get(object, 'x.x.x')
 
 const object = {a: {b: {c: 1}}}
 flocky.get(object, 'x.x.x', 'default')
-// -> "default"
+// -> 'default'
 ```
 
 <sup>[Source](./src/get/index.ts) • [Benchmark](./src/get/BENCHMARK.md) • Minify: 403 B • Minify & GZIP: 264 B<sup>
@@ -217,10 +217,10 @@ for anything security related.**
 
 ```js
 flocky.hash('some really long string')
-// -> "x1nr7uiv"
+// -> 'x1nr7uiv'
 
 flocky.hash({id: 'AAA', name: 'BBB'})
-// -> "x16mynva"
+// -> 'x16mynva'
 ```
 
 <details>
@@ -243,7 +243,7 @@ Generate a random identifier with UUID v4 format.
 
 ```js
 flocky.identifier()
-// -> "bfc8d57e-b9ab-4245-836e-d1fd99602e30"
+// -> 'bfc8d57e-b9ab-4245-836e-d1fd99602e30'
 ```
 
 <sup>[Source](./src/identifier/index.ts) • Minify: 270 B • Minify & GZIP: 197 B<sup>
@@ -275,9 +275,9 @@ flocky.min([1, 4, 2, -3, 0])
 Create an object composed of all existing keys that are not specified in `keys`.
 
 ```js
-const object = { 'a': 1, 'b': 2, 'c': 3 }
+const object = { a: 1, b: 2, c: 3 }
 flocky.omit(object, ['a'])
-// -> { "b": 2, "c": 3 }
+// -> { b: 2, c: 3 }
 ```
 
 <sup>[Source](./src/omit/index.ts) • Minify: 164 B • Minify & GZIP: 132 B<sup>
@@ -287,9 +287,9 @@ flocky.omit(object, ['a'])
 Create an object composed of the specified `keys`.
 
 ```js
-const object = { 'a': 1, 'b': 2, 'c': 3 }
+const object = { a: 1, b: 2, c: 3 }
 flocky.pick(object, ['a', 'c'])
-// -> { "a": 1, "c": 3 }
+// -> { a: 1, c: 3 }
 ```
 
 <sup>[Source](./src/pick/index.ts) • Minify: 100 B • Minify & GZIP: 93 B<sup>
@@ -318,7 +318,7 @@ Generate a random alphanumeric string with length `length`.
 
 ```js
 flocky.randomString(5)
-// -> "tfl0g"
+// -> 'tfl0g'
 ```
 
 <sup>[Source](./src/randomString/index.ts) • Minify: 251 B • Minify & GZIP: 210 B<sup>
@@ -389,7 +389,7 @@ Generate a URL-safe slug of a string.
 
 ```js
 flocky.slugify(' Issue #123 is _important_! :)')
-// -> "issue-123-is-important"
+// -> 'issue-123-is-important'
 ```
 
 <sup>[Source](./src/slugify/index.ts) • Minify: 128 B • Minify & GZIP: 114 B<sup>
@@ -419,9 +419,9 @@ flocky.toMap(
   'id'
 )
 // -> {
-// ->   "1": { "id": 1, "name": "Stanley", "age": 64 },
-// ->   "2": { "id": 2, "name": "Juliet", "age": 57 },
-// ->   "3": { "id": 3, "name": "Alex", "age": 19 }
+// ->   1: { id: 1, name: 'Stanley', age: 64 },
+// ->   2: { id: 2, name: 'Juliet', age: 57 },
+// ->   3: { id: 3, name: 'Alex', age: 19 }
 // -> }
 
 flocky.toMap(
@@ -433,11 +433,7 @@ flocky.toMap(
   'name',
   'age'
 )
-// -> {
-// ->   "Stanley": 64,
-// ->   "Juliet": 57,
-// ->   "Alex": 19
-// -> }
+// -> { Stanley: 64, Juliet: 57, Alex: 19 }
 ```
 
 <sup>[Source](./src/toMap/index.ts) • Minify: 94 B • Minify & GZIP: 92 B<sup>
@@ -453,11 +449,11 @@ flocky.unique([1, 1, 2, 4, 2, 1, 6])
 // -> [1, 2, 4, 6]
 
 flocky.unique(['foo', 'bar', 'foo', 'foobar'])
-// -> ["foo", "bar", "foobar"]
+// -> ['foo', 'bar', 'foobar']
 
-const input = [{id: 1, a: 1}, {id: 1, a: 2}, {id: 2, a: 3}, {id: 1, a: 4}]
+const input = [{ id: 1, a: 1 }, { id: 1, a: 2 }, { id: 2, a: 3 }, { id: 1, a: 4 }]
 flocky.unique(input, (element) => element.id)
-// -> [{"id": 1, "a": 1}, {"id": 2, "a": 3}]
+// -> [{ id: 1, a: 1 }, { id: 2, a: 3 }]
 ```
 
 <sup>[Source](./src/unique/index.ts) • Minify: 312 B • Minify & GZIP: 153 B<sup>

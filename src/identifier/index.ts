@@ -5,7 +5,7 @@
  *
  * ```js
  * flocky.identifier()
- * // -> "bfc8d57e-b9ab-4245-836e-d1fd99602e30"
+ * // -> 'bfc8d57e-b9ab-4245-836e-d1fd99602e30'
  * ```
  */
 

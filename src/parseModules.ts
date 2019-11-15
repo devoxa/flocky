@@ -84,6 +84,6 @@ function parseExample(example: string): Example {
 
   return {
     code,
-    expected: expected === 'undefined' ? undefined : JSON.parse(expected)
+    expected: expected === 'undefined' ? undefined : eval(`(${expected})`)
   }
 }

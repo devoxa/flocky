@@ -4,9 +4,9 @@
  * Create an object composed of the specified `keys`.
  *
  * ```js
- * const object = { 'a': 1, 'b': 2, 'c': 3 }
+ * const object = { a: 1, b: 2, c: 3 }
  * flocky.pick(object, ['a', 'c'])
- * // -> { "a": 1, "c": 3 }
+ * // -> { a: 1, c: 3 }
  * ```
  */
 

@@ -17,6 +17,7 @@ import { shuffle as _shuffle } from './shuffle'
 import { sleep as _sleep } from './sleep'
 import { slugify as _slugify } from './slugify'
 import { sum as _sum } from './sum'
+import { toMap as _toMap } from './toMap'
 import { unique as _unique } from './unique'
 
 export const average = _average
@@ -38,6 +39,7 @@ export const shuffle = _shuffle
 export const sleep = _sleep
 export const slugify = _slugify
 export const sum = _sum
+export const toMap = _toMap
 export const unique = _unique
 
 export default {
@@ -60,5 +62,6 @@ export default {
   sleep: _sleep,
   slugify: _slugify,
   sum: _sum,
+  toMap: _toMap,
   unique: _unique
 }

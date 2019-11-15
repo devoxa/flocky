@@ -4,7 +4,7 @@
  * Return a promise that waits for `ms` milliseconds before resolving.
  *
  * ```js
- * async flocky.sleep(50)
+ * async flocky.sleep(25)
  * // -> undefined
  * ```
  */

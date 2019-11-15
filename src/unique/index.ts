@@ -32,7 +32,7 @@ function primitiveUnique<T>(array: Array<T>): Array<T> {
 
 function objectUnique<T>(array: Array<T>, identity: (x: T) => any): Array<T> {
   const identities = array.map((x) => identity(x))
-  return array.filter((x, i) => identities.indexOf(identity(x)) === i)
+  return array.filter((x, i) => identities.indexOf(identities[i]) === i)
 }
 
 export default unique

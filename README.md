@@ -377,7 +377,7 @@ flocky.shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 Return a promise that waits for `ms` milliseconds before resolving.
 
 ```js
-async flocky.sleep(50)
+async flocky.sleep(25)
 // -> undefined
 ```
 
@@ -404,6 +404,43 @@ flocky.sum([1, 4, 2, -4, 0])
 ```
 
 <sup>[Source](./src/sum/index.ts) • Minify: 89 B • Minify & GZIP: 77 B<sup>
+
+### toMap(array, key, target?)
+
+Create a lookup map out of an `array` of objects, with a lookup `key` and an optional `target`.
+
+```js
+flocky.toMap(
+  [
+    { id: 1, name: 'Stanley', age: 64 },
+    { id: 2, name: 'Juliet', age: 57 },
+    { id: 3, name: 'Alex', age: 19 }
+  ],
+  'id'
+)
+// -> {
+// ->   "1": { "id": 1, "name": "Stanley", "age": 64 },
+// ->   "2": { "id": 2, "name": "Juliet", "age": 57 },
+// ->   "3": { "id": 3, "name": "Alex", "age": 19 }
+// -> }
+
+flocky.toMap(
+  [
+    { id: 1, name: 'Stanley', age: 64 },
+    { id: 2, name: 'Juliet', age: 57 },
+    { id: 3, name: 'Alex', age: 19 }
+  ],
+  'name',
+  'age'
+)
+// -> {
+// ->   "Stanley": 64,
+// ->   "Juliet": 57,
+// ->   "Alex": 19
+// -> }
+```
+
+<sup>[Source](./src/toMap/index.ts) • Minify: 94 B • Minify & GZIP: 92 B<sup>
 
 ### unique(array, identity?)
 

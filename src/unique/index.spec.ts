@@ -10,7 +10,7 @@ describe('unique', () => {
     expect(unique(['foo', 'bar', 'foo', 'foobar', 'foo', 'foo'])).toEqual([
       'foo',
       'bar',
-      'foobar'
+      'foobar',
     ])
   })
 
@@ -20,13 +20,13 @@ describe('unique', () => {
       { id: 2, name: 'Foo2' },
       { id: 1, name: 'Foo3' },
       { id: 3, name: 'Foo4' },
-      { id: 2, name: 'Foo5' }
+      { id: 2, name: 'Foo5' },
     ]
 
     const expected = [
       { id: 1, name: 'Foo1' },
       { id: 2, name: 'Foo2' },
-      { id: 3, name: 'Foo4' }
+      { id: 3, name: 'Foo4' },
     ]
 
     expect(unique(input, (element) => element.id)).toEqual(expected)

@@ -51,7 +51,7 @@ export default class Benchmark {
     this.results.push({
       library,
       input,
-      opsPerSec: parseInt(opsPerSec, 10)
+      opsPerSec: parseInt(opsPerSec, 10),
     })
   }
 
@@ -65,7 +65,7 @@ export default class Benchmark {
       '',
       this.generateResultTable(),
       '',
-      `<sup>Generated at ${new Date().toISOString()}</sup>`
+      `<sup>Generated at ${new Date().toISOString()}</sup>`,
     ].join('\n')
 
     fs.writeFileSync(

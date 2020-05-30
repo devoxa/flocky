@@ -17,13 +17,13 @@ let benchmark = new Benchmark('hash')
 benchmark.add({
   library: 'flocky',
   input: '1KB String',
-  func: () => hash(ONE_KB_STRING)
+  func: () => hash(ONE_KB_STRING),
 })
 
 benchmark.add({
   library: 'flocky',
   input: '1MB String',
-  func: () => hash(ONE_MB_STRING)
+  func: () => hash(ONE_MB_STRING),
 })
 
 benchmark.run()

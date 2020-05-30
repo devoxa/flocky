@@ -10,7 +10,7 @@ describe('duplicates', () => {
     expect(duplicates(['foo', 'bar', 'foo', 'foobar', 'foo', 'foo'])).toEqual([
       'foo',
       'foo',
-      'foo'
+      'foo',
     ])
   })
 
@@ -20,12 +20,12 @@ describe('duplicates', () => {
       { id: 2, name: 'Foo2' },
       { id: 1, name: 'Foo3' },
       { id: 3, name: 'Foo4' },
-      { id: 2, name: 'Foo5' }
+      { id: 2, name: 'Foo5' },
     ]
 
     const expected = [
       { id: 1, name: 'Foo3' },
-      { id: 2, name: 'Foo5' }
+      { id: 2, name: 'Foo5' },
     ]
 
     expect(duplicates(input, (element) => element.id)).toEqual(expected)

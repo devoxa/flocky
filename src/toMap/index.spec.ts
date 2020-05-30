@@ -9,8 +9,8 @@ describe('toMap', () => {
         id: 3,
         name: 'Chris',
         age: 19,
-        alignment: { evil: 3, neutral: 1, good: 0 }
-      }
+        alignment: { evil: 3, neutral: 1, good: 0 },
+      },
     ]
 
     expect(toMap(input, 'id')).toEqual({
@@ -20,8 +20,8 @@ describe('toMap', () => {
         id: 3,
         name: 'Chris',
         age: 19,
-        alignment: { evil: 3, neutral: 1, good: 0 }
-      }
+        alignment: { evil: 3, neutral: 1, good: 0 },
+      },
     })
 
     expect(toMap(input, 'name')).toEqual({
@@ -31,8 +31,8 @@ describe('toMap', () => {
         id: 3,
         name: 'Chris',
         age: 19,
-        alignment: { evil: 3, neutral: 1, good: 0 }
-      }
+        alignment: { evil: 3, neutral: 1, good: 0 },
+      },
     })
 
     expect(toMap(input, 'age')).toEqual({
@@ -42,8 +42,8 @@ describe('toMap', () => {
         id: 3,
         name: 'Chris',
         age: 19,
-        alignment: { evil: 3, neutral: 1, good: 0 }
-      }
+        alignment: { evil: 3, neutral: 1, good: 0 },
+      },
     })
   })
 
@@ -51,25 +51,25 @@ describe('toMap', () => {
     const input = [
       { id: 1, name: 'Anna', age: 64 },
       { id: 2, name: 'Bertha', age: 57 },
-      { id: 3, name: 'Chris', age: 19 }
+      { id: 3, name: 'Chris', age: 19 },
     ]
 
     expect(toMap(input, 'id', 'age')).toEqual({
       1: 64,
       2: 57,
-      3: 19
+      3: 19,
     })
 
     expect(toMap(input, 'name', 'name')).toEqual({
       Anna: 'Anna',
       Bertha: 'Bertha',
-      Chris: 'Chris'
+      Chris: 'Chris',
     })
 
     expect(toMap(input, 'age', 'id')).toEqual({
       64: 1,
       57: 2,
-      19: 3
+      19: 3,
     })
   })
 
@@ -78,13 +78,13 @@ describe('toMap', () => {
       { id: 1, name: 'Anna', age: 64 },
       { id: 2, name: 'Bertha', age: 57 },
       { name: 'Chris Clone', age: 80 },
-      { id: 3, name: 'Chris', age: 19 }
+      { id: 3, name: 'Chris', age: 19 },
     ]
 
     expect(toMap(input, 'id', 'age')).toEqual({
       1: 64,
       2: 57,
-      3: 19
+      3: 19,
     })
   })
 
@@ -92,14 +92,14 @@ describe('toMap', () => {
     const input = [
       { id: 1, name: 'Anna' },
       { id: 2, name: 'Bertha' },
-      { id: 3, name: 'Chris' }
+      { id: 3, name: 'Chris' },
     ]
 
     toMap(input, 'id')
     expect(input).toEqual([
       { id: 1, name: 'Anna' },
       { id: 2, name: 'Bertha' },
-      { id: 3, name: 'Chris' }
+      { id: 3, name: 'Chris' },
     ])
   })
 })

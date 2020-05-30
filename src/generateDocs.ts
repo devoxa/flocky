@@ -58,6 +58,6 @@ function calculateModuleSizes(name: string) {
   return {
     size: fileSize(content.length),
     minSize: fileSize(contentMin.length),
-    minZipSize: fileSize(contentMinZip.length)
+    minZipSize: fileSize(contentMinZip.length),
   }
 }

@@ -66,5 +66,5 @@ export default {
   slugify: _slugify,
   sum: _sum,
   toMap: _toMap,
-  unique: _unique
+  unique: _unique,
 }

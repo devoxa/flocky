@@ -44,10 +44,7 @@ export function get(
 }
 
 function parsePath(path: string): Array<string> {
-  return path
-    .replace(REPLACE_EMPTY, '')
-    .replace(REPLACE_DOT, '.')
-    .split('.')
+  return path.replace(REPLACE_EMPTY, '').replace(REPLACE_DOT, '.').split('.')
 }
 
 function getWithArrayPath(object: object, path: Array<string | number>): any {

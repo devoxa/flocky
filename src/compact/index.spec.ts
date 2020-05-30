@@ -23,7 +23,7 @@ describe('compact', () => {
       'd',
       '',
       'e',
-      undefined
+      undefined,
     ])
     expect(compacted).toEqual(['a', 'b', 'c', 'd', 'e'])
   })
@@ -39,7 +39,7 @@ describe('compact', () => {
       { d: 1 },
       '',
       { e: 1 },
-      undefined
+      undefined,
     ]
     const compacted = compact(original)
 
@@ -53,14 +53,14 @@ describe('compact', () => {
       { d: 1 },
       '',
       { e: 1 },
-      undefined
+      undefined,
     ])
     expect(compacted).toEqual([
       { a: 1 },
       { b: 1 },
       { c: 1 },
       { d: 1 },
-      { e: 1 }
+      { e: 1 },
     ])
   })
 

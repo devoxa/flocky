@@ -28,7 +28,7 @@ const RANDOM_OUTPUT = [
   0.03730391719730841,
   0.17578915337316725,
   0.8865419358339801,
-  0.2227008300658413
+  0.2227008300658413,
 ]
 
 let randomIndex = 0
@@ -42,7 +42,7 @@ export const mathRandom = {
   },
   reset: () => {
     Math.random = globalMathRandom
-  }
+  },
 }
 
 let globalDateNow = Date.now
@@ -54,5 +54,5 @@ export const dateNow = {
   },
   reset: () => {
     Date.now = globalDateNow
-  }
+  },
 }

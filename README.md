@@ -35,13 +35,6 @@
       alt="Code Coverage"
     />
   </a>
-
-  <a href="https://greenkeeper.io/">
-    <img
-      src="https://badges.greenkeeper.io/queicherius/flocky.svg?style=flat-square"
-      alt="Greenkeeper badge"
-    />
-  </a>
 </p>
 
 <!-- Quicklinks -->
@@ -49,7 +42,6 @@
   <a href="#installation">Installation</a> •
   <a href="#usage">Usage</a> •
   <a href="#api-reference">API Reference</a> •
-  <a href="#contributing">Contributing</a> •
   <a href="#contributors">Contributors</a> •
   <a href="#license">License</a>
 </p>
@@ -69,21 +61,24 @@ npm install --save flocky
 ## Import
 
 <details>
-<summary><strong>CommonJS Modules</strong></summary>
+<summary><strong>TypeScript</strong></summary>
 
-```js
-// Importing the full library
-const flocky = require('flocky')
+```ts
+// Importing the full library (tree shakable!)
+import * as flocky from 'flocky'
 flocky.sum([1, 2, 3])
 
-// Importing the full library, with a named import
-const { sum } = require('flocky')
+// Importing the full library, with a named import (tree shakable!)
+import { sum } from 'flocky'
 sum([1, 2, 3])
 
-// Importing only part of the library
-const sum = require('flocky/sum')
-const { sum } = require('flocky/sum')
+// Importing only part of the library (in case you are not using tree shaking)
+import { sum } from 'flocky/sum'
+import sum from 'flocky/sum'
 sum([1, 2, 3])
+
+// /!\ Note that the following is NOT allowed (because it does not create tree shakable bundles)
+// import flocky from 'flocky'
 ```
 
 </details>
@@ -112,24 +107,21 @@ sum([1, 2, 3])
 </details>
 
 <details>
-<summary><strong>TypeScript</strong></summary>
+<summary><strong>CommonJS Modules</strong></summary>
 
-```ts
-// Importing the full library (tree shakable!)
-import * as flocky from 'flocky'
+```js
+// Importing the full library
+const flocky = require('flocky')
 flocky.sum([1, 2, 3])
 
-// Importing the full library, with a named import (tree shakable!)
-import { sum } from 'flocky'
+// Importing the full library, with a named import
+const { sum } = require('flocky')
 sum([1, 2, 3])
 
-// Importing only part of the library (in case you are not using tree shaking)
-import { sum } from 'flocky/sum'
-import sum from 'flocky/sum'
+// Importing only part of the library
+const sum = require('flocky/sum')
+const { sum } = require('flocky/sum')
 sum([1, 2, 3])
-
-// /!\ Note that the following is NOT allowed (because it does not create tree shakable bundles)
-// import flocky from 'flocky'
 ```
 
 </details>
@@ -480,10 +472,6 @@ flocky.unique(input, (element) => element.id)
 <sup>[Source](./src/unique/index.ts) • Minify: 312 B • Minify & GZIP: 153 B<sup>
 
 <!-- END GENERATED FROM FILES -->
-
-## Contributing
-
-TODO...
 
 ## Contributors
 

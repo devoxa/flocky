@@ -27,7 +27,7 @@ export function unique<T>(array: Array<T>, identity?: (x: T) => any): Array<T> {
 }
 
 function primitiveUnique<T>(array: Array<T>): Array<T> {
-  return array.filter((x, i, self) => self.indexOf(x) === i)
+  return Array.from(new Set(array))
 }
 
 function objectUnique<T>(array: Array<T>, identity: (x: T) => any): Array<T> {

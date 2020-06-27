@@ -4,7 +4,7 @@
 
 |     | lodash | flocky |
 | --- | --- | --- |
-| array path | 730,477 ops/sec | **750,975 ops/sec** |
-| string path | 250,311 ops/sec | **571,687 ops/sec** |
+| array path | **577,865 ops/sec (100.00%)** | 460,501 ops/sec (79.69%) |
+| string path | 215,076 ops/sec (47.18%) | **455,867 ops/sec (100.00%)** |
 
-<sup>Generated at 2019-05-14T21:57:57.081Z</sup>
+<sup>Generated at 2020-06-27 with Node.JS v14.4.0</sup>

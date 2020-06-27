@@ -65,7 +65,12 @@ export default class Benchmark {
       '',
       this.generateResultTable(),
       '',
-      `<sup>Generated at ${new Date().toISOString().replace(/T.*$/, '')} with Node.JS ${process.version}</sup>`,
+      [
+        '<sup>',
+        'Generated at ' + new Date().toISOString().replace(/T.*$/, ''),
+        ' with Node.JS ' + process.version,
+        '</sup>',
+      ].join(''),
     ].join('\n')
 
     fs.writeFileSync(
@@ -93,7 +98,7 @@ export default class Benchmark {
       const formattedInputResults = inputResults.map((result) => {
         const percent = (result.opsPerSec / bestResult) * 100
         const formattedOps = result.opsPerSec.toLocaleString()
-        
+
         return result.opsPerSec === bestResult
           ? `**${formattedOps} ops/sec (100.00%)**`
           : `${formattedOps} ops/sec (${percent.toFixed(2)}%)`

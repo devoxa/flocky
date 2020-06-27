@@ -4,7 +4,7 @@
 
 |     | flocky |
 | --- | --- |
-| 1KB String | **89,567 ops/sec** |
-| 1MB String | **86 ops/sec** |
+| 1KB String | **109,262 ops/sec (100.00%)** |
+| 1MB String | **122 ops/sec (100.00%)** |
 
-<sup>Generated at 2019-03-31T19:45:55.999Z</sup>
+<sup>Generated at 2020-06-27 with Node.JS v14.4.0</sup>

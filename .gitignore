@@ -4,3 +4,4 @@ build/
 tscBuild/
 coverage/
 package-lock.json
+.history/

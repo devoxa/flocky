@@ -293,7 +293,7 @@ flocky.omit(object, ['a'])
 // -> { b: 2, c: 3 }
 ```
 
-<sup>[Source](./src/omit/index.ts) • Minify: 164 B • Minify & GZIP: 132 B<sup>
+<sup>[Source](./src/omit/index.ts) • [Benchmark](./src/omit/BENCHMARK.md) • Minify: 145 B • Minify & GZIP: 130 B<sup>
 
 ### pick(object, keys)
 
@@ -469,7 +469,7 @@ flocky.unique(input, (element) => element.id)
 // -> [{ id: 1, a: 1 }, { id: 2, a: 3 }]
 ```
 
-<sup>[Source](./src/unique/index.ts) • Minify: 312 B • Minify & GZIP: 153 B<sup>
+<sup>[Source](./src/unique/index.ts) • [Benchmark](./src/unique/BENCHMARK.md) • Minify: 282 B • Minify & GZIP: 158 B<sup>
 
 <!-- END GENERATED FROM FILES -->
 

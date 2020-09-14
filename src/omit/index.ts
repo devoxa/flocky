@@ -16,14 +16,16 @@ export function omit<T extends object, U extends keyof T>(
   object: T,
   keys: Array<U>
 ): Omit<T, U> {
+  const objectKeys = Object.keys(object) as Array<keyof T>
+
   let result: Partial<T> = {}
+  for (let i = 0; i !== objectKeys.length; i++) {
+    const objectKey = objectKeys[i] as U
 
-  let remainingKeys = Object.keys(object) as Array<keyof T>
-  remainingKeys = remainingKeys.filter((x) => !keys.includes(x as U))
-
-  remainingKeys.forEach((key) => {
-    result[key] = object[key]
-  })
+    if (keys.includes(objectKey)) {
+      result[objectKey] = object[objectKey]
+    }
+  }
 
   return result as Omit<T, U>
 }

@@ -22,9 +22,11 @@ export function omit<T extends object, U extends keyof T>(
   for (let i = 0; i !== objectKeys.length; i++) {
     const objectKey = objectKeys[i] as U
 
-    if (keys.includes(objectKey)) {
-      result[objectKey] = object[objectKey]
+    if (!keys.includes(objectKey)) {
+      continue
     }
+
+    result[objectKey] = object[objectKey]
   }
 
   return result as Omit<T, U>

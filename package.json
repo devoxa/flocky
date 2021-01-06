@@ -1,6 +1,6 @@
 {
   "name": "flocky",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "A TypeScript and JavaScript utility library with clarity and efficiency at the core.",
   "main": "index.js",
   "module": "es6/index.js",

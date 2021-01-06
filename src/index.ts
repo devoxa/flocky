@@ -2,6 +2,7 @@ import { average as _average } from './average'
 import { chunk as _chunk } from './chunk'
 import { clone as _clone } from './clone'
 import { compact as _compact } from './compact'
+import { debounce as _debounce } from './debounce'
 import { duplicates as _duplicates } from './duplicates'
 import { get as _get } from './get'
 import { hash as _hash } from './hash'
@@ -25,6 +26,7 @@ export const average = _average
 export const chunk = _chunk
 export const clone = _clone
 export const compact = _compact
+export const debounce = _debounce
 export const duplicates = _duplicates
 export const get = _get
 export const hash = _hash
@@ -49,6 +51,7 @@ export default {
   chunk: _chunk,
   clone: _clone,
   compact: _compact,
+  debounce: _debounce,
   duplicates: _duplicates,
   get: _get,
   hash: _hash,

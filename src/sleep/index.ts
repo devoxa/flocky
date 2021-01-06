@@ -5,7 +5,6 @@
  *
  * ```js
  * async flocky.sleep(25)
- * // -> undefined
  * ```
  */
 

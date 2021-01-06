@@ -177,6 +177,18 @@ flocky.compact([1, 2, 3, null, 4, false, 0, NaN, 5, ''])
 
 <sup>[Source](./src/compact/index.ts) • Minify: 75 B • Minify & GZIP: 73 B<sup>
 
+### debounce(func, wait)
+
+Creates a debounced function that delays invoking `func` until `wait` milliseconds
+have elapsed since the last time the debounced function was invoked.
+
+```js
+const func = () => console.log('Heavy processing happening')
+const debouncedFunc = flocky.debounce(func, 250)
+```
+
+<sup>[Source](./src/debounce/index.ts) • Minify: 225 B • Minify & GZIP: 160 B<sup>
+
 ### duplicates(array, identity?)
 
 Create a version of an array, in which only the duplicated elements are kept.
@@ -391,7 +403,6 @@ Return a promise that waits for `ms` milliseconds before resolving.
 
 ```js
 async flocky.sleep(25)
-// -> undefined
 ```
 
 <sup>[Source](./src/sleep/index.ts) • Minify: 104 B • Minify & GZIP: 89 B<sup>

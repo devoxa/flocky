@@ -10,7 +10,7 @@
  * ```
  */
 
-export function debounce<TFunc extends (...params: any[]) => void>(
+export function debounce<TFunc extends (...args: any[]) => void>(
   func: TFunc,
   wait: number
 ) {

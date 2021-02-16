@@ -1,3 +1,4 @@
+import sleep from '../sleep'
 import { memoize } from './index'
 
 type NumberObject = { n: number }
@@ -205,5 +206,28 @@ describe('memoize', () => {
     expect(memoizedFunc(1, 2)).toEqual(3)
     expect(memoizedFunc(1, 4)).toEqual(5)
     expect(serializerCalls).toEqual(5)
+  })
+
+  it('memoizes function calls that return promises', async () => {
+    let calls = 0
+    const func = async () => {
+      calls++
+      await sleep(10)
+      return 'A'
+    }
+
+    const memoizedFunc = memoize(func)
+
+    const a = memoizedFunc()
+    expect(a).toBeInstanceOf(Promise)
+    const b = memoizedFunc()
+    expect(b).toBeInstanceOf(Promise)
+    expect(calls).toEqual(1)
+
+    await sleep(20)
+
+    expect(await a).toEqual('A')
+    expect(await b).toEqual('A')
+    expect(calls).toEqual(1)
   })
 })

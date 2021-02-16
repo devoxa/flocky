@@ -1,27 +1,30 @@
-type Serializer = (...args: Array<any>) => string
-
 interface MemoizeOptions {
-  serializer?: Serializer
-  strategy?: 'monadic' | 'variadic'
+  strategy?: MemoizeStrategy
+  serializer?: MemoizeSerializer
 }
+
+type MemoizeStrategy = 'monadic' | 'variadic'
+
+type MemoizeSerializer = (...args: Array<any>) => string
 
 export function memoize<
   TThis,
   TReturn,
   TFunc extends (...args: any[]) => TReturn
 >(this: TThis, func: TFunc, options: MemoizeOptions = {}): TFunc {
-  const cache = defaultCache()
-  const serializer = options.serializer ? options.serializer : defaultSerializer
   const strategy =
     options.strategy === 'monadic' ||
     (options.strategy !== 'variadic' && func.length <= 1)
       ? monadic
       : variadic
+  const cache = defaultCache()
+  const serializer = options.serializer ? options.serializer : defaultSerializer
 
   return strategy.bind(this, func, cache, serializer) as TFunc
 }
 
 function isPrimitive(value: any) {
+  // We can not treat strings as primitive, because they overwrite numbers
   return (
     value == null || typeof value === 'number' || typeof value === 'boolean'
   )
@@ -30,8 +33,8 @@ function isPrimitive(value: any) {
 function monadic<TThis, TReturn, TFunc extends (...args: any[]) => TReturn>(
   this: TThis,
   func: TFunc,
-  cache: CacheInterface<TReturn>,
-  serializer: Serializer,
+  cache: MemoizeCache<TReturn>,
+  serializer: MemoizeSerializer,
   arg: any
 ) {
   const cacheKey = isPrimitive(arg) ? arg : serializer(arg)
@@ -48,10 +51,10 @@ function monadic<TThis, TReturn, TFunc extends (...args: any[]) => TReturn>(
 function variadic<TThis, TReturn, TFunc extends (...args: any[]) => TReturn>(
   this: TThis,
   func: TFunc,
-  cache: CacheInterface<TReturn>,
-  serializer: Serializer
+  cache: MemoizeCache<TReturn>,
+  serializer: MemoizeSerializer,
+  ...args: Array<any>
 ) {
-  const args = Array.prototype.slice.call(arguments, 3)
   const cacheKey = serializer(args)
 
   let computedValue = cache.get(cacheKey)
@@ -67,12 +70,12 @@ function defaultSerializer(...args: Array<any>) {
   return JSON.stringify(args)
 }
 
-interface CacheInterface<TReturn> {
+interface MemoizeCache<TReturn> {
   get: (key: string) => TReturn | undefined
   set: (key: string, value: TReturn) => void
 }
 
-const defaultCache = <TReturn>(): CacheInterface<TReturn> => {
+const defaultCache = <TReturn>(): MemoizeCache<TReturn> => {
   const cache: Record<string, TReturn> = Object.create(null)
 
   return {

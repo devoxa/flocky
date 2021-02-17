@@ -4,7 +4,7 @@
 
 |     | lodash | fast-memoize | flocky |
 | --- | --- | --- | --- |
-| monadic | 61,151,253 ops/sec (39.98%) | **152,969,042 ops/sec (100.00%)** | 147,656,235 ops/sec (96.53%) |
-| variadic | **2,136,261 ops/sec (100.00%)** | 1,003,326 ops/sec (46.97%) | 1,933,882 ops/sec (90.53%) |
+| monadic | 61,516,142 ops/sec (40.39%) | **152,318,396 ops/sec (100.00%)** | 150,923,324 ops/sec (99.08%) |
+| variadic | **2,121,499 ops/sec (100.00%)** | 1,020,555 ops/sec (48.11%) | 1,948,001 ops/sec (91.82%) |
 
 <sup>Generated at 2021-02-17 with Node.JS v14.4.0</sup>

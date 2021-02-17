@@ -22,9 +22,9 @@
     />
   </a>
 
-  <a href="https://travis-ci.org/queicherius/flocky/branches">
+  <a href="https://github.com/queicherius/flocky/actions?query=branch%3Amaster+workflow%3A%22Continuous+Integration%22">
     <img
-      src="https://img.shields.io/travis/queicherius/flocky/master.svg?style=flat-square"
+      src="https://img.shields.io/github/workflow/status/queicherius/flocky/Continuous%20Integration?style=flat-square"
       alt="Build Status"
     />
   </a>
@@ -283,6 +283,25 @@ flocky.max([1, 4, 2, -3, 0])
 ```
 
 <sup>[Source](./src/max/index.ts) • Minify: 72 B • Minify & GZIP: 73 B<sup>
+
+### memoize(func, options?)
+
+Creates a function that memoizes the result of `func`.
+
+```js
+const func = (a, b) => a + b
+const memoizedFunc = flocky.memoize(func)
+const memoizedFuncWithTtl = flocky.memoize(func, { ttl: 30 * 1000 })
+```
+
+<details>
+  <summary>Implementation Details</summary>
+
+  This method's implementation is based on [fast-memoize](https://github.com/caiogondim/fast-memoize.js), with some improvements for variadic
+  performance and additional support for a TTL based cache.
+</details>
+
+<sup>[Source](./src/memoize/index.ts) • [Benchmark](./src/memoize/BENCHMARK.md) • Minify: 979 B • Minify & GZIP: 466 B<sup>
 
 ### min(array)
 

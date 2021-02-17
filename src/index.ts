@@ -8,6 +8,7 @@ import { get as _get } from './get'
 import { hash as _hash } from './hash'
 import { identifier as _identifier } from './identifier'
 import { max as _max } from './max'
+import { memoize as _memoize } from './memoize'
 import { min as _min } from './min'
 import { omit as _omit } from './omit'
 import { pick as _pick } from './pick'
@@ -32,6 +33,7 @@ export const get = _get
 export const hash = _hash
 export const identifier = _identifier
 export const max = _max
+export const memoize = _memoize
 export const min = _min
 export const omit = _omit
 export const pick = _pick
@@ -57,6 +59,7 @@ export default {
   hash: _hash,
   identifier: _identifier,
   max: _max,
+  memoize: _memoize,
   min: _min,
   omit: _omit,
   pick: _pick,

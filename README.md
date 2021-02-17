@@ -284,6 +284,18 @@ flocky.max([1, 4, 2, -3, 0])
 
 <sup>[Source](./src/max/index.ts) • Minify: 72 B • Minify & GZIP: 73 B<sup>
 
+### memoize(func, options?)
+
+Creates a function that memoizes the result of `func`.
+
+```js
+const func = () => console.log('Heavy processing happening')
+const memoizedFunc = flocky.memoize(func)
+const memoizedFuncWithTtl = flocky.memoize(func, { ttl: 30 * 1000 })
+```
+
+<sup>[Source](./src/memoize/index.ts) • [Benchmark](./src/memoize/BENCHMARK.md) • Minify: 1.02 KB • Minify & GZIP: 489 B<sup>
+
 ### min(array)
 
 Compute the minimum of the values in an array.

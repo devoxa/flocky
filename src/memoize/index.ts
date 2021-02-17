@@ -1,3 +1,15 @@
+/**
+ * ### memoize(func, options?)
+ *
+ * Creates a function that memoizes the result of `func`.
+ *
+ * ```js
+ * const func = () => console.log('Heavy processing happening')
+ * const memoizedFunc = flocky.memoize(func)
+ * const memoizedFuncWithTtl = flocky.memoize(func, { ttl: 30 * 1000 })
+ * ```
+ */
+
 interface MemoizeOptions {
   strategy?: MemoizeStrategy
   serializer?: MemoizeSerializer

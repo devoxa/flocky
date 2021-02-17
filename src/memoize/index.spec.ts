@@ -259,4 +259,24 @@ describe('memoize', () => {
       [1, 2],
     ])
   })
+
+  it('has the correct type', async () => {
+    const func = (a: number, b: number): number => {
+      return a + b
+    }
+
+    const memoizedFunc = memoize(func)
+
+    // @ts-expect-error
+    memoizedFunc('a', 2)
+
+    // @ts-expect-error
+    memoizedFunc(2, 'a')
+
+    // @ts-expect-error
+    memoizedFunc(2, 2).concat
+
+    // This one is okay
+    memoizedFunc(2, 2).toFixed(2)
+  })
 })

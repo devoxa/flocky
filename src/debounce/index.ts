@@ -19,7 +19,7 @@ export function debounce<TFunc extends (...args: any[]) => void>(
   return function (this: any, ...args: any[]) {
     timeoutID && clearTimeout(timeoutID)
     timeoutID = window.setTimeout(() => func.apply(this, args), wait)
-  } as TFunc
+  } as (...args: Parameters<TFunc>) => void
 }
 
 export default debounce

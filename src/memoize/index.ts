@@ -4,7 +4,7 @@
  * Creates a function that memoizes the result of `func`.
  *
  * ```js
- * const func = () => console.log('Heavy processing happening')
+ * const func = (a, b) => a + b
  * const memoizedFunc = flocky.memoize(func)
  * const memoizedFuncWithTtl = flocky.memoize(func, { ttl: 30 * 1000 })
  * ```

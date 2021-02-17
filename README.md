@@ -289,10 +289,17 @@ flocky.max([1, 4, 2, -3, 0])
 Creates a function that memoizes the result of `func`.
 
 ```js
-const func = () => console.log('Heavy processing happening')
+const func = (a, b) => a + b
 const memoizedFunc = flocky.memoize(func)
 const memoizedFuncWithTtl = flocky.memoize(func, { ttl: 30 * 1000 })
 ```
+
+<details>
+  <summary>Implementation Details</summary>
+
+  This method's implementation is based on [fast-memoize](https://github.com/caiogondim/fast-memoize.js), with some improvements for variadic
+  performance and additional support for a TTL based cache.
+</details>
 
 <sup>[Source](./src/memoize/index.ts) • [Benchmark](./src/memoize/BENCHMARK.md) • Minify: 979 B • Minify & GZIP: 466 B<sup>
 

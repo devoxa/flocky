@@ -88,22 +88,22 @@ const defaultCache = <TReturn>(): MemoizeCache<TReturn> => {
 }
 
 const ttlCache = <TReturn>(ttl: number): MemoizeCache<TReturn> => {
-  const cache: Record<string, { data: TReturn; ttl: number }> = Object.create(
-    null
-  )
+  type Timeout = ReturnType<typeof setTimeout>
+  const timeouts: Record<string, Timeout> = Object.create(null)
+  const cache: Record<string, TReturn> = Object.create(null)
 
   return {
-    get: (key: string) => {
-      const value = cache[key]
-
-      if (value && value.ttl >= new Date().getTime()) {
-        return value.data
+    get: (key: string) => cache[key],
+    set: (key: string, value: TReturn) => {
+      if (timeouts[key]) {
+        clearTimeout(timeouts[key])
       }
 
-      return undefined
-    },
-    set: (key: string, value: TReturn) => {
-      cache[key] = { data: value, ttl: new Date().getTime() + ttl }
+      cache[key] = value
+      timeouts[key] = setTimeout(() => {
+        delete cache[key]
+        delete timeouts[key]
+      }, ttl)
     },
   }
 }

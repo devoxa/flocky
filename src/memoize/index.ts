@@ -8,6 +8,13 @@
  * const memoizedFunc = flocky.memoize(func)
  * const memoizedFuncWithTtl = flocky.memoize(func, { ttl: 30 * 1000 })
  * ```
+ * 
+ * <details>
+ *   <summary>Implementation Details</summary>
+ *
+ *   This method's implementation is based on [fast-memoize](https://github.com/caiogondim/fast-memoize.js), with some improvements for variadic
+ *   performance and additional support for a TTL based cache.
+ * </details>
  */
 
 interface MemoizeOptions {

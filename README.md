@@ -22,9 +22,9 @@
     />
   </a>
 
-  <a href="https://travis-ci.org/queicherius/flocky/branches">
+  <a href="https://github.com/queicherius/flocky/actions?query=branch%3Amaster+workflow%3A%22Continuous+Integration%22">
     <img
-      src="https://img.shields.io/travis/queicherius/flocky/master.svg?style=flat-square"
+      src="https://img.shields.io/github/workflow/status/queicherius/flocky/Continuous%20Integration?style=flat-square"
       alt="Build Status"
     />
   </a>

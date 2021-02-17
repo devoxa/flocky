@@ -12,8 +12,8 @@
   },
   "scripts": {
     "test": "jest --runInBand",
-    "lint": "prettier --list-different 'src/**/*.ts'",
     "format": "prettier --write 'src/**/*.ts'",
+    "format:check": "prettier --list-different 'src/**/*.ts'",
     "build": "node tasksfile.js build",
     "task": "node tasksfile.js",
     "generate-docs": "ts-node src/generateDocs.ts",

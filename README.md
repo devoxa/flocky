@@ -294,7 +294,7 @@ const memoizedFunc = flocky.memoize(func)
 const memoizedFuncWithTtl = flocky.memoize(func, { ttl: 30 * 1000 })
 ```
 
-<sup>[Source](./src/memoize/index.ts) • [Benchmark](./src/memoize/BENCHMARK.md) • Minify: 1.02 KB • Minify & GZIP: 489 B<sup>
+<sup>[Source](./src/memoize/index.ts) • [Benchmark](./src/memoize/BENCHMARK.md) • Minify: 979 B • Minify & GZIP: 466 B<sup>
 
 ### min(array)
 

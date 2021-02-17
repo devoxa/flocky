@@ -100,21 +100,17 @@ const defaultCache = <TReturn>(): MemoizeCache<TReturn> => {
 }
 
 const ttlCache = <TReturn>(ttl: number): MemoizeCache<TReturn> => {
-  type Timeout = ReturnType<typeof setTimeout>
-  const timeouts: Record<string, Timeout> = Object.create(null)
   const cache: Record<string, TReturn> = Object.create(null)
 
   return {
     get: (key: string) => cache[key],
     set: (key: string, value: TReturn) => {
-      if (timeouts[key]) {
-        clearTimeout(timeouts[key])
-      }
+      // Note: We do not need to clear the timeout because we never set a key
+      // if it still exists in the cache.
 
       cache[key] = value
-      timeouts[key] = setTimeout(() => {
+      setTimeout(() => {
         delete cache[key]
-        delete timeouts[key]
       }, ttl)
     },
   }

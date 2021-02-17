@@ -1,6 +1,7 @@
 interface MemoizeOptions {
   strategy?: MemoizeStrategy
   serializer?: MemoizeSerializer
+  ttl?: number
 }
 
 type MemoizeStrategy = 'monadic' | 'variadic'
@@ -17,7 +18,7 @@ export function memoize<
     (options.strategy !== 'variadic' && func.length <= 1)
       ? monadic
       : variadic
-  const cache = defaultCache()
+  const cache = options.ttl ? ttlCache(options.ttl) : defaultCache()
   const serializer = options.serializer ? options.serializer : defaultSerializer
 
   return strategy.bind(this, func, cache, serializer) as TFunc
@@ -82,6 +83,27 @@ const defaultCache = <TReturn>(): MemoizeCache<TReturn> => {
     get: (key: string) => cache[key],
     set: (key: string, value: TReturn) => {
       cache[key] = value
+    },
+  }
+}
+
+const ttlCache = <TReturn>(ttl: number): MemoizeCache<TReturn> => {
+  const cache: Record<string, { data: TReturn; ttl: number }> = Object.create(
+    null
+  )
+
+  return {
+    get: (key: string) => {
+      const value = cache[key]
+
+      if (value && value.ttl >= new Date().getTime()) {
+        return value.data
+      }
+
+      return undefined
+    },
+    set: (key: string, value: TReturn) => {
+      cache[key] = { data: value, ttl: new Date().getTime() + ttl }
     },
   }
 }

@@ -230,4 +230,33 @@ describe('memoize', () => {
     expect(await b).toEqual('A')
     expect(calls).toEqual(1)
   })
+
+  it('memoizes function calls with a maximum TTL', async () => {
+    const calls: Array<Array<number>> = []
+    const func = (a: number, b: number) => {
+      calls.push([a, b])
+      return a + b
+    }
+
+    const memoizedFunc = memoize(func, {
+      ttl: 10,
+    })
+
+    expect(memoizedFunc(1, 2)).toEqual(3)
+    expect(memoizedFunc(1, 2)).toEqual(3)
+    expect(memoizedFunc(3, 4)).toEqual(7)
+    expect(memoizedFunc(1, 2)).toEqual(3)
+    expect(calls).toEqual([
+      [1, 2],
+      [3, 4],
+    ])
+
+    await sleep(20)
+    expect(memoizedFunc(1, 2)).toEqual(3)
+    expect(calls).toEqual([
+      [1, 2],
+      [3, 4],
+      [1, 2],
+    ])
+  })
 })

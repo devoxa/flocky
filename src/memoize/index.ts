@@ -8,7 +8,7 @@
  * const memoizedFunc = flocky.memoize(func)
  * const memoizedFuncWithTtl = flocky.memoize(func, { ttl: 30 * 1000 })
  * ```
- * 
+ *
  * <details>
  *   <summary>Implementation Details</summary>
  *

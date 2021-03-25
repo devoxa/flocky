@@ -209,6 +209,17 @@ flocky.duplicates(input, (element) => element.id)
 
 <sup>[Source](./src/duplicates/index.ts) • Minify: 336 B • Minify & GZIP: 156 B<sup>
 
+### escapeRegExp(string)
+
+Escapes special characters in a string for use in a regular expression.
+
+```js
+flocky.escapeRegExp('Hey. (1 + 1 = 2)')
+// -> 'Hey\\. \\(1 \\+ 1 = 2\\)'
+```
+
+<sup>[Source](./src/escapeRegExp/index.ts) • Minify: 107 B • Minify & GZIP: 99 B<sup>
+
 ### get(object, path, defaultValue?)
 
 Get the value at a `path` of an `object` (with an optional `defaultValue`)

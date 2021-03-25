@@ -4,6 +4,7 @@ import { clone as _clone } from './clone'
 import { compact as _compact } from './compact'
 import { debounce as _debounce } from './debounce'
 import { duplicates as _duplicates } from './duplicates'
+import { escapeRegExp as _escapeRegExp } from './escapeRegExp'
 import { get as _get } from './get'
 import { hash as _hash } from './hash'
 import { identifier as _identifier } from './identifier'
@@ -29,6 +30,7 @@ export const clone = _clone
 export const compact = _compact
 export const debounce = _debounce
 export const duplicates = _duplicates
+export const escapeRegExp = _escapeRegExp
 export const get = _get
 export const hash = _hash
 export const identifier = _identifier
@@ -55,6 +57,7 @@ export default {
   compact: _compact,
   debounce: _debounce,
   duplicates: _duplicates,
+  escapeRegExp: _escapeRegExp,
   get: _get,
   hash: _hash,
   identifier: _identifier,

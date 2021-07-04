@@ -24,7 +24,7 @@ export function parseModules(): Array<ModuleFile> {
 
 function getModulePaths() {
   const paths = glob.sync(path.join(__dirname, '../src/*/*.ts'))
-  return paths.filter(path => path.match(/src\/(.*?)\/\1.ts/))
+  return paths.filter((path) => path.match(/src\/(.*?)\/\1.ts/))
 }
 
 function parseModule(filePath: string): ModuleFile | false {
@@ -83,9 +83,6 @@ function parseExample(example: string): Example {
 
   return {
     code,
-    expected:
-      expected === '' || expected === 'undefined'
-        ? undefined
-        : eval(`(${expected})`),
+    expected: expected === '' || expected === 'undefined' ? undefined : eval(`(${expected})`),
   }
 }

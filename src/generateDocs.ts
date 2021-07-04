@@ -23,10 +23,7 @@ async function run() {
       subText.push(`[Source](./src/${module.name}/index.ts)`)
 
       // Link to the benchmark
-      const benchmarkPath = path.join(
-        __dirname,
-        `./${module.name}/BENCHMARK.md`
-      )
+      const benchmarkPath = path.join(__dirname, `./${module.name}/BENCHMARK.md`)
       const hasBenchmark = fs.existsSync(benchmarkPath)
       if (hasBenchmark) {
         subText.push(`[Benchmark](./src/${module.name}/BENCHMARK.md)`)
@@ -56,10 +53,7 @@ async function run() {
 // ----------------------------------------------------------------------------
 
 async function calculateModuleSizes(name: string) {
-  const content = fs.readFileSync(
-    path.join(__dirname, `../dist/esm/${name}/${name}.js`),
-    'utf-8'
-  )
+  const content = fs.readFileSync(path.join(__dirname, `../dist/esm/${name}/${name}.js`), 'utf-8')
 
   const contentMin = (await terser.minify(content)).code || ''
   const contentMinZip = pako.deflate(contentMin)

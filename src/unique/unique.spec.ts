@@ -7,11 +7,7 @@ describe('unique', () => {
   })
 
   it('filters the unique occurrences of an array of strings', () => {
-    expect(unique(['foo', 'bar', 'foo', 'foobar', 'foo', 'foo'])).toEqual([
-      'foo',
-      'bar',
-      'foobar',
-    ])
+    expect(unique(['foo', 'bar', 'foo', 'foobar', 'foo', 'foo'])).toEqual(['foo', 'bar', 'foobar'])
   })
 
   it('filters the unique occurrences of an array of objects with an identity function', () => {

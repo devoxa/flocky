@@ -1,4 +1,4 @@
-import {sleep} from '../sleep/sleep'
+import { sleep } from '../sleep/sleep'
 import { memoize } from './memoize'
 
 type NumberObject = { n: number }
@@ -114,10 +114,7 @@ describe('memoize', () => {
 
   it('memoizes function calls with spread non-primitive arguments', () => {
     const calls: Array<Array<NumberObject>> = []
-    const func = (
-      multiplier: NumberObject,
-      ...numbers: Array<NumberObject>
-    ) => {
+    const func = (multiplier: NumberObject, ...numbers: Array<NumberObject>) => {
       calls.push([multiplier, ...numbers])
       return numbers.map((x) => multiplier.n * x.n)
     }
@@ -136,8 +133,7 @@ describe('memoize', () => {
   })
 
   it('passes arguments as their original primitive', () => {
-    const func = (x: any) =>
-      typeof x === 'object' ? x.constructor.name : typeof x
+    const func = (x: any) => (typeof x === 'object' ? x.constructor.name : typeof x)
 
     const memoizedFunc = memoize(func)
 

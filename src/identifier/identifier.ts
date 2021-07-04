@@ -51,5 +51,3 @@ export function identifier(): string {
 
   return uuid
 }
-
-

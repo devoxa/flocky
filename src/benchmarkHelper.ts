@@ -73,11 +73,7 @@ export class Benchmark {
       ].join(''),
     ].join('\n')
 
-    fs.writeFileSync(
-      path.join(__dirname, `./${this.name}/BENCHMARK.md`),
-      content,
-      'utf-8'
-    )
+    fs.writeFileSync(path.join(__dirname, `./${this.name}/BENCHMARK.md`), content, 'utf-8')
   }
 
   generateResultTable(): string {

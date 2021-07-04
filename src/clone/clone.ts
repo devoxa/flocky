@@ -12,14 +12,7 @@
  * ```
  */
 
-type JSONValue =
-  | string
-  | number
-  | boolean
-  | null
-  | undefined
-  | JSONObject
-  | JSONArray
+type JSONValue = string | number | boolean | null | undefined | JSONObject | JSONArray
 
 interface JSONObject {
   [key: string]: JSONValue
@@ -30,5 +23,3 @@ interface JSONArray extends Array<JSONValue> {}
 export function clone<T extends JSONValue>(value: T): T {
   return JSON.parse(JSON.stringify(value))
 }
-
-

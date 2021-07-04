@@ -36,9 +36,7 @@ benchmark.add({
   func: () => flockyMonadicFunc(1),
 })
 
-const lodashVariadicFunc = lodash.memoize(variadicFunc, (...args) =>
-  JSON.stringify(args)
-)
+const lodashVariadicFunc = lodash.memoize(variadicFunc, (...args) => JSON.stringify(args))
 benchmark.add({
   library: 'lodash',
   input: 'variadic',

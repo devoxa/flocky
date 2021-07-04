@@ -12,5 +12,3 @@
 export function min(array: Array<number>): number {
   return Math.min.apply(null, array)
 }
-
-

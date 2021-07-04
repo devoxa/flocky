@@ -16,9 +16,7 @@ describe('matchAll', () => {
   })
 
   it('matches all occurrences of the regular expression with multiple submatches', () => {
-    expect(
-      matchAll(/(\d+) and (\d+)/g, '200 and 400 or also 300 and 500')
-    ).toEqual([
+    expect(matchAll(/(\d+) and (\d+)/g, '200 and 400 or also 300 and 500')).toEqual([
       { match: '200 and 400', subMatches: ['200', '400'], index: 0 },
       { match: '300 and 500', subMatches: ['300', '500'], index: 20 },
     ])

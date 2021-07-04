@@ -9,8 +9,7 @@
  * ```
  */
 
-const CHARACTERS =
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+const CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
 export function randomString(length: number): string {
   let string = ''
@@ -22,5 +21,3 @@ export function randomString(length: number): string {
 
   return string
 }
-
-

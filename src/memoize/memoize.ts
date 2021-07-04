@@ -27,14 +27,13 @@ type MemoizeStrategy = 'monadic' | 'variadic'
 
 type MemoizeSerializer = (...args: Array<any>) => string
 
-export function memoize<
-  TThis,
-  TReturn,
-  TFunc extends (...args: any[]) => TReturn
->(this: TThis, func: TFunc, options: MemoizeOptions = {}): TFunc {
+export function memoize<TThis, TReturn, TFunc extends (...args: any[]) => TReturn>(
+  this: TThis,
+  func: TFunc,
+  options: MemoizeOptions = {}
+): TFunc {
   const strategy =
-    options.strategy === 'monadic' ||
-    (options.strategy !== 'variadic' && func.length <= 1)
+    options.strategy === 'monadic' || (options.strategy !== 'variadic' && func.length <= 1)
       ? monadic
       : variadic
   const cache = options.ttl ? ttlCache(options.ttl) : defaultCache()
@@ -45,9 +44,7 @@ export function memoize<
 
 function isPrimitive(value: any) {
   // We can not treat strings as primitive, because they overwrite numbers
-  return (
-    value == null || typeof value === 'number' || typeof value === 'boolean'
-  )
+  return value == null || typeof value === 'number' || typeof value === 'boolean'
 }
 
 function monadic<TThis, TReturn, TFunc extends (...args: any[]) => TReturn>(

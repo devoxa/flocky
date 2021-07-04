@@ -19,5 +19,3 @@ export function chunk<T>(array: Array<T>, size: number): Array<Array<T>> {
 
   return chunked
 }
-
-

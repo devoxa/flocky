@@ -47,11 +47,7 @@ export function toMap<
   Element extends object,
   Key extends MapableKeys<Element>,
   Target extends keyof Element
->(
-  array: Array<Element>,
-  key: Key,
-  target: Target
-): { [key: string]: Element[Target] | undefined }
+>(array: Array<Element>, key: Key, target: Target): { [key: string]: Element[Target] | undefined }
 
 export function toMap<
   Element extends object,

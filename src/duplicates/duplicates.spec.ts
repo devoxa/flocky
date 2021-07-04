@@ -7,11 +7,7 @@ describe('duplicates', () => {
   })
 
   it('filters the duplicate occurrences of an array of strings', () => {
-    expect(duplicates(['foo', 'bar', 'foo', 'foobar', 'foo', 'foo'])).toEqual([
-      'foo',
-      'foo',
-      'foo',
-    ])
+    expect(duplicates(['foo', 'bar', 'foo', 'foobar', 'foo', 'foo'])).toEqual(['foo', 'foo', 'foo'])
   })
 
   it('filters the duplicate occurrences of an array of objects with an identity function', () => {

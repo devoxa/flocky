@@ -23,5 +23,3 @@ function formatMatch(match: RegExpMatchArray) {
     index: match.index,
   }
 }
-
-

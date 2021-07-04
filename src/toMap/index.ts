@@ -66,7 +66,7 @@ export function toMap<
 
   array.map((element) => {
     if (!element[key]) return
-    map[(element[key] as any) as string] = target ? element[target] : element
+    map[element[key] as any as string] = target ? element[target] : element
   })
 
   return map

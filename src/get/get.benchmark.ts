@@ -4,7 +4,7 @@ import { get } from './get'
 
 const OBJECT = { foo: { bar: { herp: 123 } } }
 
-let benchmark = new Benchmark('get')
+const benchmark = new Benchmark('get')
 
 benchmark.add({
   library: 'lodash',

@@ -133,7 +133,7 @@ describe('memoize', () => {
   })
 
   it('passes arguments as their original primitive', () => {
-    const func = (x: any) => (typeof x === 'object' ? x.constructor.name : typeof x)
+    const func = (x: unknown) => (typeof x === 'object' && x ? x.constructor.name : typeof x)
 
     const memoizedFunc = memoize(func)
 
@@ -185,9 +185,9 @@ describe('memoize', () => {
 
   it('can define a custom serializer', () => {
     let serializerCalls = 0
-    function serializer() {
+    function serializer(data: unknown) {
       serializerCalls++
-      return '__' + JSON.stringify(arguments) + '__'
+      return '__' + JSON.stringify(data) + '__'
     }
 
     const func = (a: number, b: number) => {
@@ -263,13 +263,13 @@ describe('memoize', () => {
 
     const memoizedFunc = memoize(func)
 
-    // @ts-expect-error
+    // @ts-expect-error The first argument has to be a number
     memoizedFunc('a', 2)
 
-    // @ts-expect-error
+    // @ts-expect-error The second argument has to be a number
     memoizedFunc(2, 'a')
 
-    // @ts-expect-error
+    // @ts-expect-error The return value is a number
     memoizedFunc(2, 2).concat
 
     // This one is okay

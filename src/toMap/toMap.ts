@@ -38,19 +38,19 @@ type MapableKeys<T> = NonNullable<
   }[keyof T]
 >
 
-export function toMap<Element extends object, Key extends MapableKeys<Element>>(
+export function toMap<Element extends Record<string, unknown>, Key extends MapableKeys<Element>>(
   array: Array<Element>,
   key: Key
 ): { [key: string]: Element | undefined }
 
 export function toMap<
-  Element extends object,
+  Element extends Record<string, unknown>,
   Key extends MapableKeys<Element>,
   Target extends keyof Element
 >(array: Array<Element>, key: Key, target: Target): { [key: string]: Element[Target] | undefined }
 
 export function toMap<
-  Element extends object,
+  Element extends Record<string, unknown>,
   Key extends MapableKeys<Element>,
   Target extends keyof Element
 >(
@@ -58,11 +58,11 @@ export function toMap<
   key: Key,
   target?: Target
 ): { [key: string]: Element | Element[Target] | undefined } {
-  let map: { [key: string]: Element | Element[Target] } = {}
+  const map: { [key: string]: Element | Element[Target] } = {}
 
   array.map((element) => {
     if (!element[key]) return
-    map[element[key] as any as string] = target ? element[target] : element
+    map[element[key] as unknown as string] = target ? element[target] : element
   })
 
   return map

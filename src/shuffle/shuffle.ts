@@ -29,7 +29,7 @@ export function shuffle<T>(array: Array<T>): Array<T> {
   //        ^ Random index between 0 - 1 (e.g. 0: swap 'd' with 'e')
   // ['d', 'e', 'a', 'b', 'c']
   for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1))
+    const j = Math.floor(Math.random() * (i + 1))
 
     const tmp = array[i]
     array[i] = array[j]

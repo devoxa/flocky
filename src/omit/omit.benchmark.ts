@@ -2,9 +2,9 @@ import { Benchmark } from '../benchmarkHelper'
 import { omit } from './omit'
 import { randomString } from '../randomString/randomString'
 
-let benchmark = new Benchmark('omit')
+const benchmark = new Benchmark('omit')
 
-let omitKeys: Array<string> = []
+const omitKeys: Array<string> = []
 for (let i = 0; i !== 55; i++) {
   omitKeys.push(randomString(10))
 }
@@ -69,7 +69,7 @@ benchmark.add({
       j: 10,
     }
 
-    return omit(object, omitKeys as any)
+    return omit(object, omitKeys as Array<keyof typeof object>)
   },
 })
 

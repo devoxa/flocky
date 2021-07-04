@@ -7,7 +7,7 @@ import { unique } from './unique/unique'
 interface BenchmarkSample {
   library: string
   input: string
-  func: () => any
+  func: () => void
 }
 
 interface BenchmarkResult {
@@ -77,8 +77,7 @@ export class Benchmark {
   }
 
   generateResultTable(): string {
-    let table: Array<string> = []
-
+    const table: Array<string> = []
     const inputs = unique(this.results.map((x) => x.input))
     const libraries = unique(this.results.map((x) => x.library))
 

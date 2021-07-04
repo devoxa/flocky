@@ -16,7 +16,7 @@ const LARGE_ARRAY = generateArrayOfSize(10000)
 const SMALL_ARRAY = generateArrayOfSize(100)
 console.log('Setup finished')
 
-let benchmark = new Benchmark('unique')
+const benchmark = new Benchmark('unique')
 
 benchmark.add({
   library: 'es6 filter',

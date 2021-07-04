@@ -12,10 +12,13 @@
 
 type Omit<T, U> = Pick<T, Exclude<keyof T, U>>
 
-export function omit<T extends object, U extends keyof T>(object: T, keys: Array<U>): Omit<T, U> {
+export function omit<T extends Record<string, unknown>, U extends keyof T>(
+  object: T,
+  keys: Array<U>
+): Omit<T, U> {
   const objectKeys = Object.keys(object) as Array<keyof T>
 
-  let result: Partial<T> = {}
+  const result: Partial<T> = {}
   for (let i = 0; i !== objectKeys.length; i++) {
     const objectKey = objectKeys[i] as U
 

@@ -10,8 +10,11 @@
  * ```
  */
 
-export function pick<T extends object, U extends keyof T>(object: T, keys: Array<U>): Pick<T, U> {
-  let result: Partial<T> = {}
+export function pick<T extends Record<string, unknown>, U extends keyof T>(
+  object: T,
+  keys: Array<U>
+): Pick<T, U> {
+  const result: Partial<T> = {}
 
   keys.forEach((key) => {
     result[key] = object[key]

@@ -12,7 +12,7 @@ function makeString(length: number): string {
 const ONE_KB_STRING = makeString(1024)
 const ONE_MB_STRING = makeString(1024 * 1024)
 
-let benchmark = new Benchmark('hash')
+const benchmark = new Benchmark('hash')
 
 benchmark.add({
   library: 'flocky',

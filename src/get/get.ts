@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 /**
  * ### get(object, path, defaultValue?)
  *
@@ -26,7 +28,7 @@ const REPLACE_EMPTY = /]|^\[/g
 const REPLACE_DOT = /\.?\[/g
 
 export function get(
-  object: object | null | undefined,
+  object: Record<string, unknown> | Array<unknown> | null | undefined,
   path: string | Array<string | number>,
   defaultValue?: any
 ): any {
@@ -47,7 +49,10 @@ function parsePath(path: string): Array<string> {
   return path.replace(REPLACE_EMPTY, '').replace(REPLACE_DOT, '.').split('.')
 }
 
-function getWithArrayPath(object: object, path: Array<string | number>): any {
+function getWithArrayPath(
+  object: Record<string, unknown> | Array<unknown>,
+  path: Array<string | number>
+): any {
   const length = path.length
   let index = 0
   let current: any = object

@@ -18,7 +18,7 @@
  * ```
  */
 
-export function duplicates<T>(array: Array<T>, identity?: (x: T) => any): Array<T> {
+export function duplicates<T>(array: Array<T>, identity?: (x: T) => unknown): Array<T> {
   if (!identity) {
     return primitiveDuplicates(array)
   }
@@ -30,7 +30,7 @@ function primitiveDuplicates<T>(array: Array<T>): Array<T> {
   return array.filter((x, i, self) => self.indexOf(x) !== i)
 }
 
-function objectDuplicates<T>(array: Array<T>, identity: (x: T) => any): Array<T> {
+function objectDuplicates<T>(array: Array<T>, identity: (x: T) => unknown): Array<T> {
   const identities = array.map((x) => identity(x))
   return array.filter((_, i) => identities.indexOf(identities[i]) !== i)
 }

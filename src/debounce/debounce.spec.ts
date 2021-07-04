@@ -27,16 +27,16 @@ describe('debounce', () => {
 
     const debouncedFunc = debounce(func, 250)
 
-    // @ts-expect-error
+    // @ts-expect-error The first argument has to be a number
     debouncedFunc('a', 2)
 
-    // @ts-expect-error
+    // @ts-expect-error The second argument has to be a number
     debouncedFunc(2, 'a')
 
-    // @ts-expect-error
+    // @ts-expect-error The return value is void
     debouncedFunc(2, 2)?.concat
 
-    // @ts-expect-error
+    // @ts-expect-error The return value is void
     debouncedFunc(2, 2)?.toFixed
   })
 })

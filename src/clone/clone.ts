@@ -13,12 +13,8 @@
  */
 
 type JSONValue = string | number | boolean | null | undefined | JSONObject | JSONArray
-
-interface JSONObject {
-  [key: string]: JSONValue
-}
-
-interface JSONArray extends Array<JSONValue> {}
+type JSONObject = { [key: string]: JSONValue }
+type JSONArray = Array<JSONValue>
 
 export function clone<T extends JSONValue>(value: T): T {
   return JSON.parse(JSON.stringify(value))

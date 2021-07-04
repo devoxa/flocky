@@ -82,7 +82,7 @@ flocky.chunk([1, 2, 3, 4, 5, 6, 7], 3)
 // -> [[1, 2, 3], [4, 5, 6], [7]]
 ```
 
-<sup>[Source](./src/chunk/index.ts) • Minify: 103 B • Minify & GZIP: 97 B<sup>
+<sup>[Source](./src/chunk/index.ts) • Minify: 105 B • Minify & GZIP: 101 B<sup>
 
 ### clone(value)
 
@@ -203,7 +203,7 @@ flocky.hash({id: 'AAA', name: 'BBB'})
   - https://github.com/whitequark/murmurhash3-js/blob/master/murmurhash3.js
 </details>
 
-<sup>[Source](./src/hash/index.ts) • [Benchmark](./src/hash/BENCHMARK.md) • Minify: 548 B • Minify & GZIP: 332 B<sup>
+<sup>[Source](./src/hash/index.ts) • [Benchmark](./src/hash/BENCHMARK.md) • Minify: 554 B • Minify & GZIP: 334 B<sup>
 
 ### identifier()
 
@@ -258,7 +258,7 @@ const memoizedFuncWithTtl = flocky.memoize(func, { ttl: 30 * 1000 })
   performance and additional support for a TTL based cache.
 </details>
 
-<sup>[Source](./src/memoize/index.ts) • [Benchmark](./src/memoize/BENCHMARK.md) • Minify: 817 B • Minify & GZIP: 400 B<sup>
+<sup>[Source](./src/memoize/index.ts) • [Benchmark](./src/memoize/BENCHMARK.md) • Minify: 822 B • Minify & GZIP: 396 B<sup>
 
 ### min(array)
 
@@ -281,7 +281,7 @@ flocky.omit(object, ['a'])
 // -> { b: 2, c: 3 }
 ```
 
-<sup>[Source](./src/omit/index.ts) • [Benchmark](./src/omit/BENCHMARK.md) • Minify: 143 B • Minify & GZIP: 126 B<sup>
+<sup>[Source](./src/omit/index.ts) • [Benchmark](./src/omit/BENCHMARK.md) • Minify: 139 B • Minify & GZIP: 125 B<sup>
 
 ### pick(object, keys)
 
@@ -293,7 +293,7 @@ flocky.pick(object, ['a', 'c'])
 // -> { a: 1, c: 3 }
 ```
 
-<sup>[Source](./src/pick/index.ts) • Minify: 78 B • Minify & GZIP: 82 B<sup>
+<sup>[Source](./src/pick/index.ts) • Minify: 80 B • Minify & GZIP: 84 B<sup>
 
 ### random(lower, upper, float?)
 
@@ -371,7 +371,7 @@ flocky.shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 // -> [3, 7, 2, 1, 10, 4, 6, 9, 5, 8]
 ```
 
-<sup>[Source](./src/shuffle/index.ts) • Minify: 156 B • Minify & GZIP: 133 B<sup>
+<sup>[Source](./src/shuffle/index.ts) • Minify: 152 B • Minify & GZIP: 131 B<sup>
 
 ### sleep(ms)
 
@@ -436,7 +436,7 @@ flocky.toMap(
 // -> { Stanley: 64, Juliet: 57, Alex: 19 }
 ```
 
-<sup>[Source](./src/toMap/index.ts) • Minify: 93 B • Minify & GZIP: 93 B<sup>
+<sup>[Source](./src/toMap/index.ts) • Minify: 95 B • Minify & GZIP: 95 B<sup>
 
 ### unique(array, identity?)
 

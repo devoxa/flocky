@@ -13,7 +13,7 @@ interface ModuleFile {
 
 interface Example {
   code: string
-  expected: any
+  expected: unknown
 }
 
 export function parseModules(): Array<ModuleFile> {
@@ -40,7 +40,7 @@ function parseModuleName(filePath: string): string {
 }
 
 function parseModuleDocs(filePath: string): string {
-  let fileContent = fs.readFileSync(filePath, 'utf-8')
+  const fileContent = fs.readFileSync(filePath, 'utf-8')
 
   // istanbul ignore next
   if (!fileContent.includes('/**')) {
@@ -56,7 +56,7 @@ function parseModuleDocs(filePath: string): string {
 }
 
 function parseExamples(filePath: string, docs: string): Array<Example> {
-  let exampleMatch = docs.match(EXAMPLE_REGEX)
+  const exampleMatch = docs.match(EXAMPLE_REGEX)
 
   // istanbul ignore next
   if (!exampleMatch) {

@@ -18,7 +18,7 @@
  * ```
  */
 
-export function unique<T>(array: Array<T>, identity?: (x: T) => any): Array<T> {
+export function unique<T>(array: Array<T>, identity?: (x: T) => unknown): Array<T> {
   if (!identity) {
     return primitiveUnique(array)
   }
@@ -30,7 +30,7 @@ function primitiveUnique<T>(array: Array<T>): Array<T> {
   return Array.from(new Set(array))
 }
 
-function objectUnique<T>(array: Array<T>, identity: (x: T) => any): Array<T> {
+function objectUnique<T>(array: Array<T>, identity: (x: T) => unknown): Array<T> {
   const identities = array.map((x) => identity(x))
   return array.filter((_, i) => identities.indexOf(identities[i]) === i)
 }

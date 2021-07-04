@@ -27,14 +27,18 @@
  * </details>
  */
 
-export function hash(data: any): string {
+type JSONValue = string | number | boolean | null | undefined | JSONObject | JSONArray
+type JSONObject = { [key: string]: JSONValue }
+type JSONArray = Array<JSONValue>
+
+export function hash(data: JSONValue): string {
   // Convert any data into a string
   data = JSON.stringify(data)
 
   // Setup length, seed and chunk looping
   const len = data.length
   let hash = len ^ len
-  let roundedEnd = len & ~0x1
+  const roundedEnd = len & ~0x1
 
   // Go through 4-byte chunks
   for (let i = 0; i < roundedEnd; i += 2) {

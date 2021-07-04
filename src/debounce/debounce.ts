@@ -1,3 +1,5 @@
+import { TAnyFunction } from '../typeHelpers'
+
 /**
  * ### debounce(func, wait)
  *
@@ -10,10 +12,10 @@
  * ```
  */
 
-export function debounce<TFunc extends (...args: any[]) => void>(func: TFunc, wait: number) {
+export function debounce<TFunc extends TAnyFunction<void>>(func: TFunc, wait: number) {
   let timeoutID: number | null = null
 
-  return function (this: any, ...args: any[]) {
+  return function (this: unknown, ...args: unknown[]) {
     timeoutID && clearTimeout(timeoutID)
     timeoutID = window.setTimeout(() => func.apply(this, args), wait)
   } as (...args: Parameters<TFunc>) => void

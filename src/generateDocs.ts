@@ -17,7 +17,7 @@ async function run() {
   // Generate the subtext for each module (source link, benchmark link, module size)
   modules = await Promise.all(
     modules.map(async (module) => {
-      let subText: Array<string> = []
+      const subText: Array<string> = []
 
       // Link to the source
       subText.push(`[Source](./src/${module.name}/index.ts)`)

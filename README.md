@@ -70,7 +70,7 @@ flocky.average([1, 4, 2, -4, 0])
 // -> 0.6
 ```
 
-<sup>[Source](./src/average/index.ts) • Minify: 106 B • Minify & GZIP: 87 B<sup>
+<sup>[Source](./src/average/index.ts) • Minify: 77 B • Minify & GZIP: 79 B<sup>
 
 ### chunk(array, size)
 
@@ -82,7 +82,7 @@ flocky.chunk([1, 2, 3, 4, 5, 6, 7], 3)
 // -> [[1, 2, 3], [4, 5, 6], [7]]
 ```
 
-<sup>[Source](./src/chunk/index.ts) • Minify: 113 B • Minify & GZIP: 105 B<sup>
+<sup>[Source](./src/chunk/index.ts) • Minify: 103 B • Minify & GZIP: 97 B<sup>
 
 ### clone(value)
 
@@ -96,7 +96,7 @@ original[0] === clone[0]
 // -> false
 ```
 
-<sup>[Source](./src/clone/index.ts) • Minify: 83 B • Minify & GZIP: 78 B<sup>
+<sup>[Source](./src/clone/index.ts) • Minify: 69 B • Minify & GZIP: 69 B<sup>
 
 ### compact(array)
 
@@ -107,7 +107,7 @@ flocky.compact([1, 2, 3, null, 4, false, 0, NaN, 5, ''])
 // -> [1, 2, 3, 4, 5]
 ```
 
-<sup>[Source](./src/compact/index.ts) • Minify: 75 B • Minify & GZIP: 73 B<sup>
+<sup>[Source](./src/compact/index.ts) • Minify: 61 B • Minify & GZIP: 64 B<sup>
 
 ### debounce(func, wait)
 
@@ -119,7 +119,7 @@ const func = () => console.log('Heavy processing happening')
 const debouncedFunc = flocky.debounce(func, 250)
 ```
 
-<sup>[Source](./src/debounce/index.ts) • Minify: 225 B • Minify & GZIP: 160 B<sup>
+<sup>[Source](./src/debounce/index.ts) • Minify: 138 B • Minify & GZIP: 117 B<sup>
 
 ### duplicates(array, identity?)
 
@@ -139,7 +139,7 @@ flocky.duplicates(input, (element) => element.id)
 // -> [{ id: 1, a: 2 }, { id: 1, a: 4 }]
 ```
 
-<sup>[Source](./src/duplicates/index.ts) • Minify: 336 B • Minify & GZIP: 156 B<sup>
+<sup>[Source](./src/duplicates/index.ts) • Minify: 277 B • Minify & GZIP: 147 B<sup>
 
 ### escapeRegExp(string)
 
@@ -150,7 +150,7 @@ flocky.escapeRegExp('Hey. (1 + 1 = 2)')
 // -> 'Hey\\. \\(1 \\+ 1 = 2\\)'
 ```
 
-<sup>[Source](./src/escapeRegExp/index.ts) • Minify: 107 B • Minify & GZIP: 99 B<sup>
+<sup>[Source](./src/escapeRegExp/index.ts) • Minify: 93 B • Minify & GZIP: 90 B<sup>
 
 ### get(object, path, defaultValue?)
 
@@ -174,7 +174,7 @@ flocky.get(object, 'x.x.x', 'default')
 // -> 'default'
 ```
 
-<sup>[Source](./src/get/index.ts) • [Benchmark](./src/get/BENCHMARK.md) • Minify: 403 B • Minify & GZIP: 264 B<sup>
+<sup>[Source](./src/get/index.ts) • [Benchmark](./src/get/BENCHMARK.md) • Minify: 400 B • Minify & GZIP: 261 B<sup>
 
 ### hash(data)
 
@@ -203,7 +203,7 @@ flocky.hash({id: 'AAA', name: 'BBB'})
   - https://github.com/whitequark/murmurhash3-js/blob/master/murmurhash3.js
 </details>
 
-<sup>[Source](./src/hash/index.ts) • [Benchmark](./src/hash/BENCHMARK.md) • Minify: 538 B • Minify & GZIP: 333 B<sup>
+<sup>[Source](./src/hash/index.ts) • [Benchmark](./src/hash/BENCHMARK.md) • Minify: 548 B • Minify & GZIP: 332 B<sup>
 
 ### identifier()
 
@@ -214,7 +214,7 @@ flocky.identifier()
 // -> 'bfc8d57e-b9ab-4245-836e-d1fd99602e30'
 ```
 
-<sup>[Source](./src/identifier/index.ts) • Minify: 270 B • Minify & GZIP: 197 B<sup>
+<sup>[Source](./src/identifier/index.ts) • Minify: 275 B • Minify & GZIP: 196 B<sup>
 
 ### matchAll(regExp, string)
 
@@ -228,7 +228,7 @@ flocky.matchAll(/f(o+)/g, 'foo bar baz foooo bar')
 // -> ]
 ```
 
-<sup>[Source](./src/matchAll/index.ts) • Minify: 192 B • Minify & GZIP: 139 B<sup>
+<sup>[Source](./src/matchAll/index.ts) • Minify: 178 B • Minify & GZIP: 133 B<sup>
 
 ### max(array)
 
@@ -239,7 +239,7 @@ flocky.max([1, 4, 2, -3, 0])
 // -> 4
 ```
 
-<sup>[Source](./src/max/index.ts) • Minify: 72 B • Minify & GZIP: 73 B<sup>
+<sup>[Source](./src/max/index.ts) • Minify: 58 B • Minify & GZIP: 63 B<sup>
 
 ### memoize(func, options?)
 
@@ -258,7 +258,7 @@ const memoizedFuncWithTtl = flocky.memoize(func, { ttl: 30 * 1000 })
   performance and additional support for a TTL based cache.
 </details>
 
-<sup>[Source](./src/memoize/index.ts) • [Benchmark](./src/memoize/BENCHMARK.md) • Minify: 979 B • Minify & GZIP: 466 B<sup>
+<sup>[Source](./src/memoize/index.ts) • [Benchmark](./src/memoize/BENCHMARK.md) • Minify: 817 B • Minify & GZIP: 400 B<sup>
 
 ### min(array)
 
@@ -269,7 +269,7 @@ flocky.min([1, 4, 2, -3, 0])
 // -> -3
 ```
 
-<sup>[Source](./src/min/index.ts) • Minify: 72 B • Minify & GZIP: 73 B<sup>
+<sup>[Source](./src/min/index.ts) • Minify: 58 B • Minify & GZIP: 63 B<sup>
 
 ### omit(object, keys)
 
@@ -281,7 +281,7 @@ flocky.omit(object, ['a'])
 // -> { b: 2, c: 3 }
 ```
 
-<sup>[Source](./src/omit/index.ts) • [Benchmark](./src/omit/BENCHMARK.md) • Minify: 145 B • Minify & GZIP: 130 B<sup>
+<sup>[Source](./src/omit/index.ts) • [Benchmark](./src/omit/BENCHMARK.md) • Minify: 143 B • Minify & GZIP: 126 B<sup>
 
 ### pick(object, keys)
 
@@ -293,7 +293,7 @@ flocky.pick(object, ['a', 'c'])
 // -> { a: 1, c: 3 }
 ```
 
-<sup>[Source](./src/pick/index.ts) • Minify: 100 B • Minify & GZIP: 93 B<sup>
+<sup>[Source](./src/pick/index.ts) • Minify: 78 B • Minify & GZIP: 82 B<sup>
 
 ### random(lower, upper, float?)
 
@@ -311,7 +311,7 @@ flocky.random(2.5, 3.5)
 // -> 3.2341312319841373
 ```
 
-<sup>[Source](./src/random/index.ts) • Minify: 233 B • Minify & GZIP: 135 B<sup>
+<sup>[Source](./src/random/index.ts) • Minify: 219 B • Minify & GZIP: 128 B<sup>
 
 ### randomString(length)
 
@@ -322,7 +322,7 @@ flocky.randomString(5)
 // -> 'tfl0g'
 ```
 
-<sup>[Source](./src/randomString/index.ts) • Minify: 251 B • Minify & GZIP: 210 B<sup>
+<sup>[Source](./src/randomString/index.ts) • Minify: 245 B • Minify & GZIP: 207 B<sup>
 
 ### roundTo(number, precision)
 
@@ -348,7 +348,7 @@ flocky.roundTo(1111.1, -2)
   by Lam Wei Li.
 </details>
 
-<sup>[Source](./src/roundTo/index.ts) • Minify: 228 B • Minify & GZIP: 156 B<sup>
+<sup>[Source](./src/roundTo/index.ts) • Minify: 209 B • Minify & GZIP: 150 B<sup>
 
 ### sample(array)
 
@@ -359,7 +359,7 @@ flocky.sample([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 // -> 8
 ```
 
-<sup>[Source](./src/sample/index.ts) • Minify: 93 B • Minify & GZIP: 89 B<sup>
+<sup>[Source](./src/sample/index.ts) • Minify: 79 B • Minify & GZIP: 79 B<sup>
 
 ### shuffle(array)
 
@@ -371,7 +371,7 @@ flocky.shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 // -> [3, 7, 2, 1, 10, 4, 6, 9, 5, 8]
 ```
 
-<sup>[Source](./src/shuffle/index.ts) • Minify: 164 B • Minify & GZIP: 137 B<sup>
+<sup>[Source](./src/shuffle/index.ts) • Minify: 156 B • Minify & GZIP: 133 B<sup>
 
 ### sleep(ms)
 
@@ -381,7 +381,7 @@ Return a promise that waits for `ms` milliseconds before resolving.
 await flocky.sleep(25)
 ```
 
-<sup>[Source](./src/sleep/index.ts) • Minify: 104 B • Minify & GZIP: 89 B<sup>
+<sup>[Source](./src/sleep/index.ts) • Minify: 73 B • Minify & GZIP: 78 B<sup>
 
 ### slugify(string)
 
@@ -392,7 +392,7 @@ flocky.slugify(' Issue #123 is _important_! :)')
 // -> 'issue-123-is-important'
 ```
 
-<sup>[Source](./src/slugify/index.ts) • Minify: 128 B • Minify & GZIP: 114 B<sup>
+<sup>[Source](./src/slugify/index.ts) • Minify: 114 B • Minify & GZIP: 104 B<sup>
 
 ### sum(array)
 
@@ -403,7 +403,7 @@ flocky.sum([1, 4, 2, -4, 0])
 // -> 3
 ```
 
-<sup>[Source](./src/sum/index.ts) • Minify: 89 B • Minify & GZIP: 77 B<sup>
+<sup>[Source](./src/sum/index.ts) • Minify: 60 B • Minify & GZIP: 67 B<sup>
 
 ### toMap(array, key, target?)
 
@@ -436,7 +436,7 @@ flocky.toMap(
 // -> { Stanley: 64, Juliet: 57, Alex: 19 }
 ```
 
-<sup>[Source](./src/toMap/index.ts) • Minify: 94 B • Minify & GZIP: 92 B<sup>
+<sup>[Source](./src/toMap/index.ts) • Minify: 93 B • Minify & GZIP: 93 B<sup>
 
 ### unique(array, identity?)
 
@@ -456,7 +456,7 @@ flocky.unique(input, (element) => element.id)
 // -> [{ id: 1, a: 1 }, { id: 2, a: 3 }]
 ```
 
-<sup>[Source](./src/unique/index.ts) • [Benchmark](./src/unique/BENCHMARK.md) • Minify: 282 B • Minify & GZIP: 158 B<sup>
+<sup>[Source](./src/unique/index.ts) • [Benchmark](./src/unique/BENCHMARK.md) • Minify: 238 B • Minify & GZIP: 153 B<sup>
 
 <!-- END GENERATED FROM FILES -->
 <!-- prettier-ignore-end -->

@@ -57,7 +57,7 @@ async function run() {
 
 async function calculateModuleSizes(name: string) {
   const content = fs.readFileSync(
-    path.join(__dirname, `../build/es6/${name}.js`),
+    path.join(__dirname, `../dist/esm/${name}/${name}.js`),
     'utf-8'
   )
 

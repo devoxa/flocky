@@ -29,7 +29,7 @@ function getModulePaths() {
 
 function parseModule(filePath: string): ModuleFile | false {
   const name = parseModuleName(filePath)
-  const docs = parseModuleDocs(filePath, name)
+  const docs = parseModuleDocs(filePath)
   const examples = parseExamples(filePath, docs)
 
   return { filePath, name, docs, examples }
@@ -39,7 +39,7 @@ function parseModuleName(filePath: string): string {
   return filePath.replace(/^.*\/src\/(.*?)\/\1.ts$/, '$1')
 }
 
-function parseModuleDocs(filePath: string, name: string): string {
+function parseModuleDocs(filePath: string): string {
   let fileContent = fs.readFileSync(filePath, 'utf-8')
 
   // istanbul ignore next

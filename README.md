@@ -446,7 +446,7 @@ flocky.shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 Return a promise that waits for `ms` milliseconds before resolving.
 
 ```js
-async flocky.sleep(25)
+await flocky.sleep(25)
 ```
 
 <sup>[Source](./src/sleep/index.ts) • Minify: 104 B • Minify & GZIP: 89 B<sup>

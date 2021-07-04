@@ -1,46 +1,51 @@
 {
-  "name": "flocky",
+  "name": "@devoxa/flocky",
+  "description": "A utility library with clarity and efficiency at the core. 0 dependencies.",
   "version": "0.2.8",
-  "description": "A TypeScript and JavaScript utility library with clarity and efficiency at the core.",
-  "main": "index.js",
-  "module": "es6/index.js",
-  "author": "queicherius@gmail.com",
+  "main": "dist/index.js",
   "license": "MIT",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/queicherius/flocky.git"
+    "url": "https://github.com/devoxa/flocky"
   },
   "scripts": {
-    "test": "jest --runInBand",
-    "format": "prettier --write 'src/**/*.ts'",
-    "format:check": "prettier --list-different 'src/**/*.ts'",
-    "build": "node tasksfile.js build",
-    "task": "node tasksfile.js",
-    "generate-docs": "ts-node src/generateDocs.ts",
-    "benchmark": "run(){ ts-node src/$1/benchmark.ts; }; run"
+    "test": "jest",
+    "benchmark": "run(){ ts-node src/$1/benchmark.ts; }; run",
+    "format": "prettier --ignore-path='.gitignore' --list-different --write .",
+    "format:check": "prettier --ignore-path='.gitignore' --check .",
+    "lint": "eslint --ignore-path='.gitignore' '{src,tests}/**/*.ts'",
+    "build": "rm -rf dist/ && tsc && yarn build:docs",
+    "build:docs": "ts-node src/generateDocs.ts",
+    "preversion": "yarn build"
   },
+  "eslintConfig": {
+    "extends": "@devoxa"
+  },
+  "prettier": "@devoxa/prettier-config",
   "devDependencies": {
+    "@devoxa/eslint-config": "2.0.5",
+    "@devoxa/prettier-config": "1.0.0",
     "@types/benchmark": "^2.1.0",
-    "@types/filesize": "^5.0.0",
     "@types/glob": "^7.1.3",
-    "@types/jest": "^26.0.23",
+    "@types/jest": "26.0.23",
     "@types/lodash": "^4.14.170",
-    "@types/node": "^16.0.0",
+    "@types/node": "15.12.5",
     "@types/pako": "^1.0.1",
-    "@types/terser": "^3.12.0",
     "benchmark": "^2.1.4",
+    "eslint": "7.29.0",
     "fast-memoize": "^2.5.2",
     "filesize": "^6.4.0",
     "glob": "^7.1.7",
-    "jest": "^27.0.6",
+    "jest": "27.0.5",
     "lodash": "^4.17.21",
     "pako": "^2.0.3",
-    "prettier": "^2.3.2",
+    "prettier": "2.3.2",
     "rollup": "^2.52.7",
-    "tasksfile": "^5.1.1",
     "terser": "^5.7.1",
-    "ts-jest": "^27.0.3",
+    "ts-jest": "27.0.3",
     "ts-node": "^10.0.0",
-    "typescript": "^4.3.5"
+    "typescript": "4.3.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

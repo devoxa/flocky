@@ -1,37 +1,32 @@
-<!-- Logo -->
-<p align="center">
-  <img height="150" src="./logo.png">
-</p>
-
 <!-- Title -->
 <h1 align="center">
   flocky
 </h1>
 
 <!-- Description -->
-<h4 align="center"> 
-  A TypeScript and JavaScript utility library with clarity and efficiency at the core. 0 dependencies.
+<h4 align="center">
+  A utility library with clarity and efficiency at the core. 0 dependencies.
 </h4>
 
 <!-- Badges -->
 <p align="center">
-  <a href="https://www.npmjs.com/package/flocky">
+  <a href="https://www.npmjs.com/package/@devoxa/flocky">
     <img
-      src="https://img.shields.io/npm/v/flocky.svg?style=flat-square"
+      src="https://img.shields.io/npm/v/@devoxa/flocky?style=flat-square"
       alt="Package Version"
     />
   </a>
 
-  <a href="https://github.com/queicherius/flocky/actions?query=branch%3Amaster+workflow%3A%22Continuous+Integration%22">
+  <a href="https://github.com/devoxa/flocky/actions?query=branch%3Amaster+workflow%3A%22Continuous+Integration%22">
     <img
-      src="https://img.shields.io/github/workflow/status/queicherius/flocky/Continuous%20Integration?style=flat-square"
+      src="https://img.shields.io/github/workflow/status/devoxa/flocky/Continuous%20Integration?style=flat-square"
       alt="Build Status"
     />
   </a>
 
-  <a href="https://codecov.io/github/queicherius/flocky">
+  <a href="https://codecov.io/github/devoxa/flocky">
     <img
-      src="https://img.shields.io/codecov/c/github/queicherius/flocky/master.svg?style=flat-square"
+      src="https://img.shields.io/codecov/c/github/devoxa/flocky/master?style=flat-square"
       alt="Code Coverage"
     />
   </a>
@@ -51,83 +46,20 @@
 ## Installation
 
 ```bash
-# Using `yarn`
-yarn add flocky
-
-# Using `npm`
-npm install --save flocky
+yarn add @devoxa/flocky
 ```
 
-## Import
-
-<details>
-<summary><strong>TypeScript</strong></summary>
+## Usage
 
 ```ts
-// Importing the full library (tree shakable!)
-import * as flocky from 'flocky'
-flocky.sum([1, 2, 3])
-
-// Importing the full library, with a named import (tree shakable!)
 import { sum } from 'flocky'
 sum([1, 2, 3])
-
-// Importing only part of the library (in case you are not using tree shaking)
-import { sum } from 'flocky/sum'
-import sum from 'flocky/sum'
-sum([1, 2, 3])
-
-// /!\ Note that the following is NOT allowed (because it does not create tree shakable bundles)
-// import flocky from 'flocky'
+// -> 6
 ```
-
-</details>
-
-<details>
-<summary><strong>ES6 Modules</strong></summary>
-
-```js
-// Importing the full library (tree shakable!)
-import * as flocky from 'flocky'
-flocky.sum([1, 2, 3])
-
-// Importing the full library, with a named import (tree shakable!)
-import { sum } from 'flocky'
-sum([1, 2, 3])
-
-// Importing only part of the library (in case you are not using tree shaking)
-import { sum } from 'flocky/es6/sum'
-import sum from 'flocky/es6/sum'
-sum([1, 2, 3])
-
-// /!\ Note that the following is NOT allowed (because it does not create tree shakable bundles)
-// import flocky from 'flocky'
-```
-
-</details>
-
-<details>
-<summary><strong>CommonJS Modules</strong></summary>
-
-```js
-// Importing the full library
-const flocky = require('flocky')
-flocky.sum([1, 2, 3])
-
-// Importing the full library, with a named import
-const { sum } = require('flocky')
-sum([1, 2, 3])
-
-// Importing only part of the library
-const sum = require('flocky/sum')
-const { sum } = require('flocky/sum')
-sum([1, 2, 3])
-```
-
-</details>
 
 ## API Reference
 
+<!-- prettier-ignore-start -->
 <!-- START GENERATED FROM FILES -->
 ### average(array)
 
@@ -527,6 +459,7 @@ flocky.unique(input, (element) => element.id)
 <sup>[Source](./src/unique/index.ts) • [Benchmark](./src/unique/BENCHMARK.md) • Minify: 282 B • Minify & GZIP: 158 B<sup>
 
 <!-- END GENERATED FROM FILES -->
+<!-- prettier-ignore-end -->
 
 ## Contributors
 
@@ -537,17 +470,19 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://www.david-reess.de"><img src="https://avatars3.githubusercontent.com/u/4615516?v=4" width="75px;" alt="David Reeß"/><br /><sub><b>David Reeß</b></sub></a><br /><a href="https://github.com/queicherius/flocky/commits?author=queicherius" title="Code">💻</a> <a href="https://github.com/queicherius/flocky/commits?author=queicherius" title="Documentation">📖</a> <a href="https://github.com/queicherius/flocky/commits?author=queicherius" title="Tests">⚠️</a></td>
-    <td align="center"><a href="https://github.com/atjeff"><img src="https://avatars1.githubusercontent.com/u/10563763?v=4" width="75px;" alt="Jeff Hage"/><br /><sub><b>Jeff Hage</b></sub></a><br /><a href="https://github.com/queicherius/flocky/commits?author=atjeff" title="Code">💻</a></td>
-    <td align="center"><a href="https://gw2treasures.com/"><img src="https://avatars2.githubusercontent.com/u/2511547?v=4" width="75px;" alt="darthmaim"/><br /><sub><b>darthmaim</b></sub></a><br /><a href="https://github.com/queicherius/flocky/commits?author=darthmaim" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.david-reess.de"><img src="https://avatars3.githubusercontent.com/u/4615516?v=4?s=75" width="75px;" alt=""/><br /><sub><b>David Reeß</b></sub></a><br /><a href="https://github.com/devoxa/flocky/commits?author=queicherius" title="Code">💻</a> <a href="https://github.com/devoxa/flocky/commits?author=queicherius" title="Documentation">📖</a> <a href="https://github.com/devoxa/flocky/commits?author=queicherius" title="Tests">⚠️</a></td>
+    <td align="center"><a href="https://github.com/atjeff"><img src="https://avatars1.githubusercontent.com/u/10563763?v=4?s=75" width="75px;" alt=""/><br /><sub><b>Jeff Hage</b></sub></a><br /><a href="https://github.com/devoxa/flocky/commits?author=atjeff" title="Code">💻</a></td>
+    <td align="center"><a href="https://gw2treasures.com/"><img src="https://avatars2.githubusercontent.com/u/2511547?v=4?s=75" width="75px;" alt=""/><br /><sub><b>darthmaim</b></sub></a><br /><a href="https://github.com/devoxa/flocky/commits?author=darthmaim" title="Code">💻</a></td>
   </tr>
 </table>
 
-<!-- markdownlint-enable -->
+<!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
+
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors)
+specification. Contributions of any kind welcome!
 
 ## License
 

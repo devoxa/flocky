@@ -1,25 +1,33 @@
 {
   "compilerOptions": {
-    /* Basic Options */
-    "target": "es5",
+    // Output Options
+    "target": "es2015",
     "module": "commonjs",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": false,
+    "jsx": "react",
     "noEmitOnError": true,
-    "declaration": true,
     "newLine": "lf",
-    "outDir": "tscBuild",
+    "outDir": "dist/",
+    "baseUrl": "./",
+    "declaration": true,
+    "sourceMap": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "incremental": true,
 
-    /* Type-Checking Options */
+    // Type-Checking Options
+    "lib": ["esnext", "dom"],
     "strict": true,
     "skipLibCheck": true,
+    "strictPropertyInitialization": false,
 
-    /* Module Resolution Options */
+    // Module Resolution Options
     "moduleResolution": "node",
-    "typeRoots" : ["./node_modules/@types"],
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "allowJs": false
   },
-  "include": ["src"]
+  "include": ["src/", "tests/"]
 }

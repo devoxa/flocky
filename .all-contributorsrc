@@ -1,14 +1,10 @@
 {
+  "imageSize": 75,
   "projectName": "flocky",
-  "projectOwner": "queicherius",
+  "projectOwner": "devoxa",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "files": [
-    "README.md"
-  ],
-  "imageSize": 75,
-  "commit": false,
-  "commitConvention": "none",
+  "skipCi": true,
   "contributors": [
     {
       "login": "queicherius",
@@ -39,6 +35,9 @@
         "code"
       ]
     }
+  ],
+  "files": [
+    "README.md"
   ],
   "contributorsPerLine": 7
 }

@@ -1,18 +1,23 @@
 name: Continuous Integration
 
-on: [push]
+on:
+  push:
+    branches:
+      - master
+  pull_request:
 
 jobs:
   test-and-build:
-    name: 'Test & Build'
+    name: 'Test & build'
     runs-on: ubuntu-latest
+    timeout-minutes: 30
 
     steps:
       - name: 'Checkout the repository'
         uses: actions/checkout@v2
 
       - name: 'Setup Node.JS'
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: '12'
 
@@ -34,8 +39,8 @@ jobs:
       - name: 'Check code formatting'
         run: yarn format:check
 
-      # - name: 'Run linter'
-      #   run: yarn lint
+      - name: 'Run linter'
+        run: yarn lint
 
       - name: 'Build package'
         run: yarn build

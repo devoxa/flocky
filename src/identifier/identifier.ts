@@ -52,4 +52,4 @@ export function identifier(): string {
   return uuid
 }
 
-export default identifier
+

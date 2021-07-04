@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     // Output Options
-    "target": "es2015",
-    "module": "commonjs",
+    "target": "es2019",
+    "module": "esnext",
     "jsx": "react",
     "noEmitOnError": true,
     "newLine": "lf",
@@ -20,6 +20,8 @@
     "strict": true,
     "skipLibCheck": true,
     "strictPropertyInitialization": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
 
     // Module Resolution Options
     "moduleResolution": "node",
@@ -29,5 +31,5 @@
     "resolveJsonModule": true,
     "allowJs": false
   },
-  "include": ["src/", "tests/"]
+  "include": ["src/"]
 }

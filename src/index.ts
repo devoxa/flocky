@@ -1,82 +1,26 @@
-import { average as _average } from './average/average'
-import { chunk as _chunk } from './chunk/chunk'
-import { clone as _clone } from './clone/clone'
-import { compact as _compact } from './compact/compact'
-import { debounce as _debounce } from './debounce/debounce'
-import { duplicates as _duplicates } from './duplicates/duplicates'
-import { escapeRegExp as _escapeRegExp } from './escapeRegExp/escapeRegExp'
-import { get as _get } from './get/get'
-import { hash as _hash } from './hash/hash'
-import { identifier as _identifier } from './identifier/identifier'
-import { matchAll as _matchAll } from './matchAll/matchAll'
-import { max as _max } from './max/max'
-import { memoize as _memoize } from './memoize/memoize'
-import { min as _min } from './min/min'
-import { omit as _omit } from './omit/omit'
-import { pick as _pick } from './pick/pick'
-import { random as _random } from './random/random'
-import { randomString as _randomString } from './randomString/randomString'
-import { roundTo as _roundTo } from './roundTo/roundTo'
-import { sample as _sample } from './sample/sample'
-import { shuffle as _shuffle } from './shuffle/shuffle'
-import { sleep as _sleep } from './sleep/sleep'
-import { slugify as _slugify } from './slugify/slugify'
-import { sum as _sum } from './sum/sum'
-import { toMap as _toMap } from './toMap/toMap'
-import { unique as _unique } from './unique/unique'
-
-export const average = _average
-export const chunk = _chunk
-export const clone = _clone
-export const compact = _compact
-export const debounce = _debounce
-export const duplicates = _duplicates
-export const escapeRegExp = _escapeRegExp
-export const get = _get
-export const hash = _hash
-export const identifier = _identifier
-export const matchAll = _matchAll
-export const max = _max
-export const memoize = _memoize
-export const min = _min
-export const omit = _omit
-export const pick = _pick
-export const random = _random
-export const randomString = _randomString
-export const roundTo = _roundTo
-export const sample = _sample
-export const shuffle = _shuffle
-export const sleep = _sleep
-export const slugify = _slugify
-export const sum = _sum
-export const toMap = _toMap
-export const unique = _unique
-
-export default {
-  average: _average,
-  chunk: _chunk,
-  clone: _clone,
-  compact: _compact,
-  debounce: _debounce,
-  duplicates: _duplicates,
-  escapeRegExp: _escapeRegExp,
-  get: _get,
-  hash: _hash,
-  identifier: _identifier,
-  matchAll: _matchAll,
-  max: _max,
-  memoize: _memoize,
-  min: _min,
-  omit: _omit,
-  pick: _pick,
-  random: _random,
-  randomString: _randomString,
-  roundTo: _roundTo,
-  sample: _sample,
-  shuffle: _shuffle,
-  sleep: _sleep,
-  slugify: _slugify,
-  sum: _sum,
-  toMap: _toMap,
-  unique: _unique,
-}
+export { average } from './average/average'
+export { chunk } from './chunk/chunk'
+export { clone } from './clone/clone'
+export { compact } from './compact/compact'
+export { debounce } from './debounce/debounce'
+export { duplicates } from './duplicates/duplicates'
+export { escapeRegExp } from './escapeRegExp/escapeRegExp'
+export { get } from './get/get'
+export { hash } from './hash/hash'
+export { identifier } from './identifier/identifier'
+export { matchAll } from './matchAll/matchAll'
+export { max } from './max/max'
+export { memoize } from './memoize/memoize'
+export { min } from './min/min'
+export { omit } from './omit/omit'
+export { pick } from './pick/pick'
+export { random } from './random/random'
+export { randomString } from './randomString/randomString'
+export { roundTo } from './roundTo/roundTo'
+export { sample } from './sample/sample'
+export { shuffle } from './shuffle/shuffle'
+export { sleep } from './sleep/sleep'
+export { slugify } from './slugify/slugify'
+export { sum } from './sum/sum'
+export { toMap } from './toMap/toMap'
+export { unique } from './unique/unique'

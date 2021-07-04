@@ -52,4 +52,4 @@ function shift(number: number, exponent: number): number {
   return Number(`${numberBase}e${Number(numberExponent) + exponent}`)
 }
 
-export default roundTo
+

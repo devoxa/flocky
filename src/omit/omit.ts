@@ -30,4 +30,4 @@ export function omit<T extends object, U extends keyof T>(
   return result as Omit<T, U>
 }
 
-export default omit
+

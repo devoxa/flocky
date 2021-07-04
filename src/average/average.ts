@@ -13,4 +13,4 @@ export function average(array: Array<number>): number {
   return array.reduce((a, b) => a + b, 0) / array.length
 }
 
-export default average
+

@@ -16,7 +16,7 @@ interface BenchmarkResult {
   opsPerSec: number
 }
 
-export default class Benchmark {
+export class Benchmark {
   private readonly name: string
   private suite: Suite
   private results: Array<BenchmarkResult>

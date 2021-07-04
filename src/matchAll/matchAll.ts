@@ -24,4 +24,4 @@ function formatMatch(match: RegExpMatchArray) {
   }
 }
 
-export default matchAll
+

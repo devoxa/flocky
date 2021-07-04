@@ -22,4 +22,4 @@ export function debounce<TFunc extends (...args: any[]) => void>(
   } as (...args: Parameters<TFunc>) => void
 }
 
-export default debounce
+

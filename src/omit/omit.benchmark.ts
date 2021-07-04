@@ -1,4 +1,4 @@
-import Benchmark from '../benchmarkHelper'
+import { Benchmark } from '../benchmarkHelper'
 import { omit } from './omit'
 import { randomString } from '../randomString/randomString'
 

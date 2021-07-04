@@ -31,4 +31,4 @@ export function clone<T extends JSONValue>(value: T): T {
   return JSON.parse(JSON.stringify(value))
 }
 
-export default clone
+

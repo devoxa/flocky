@@ -17,4 +17,4 @@ export function slugify(string: string): string {
     .replace(/^-|-$/g, '') // Trim "-" from start and end
 }
 
-export default slugify
+

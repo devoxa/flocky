@@ -23,4 +23,4 @@ export function pick<T extends object, U extends keyof T>(
   return result as Pick<T, U>
 }
 
-export default pick
+

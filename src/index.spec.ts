@@ -1,4 +1,4 @@
-import _flocky from './index'
+import * as _flocky from './index'
 import { parseModules } from './parseModules'
 import { dateNow, mathRandom } from './testHelpers'
 

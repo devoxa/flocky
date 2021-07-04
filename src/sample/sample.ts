@@ -14,4 +14,4 @@ export function sample<T>(array: Array<T>): T {
   return array[index]
 }
 
-export default sample
+

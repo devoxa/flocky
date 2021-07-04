@@ -1,5 +1,5 @@
 import lodash from 'lodash'
-import Benchmark from '../benchmarkHelper'
+import { Benchmark } from '../benchmarkHelper'
 import { unique } from './unique'
 
 function generateArrayOfSize(size: number) {

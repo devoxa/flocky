@@ -80,4 +80,4 @@ function mul32(m: number, n: number) {
   return (((nHigh * m) | 0) + ((nLow * m) | 0)) | 0
 }
 
-export default hash
+

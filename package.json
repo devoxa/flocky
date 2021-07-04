@@ -3,18 +3,20 @@
   "description": "A utility library with clarity and efficiency at the core. 0 dependencies.",
   "version": "0.2.8",
   "main": "dist/index.js",
+  "module": "dist/esm/index.js",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/devoxa/flocky"
   },
   "scripts": {
     "test": "jest",
-    "benchmark": "run(){ ts-node src/$1/$1.benchmark.ts; }; run",
+    "benchmark": "run(){ ts-node -O '{\"module\":\"commonjs\"}' src/$1/$1.benchmark.ts; }; run",
     "format": "prettier --ignore-path='.gitignore' --list-different --write .",
     "format:check": "prettier --ignore-path='.gitignore' --check .",
     "lint": "eslint --ignore-path='.gitignore' '{src,tests}/**/*.ts'",
-    "build": "rm -rf dist/ && tsc && yarn build:docs",
-    "build:docs": "ts-node src/generateDocs.ts",
+    "build": "yarn build:rollup && yarn build:docs",
+    "build:rollup": "rm -rf dist/ && rollup -c",
+    "build:docs": "ts-node -O '{\"module\":\"commonjs\"}' src/generateDocs.ts",
     "preversion": "yarn build"
   },
   "eslintConfig": {
@@ -24,6 +26,8 @@
   "devDependencies": {
     "@devoxa/eslint-config": "2.0.5",
     "@devoxa/prettier-config": "1.0.0",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-node-resolve": "^13.0.0",
     "@types/benchmark": "^2.1.0",
     "@types/glob": "^7.1.3",
     "@types/jest": "26.0.23",
@@ -40,6 +44,7 @@
     "pako": "^2.0.3",
     "prettier": "2.3.2",
     "rollup": "^2.52.7",
+    "rollup-plugin-typescript2": "^0.30.0",
     "terser": "^5.7.1",
     "ts-jest": "27.0.3",
     "ts-node": "^10.0.0",

@@ -13,4 +13,4 @@ export function max(array: Array<number>): number {
   return Math.max.apply(null, array)
 }
 
-export default max
+

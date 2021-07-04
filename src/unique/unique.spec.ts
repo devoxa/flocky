@@ -1,4 +1,4 @@
-import { unique } from './index'
+import { unique } from './unique'
 
 describe('unique', () => {
   it('filters the unique occurrences of an array of numbers', () => {

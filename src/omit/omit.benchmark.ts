@@ -1,6 +1,6 @@
 import Benchmark from '../benchmarkHelper'
-import { omit } from './index'
-import { randomString } from '../randomString'
+import { omit } from './omit'
+import { randomString } from '../randomString/randomString'
 
 let benchmark = new Benchmark('omit')
 

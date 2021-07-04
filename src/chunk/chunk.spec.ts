@@ -1,4 +1,4 @@
-import { chunk } from './index'
+import { chunk } from './chunk'
 
 describe('chunk', () => {
   it('splits an array of numbers into chunks', () => {

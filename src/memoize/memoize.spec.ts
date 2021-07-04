@@ -1,5 +1,5 @@
-import sleep from '../sleep'
-import { memoize } from './index'
+import {sleep} from '../sleep/sleep'
+import { memoize } from './memoize'
 
 type NumberObject = { n: number }
 

@@ -1,4 +1,4 @@
-import { sleep } from './index'
+import { sleep } from './sleep'
 
 describe('sleep', () => {
   it('waits for the specified time', async () => {

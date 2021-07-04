@@ -23,7 +23,8 @@ export function parseModules(): Array<ModuleFile> {
 }
 
 function getModulePaths() {
-  return glob.sync(path.join(__dirname, '../src/*/index.ts'))
+  const paths = glob.sync(path.join(__dirname, '../src/*/*.ts'))
+  return paths.filter(path => path.match(/src\/(.*?)\/\1.ts/))
 }
 
 function parseModule(filePath: string): ModuleFile | false {
@@ -35,7 +36,7 @@ function parseModule(filePath: string): ModuleFile | false {
 }
 
 function parseModuleName(filePath: string): string {
-  return filePath.replace(/^.*\/(.*)\/index\.ts$/, '$1')
+  return filePath.replace(/^.*\/src\/(.*?)\/\1.ts$/, '$1')
 }
 
 function parseModuleDocs(filePath: string, name: string): string {
@@ -43,8 +44,7 @@ function parseModuleDocs(filePath: string, name: string): string {
 
   // istanbul ignore next
   if (!fileContent.includes('/**')) {
-    console.log(`[FAIL] The module at path '${filePath}' has no JSDoc`)
-    return process.exit(1)
+    throw new Error(`The module at path '${filePath}' has no JSDoc`)
   }
 
   // Parse the initial comment as the documentation
@@ -60,8 +60,7 @@ function parseExamples(filePath: string, docs: string): Array<Example> {
 
   // istanbul ignore next
   if (!exampleMatch) {
-    console.log(`[FAIL] The module at path '${filePath}' has no examples`)
-    return process.exit(1)
+    throw new Error(`The module at path '${filePath}' has no examples`)
   }
 
   return exampleMatch[1].split('\n\n').map(parseExample)

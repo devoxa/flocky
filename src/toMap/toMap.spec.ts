@@ -1,4 +1,4 @@
-import { toMap } from './index'
+import { toMap } from './toMap'
 
 describe('toMap', () => {
   it('generates a map with no target', () => {

@@ -1,8 +1,8 @@
 import { Event, Suite } from 'benchmark'
 import fs from 'fs'
 import path from 'path'
-import { max } from './max'
-import { unique } from './unique'
+import { max } from './max/max'
+import { unique } from './unique/unique'
 
 interface BenchmarkSample {
   library: string

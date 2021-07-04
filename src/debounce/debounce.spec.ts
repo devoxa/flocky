@@ -1,5 +1,5 @@
-import { debounce } from '.'
-import { sleep } from '../sleep'
+import { debounce } from './debounce'
+import { sleep } from '../sleep/sleep'
 
 describe('debounce', () => {
   it('debounces the function call', async () => {

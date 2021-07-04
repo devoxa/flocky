@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "jest",
-    "benchmark": "run(){ ts-node src/$1/benchmark.ts; }; run",
+    "benchmark": "run(){ ts-node src/$1/$1.benchmark.ts; }; run",
     "format": "prettier --ignore-path='.gitignore' --list-different --write .",
     "format:check": "prettier --ignore-path='.gitignore' --check .",
     "lint": "eslint --ignore-path='.gitignore' '{src,tests}/**/*.ts'",

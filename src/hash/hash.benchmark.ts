@@ -1,5 +1,5 @@
 import Benchmark from '../benchmarkHelper'
-import { hash } from './index'
+import { hash } from './hash'
 
 function makeString(length: number): string {
   let text = ''

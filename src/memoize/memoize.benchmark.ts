@@ -1,7 +1,7 @@
 import lodash from 'lodash'
 import fastMemoize from 'fast-memoize'
 import Benchmark from '../benchmarkHelper'
-import { memoize } from './index'
+import { memoize } from './memoize'
 
 function monadicFunc(a: number) {
   return a + 1

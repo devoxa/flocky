@@ -1,4 +1,4 @@
-import { max } from './index'
+import { max } from './max'
 
 describe('max', () => {
   it('calculates the maximum of an array of numbers', () => {

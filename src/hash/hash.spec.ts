@@ -1,4 +1,4 @@
-import { hash } from './index'
+import { hash } from './hash'
 
 describe('hash', () => {
   it('consistently hashes the input', () => {

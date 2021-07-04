@@ -1,4 +1,4 @@
-import { clone } from './index'
+import { clone } from './clone'
 
 describe('clone', () => {
   it('clones primitive types', () => {

@@ -1,4 +1,4 @@
-import { compact } from './index'
+import { compact } from './compact'
 
 describe('compact', () => {
   it('compacts numeric arrays', () => {

@@ -1,4 +1,4 @@
-import { escapeRegExp } from './index'
+import { escapeRegExp } from './escapeRegExp'
 
 describe('escapeRegExp', () => {
   it('can escape the special characters in a string', () => {

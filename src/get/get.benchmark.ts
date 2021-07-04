@@ -1,6 +1,6 @@
 import lodash from 'lodash'
 import Benchmark from '../benchmarkHelper'
-import { get } from './index'
+import { get } from './get'
 
 const OBJECT = { foo: { bar: { herp: 123 } } }
 

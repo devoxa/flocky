@@ -1,4 +1,4 @@
-import { average } from './index'
+import { average } from './average'
 
 describe('average', () => {
   it('calculates the average of an array of numbers', () => {

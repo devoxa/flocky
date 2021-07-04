@@ -1,4 +1,4 @@
-import { min } from './index'
+import { min } from './min'
 
 describe('min', () => {
   it('calculates the minimum of an array of numbers', () => {

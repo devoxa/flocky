@@ -1,4 +1,4 @@
-import { duplicates } from './index'
+import { duplicates } from './duplicates'
 
 describe('duplicates', () => {
   it('filters the duplicate occurrences of an array of numbers', () => {

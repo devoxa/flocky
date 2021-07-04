@@ -1,4 +1,4 @@
-import { pick } from './index'
+import { pick } from './pick'
 
 describe('pick', () => {
   it('picks the specified keys of the object', () => {

@@ -1,4 +1,4 @@
-import { omit } from './index'
+import { omit } from './omit'
 
 describe('omit', () => {
   it('omits the specified keys of the object', () => {

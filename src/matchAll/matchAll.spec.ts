@@ -1,4 +1,4 @@
-import { matchAll } from './index'
+import { matchAll } from './matchAll'
 
 describe('matchAll', () => {
   it('matches all occurrences of the regular expression', () => {

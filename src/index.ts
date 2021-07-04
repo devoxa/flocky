@@ -8,6 +8,7 @@ import { escapeRegExp as _escapeRegExp } from './escapeRegExp'
 import { get as _get } from './get'
 import { hash as _hash } from './hash'
 import { identifier as _identifier } from './identifier'
+import { matchAll as _matchAll } from './matchAll'
 import { max as _max } from './max'
 import { memoize as _memoize } from './memoize'
 import { min as _min } from './min'
@@ -34,6 +35,7 @@ export const escapeRegExp = _escapeRegExp
 export const get = _get
 export const hash = _hash
 export const identifier = _identifier
+export const matchAll = _matchAll
 export const max = _max
 export const memoize = _memoize
 export const min = _min
@@ -61,6 +63,7 @@ export default {
   get: _get,
   hash: _hash,
   identifier: _identifier,
+  matchAll: _matchAll,
   max: _max,
   memoize: _memoize,
   min: _min,

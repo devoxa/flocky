@@ -284,6 +284,20 @@ flocky.identifier()
 
 <sup>[Source](./src/identifier/index.ts) • Minify: 270 B • Minify & GZIP: 197 B<sup>
 
+### matchAll(regExp, string)
+
+Find all matches of a regular expression in a string.
+
+```js
+flocky.matchAll(/f(o+)/g, 'foo bar baz foooo bar')
+// -> [
+// ->   { match: 'foo', subMatches: ['oo'], index: 0 },
+// ->   { match: 'foooo', subMatches: ['oooo'], index: 12 },
+// -> ]
+```
+
+<sup>[Source](./src/matchAll/index.ts) • Minify: 192 B • Minify & GZIP: 139 B<sup>
+
 ### max(array)
 
 Compute the maximum of the values in an array.

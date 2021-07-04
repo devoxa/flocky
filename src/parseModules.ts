@@ -72,7 +72,7 @@ function parseExample(example: string): Example {
   const code = example
     .split('\n')
     .filter((x) => !x.startsWith('// -> '))
-    .map((x) => x.replace('async ', ''))
+    .map((x) => x.replace('await ', ''))
     .join('\n')
 
   // Get the expected output (the parts with "// -> " at the start)

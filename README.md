@@ -258,7 +258,7 @@ const memoizedFuncWithTtl = flocky.memoize(func, { ttl: 30 * 1000 })
   performance and additional support for a TTL based cache.
 </details>
 
-<sup>[Source](./src/memoize/index.ts) • [Benchmark](./src/memoize/BENCHMARK.md) • Minify: 822 B • Minify & GZIP: 396 B<sup>
+<sup>[Source](./src/memoize/index.ts) • [Benchmark](./src/memoize/BENCHMARK.md) • Minify: 820 B • Minify & GZIP: 393 B<sup>
 
 ### min(array)
 

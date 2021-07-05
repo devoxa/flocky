@@ -297,6 +297,22 @@ flocky.pick(object, ['a', 'c'])
 
 <sup>[Source](./src/pick/pick.ts) • [Benchmark](./src/pick/BENCHMARK.md) • Minify: 97 B • Minify & GZIP: 93 B<sup>
 
+### promisePool(promiseFunctions, limit)
+
+Run multiple promise-returning functions in parallel with limited concurrency.
+
+```js
+await flocky.promisePool([
+  () => Promise.resolve(1),
+  () => Promise.resolve(2),
+  () => Promise.resolve(3),
+  () => Promise.resolve(4),
+], 2)
+// -> [1, 2, 3, 4]
+```
+
+<sup>[Source](./src/promisePool/promisePool.ts) • Minify: 182 B • Minify & GZIP: 142 B<sup>
+
 ### random(lower, upper, float?)
 
 Generate a random number between `lower` and `upper` (inclusive).

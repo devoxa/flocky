@@ -2,9 +2,9 @@
 
 [Source for this benchmark](./benchmark.ts)
 
-|            | flocky                        |
-| ---------- | ----------------------------- |
-| 1KB String | **109,262 ops/sec (100.00%)** |
-| 1MB String | **122 ops/sec (100.00%)**     |
+|     | flocky |
+| --- | --- |
+| 1KB String | **157,713 ops/sec (100.00%)** |
+| 1MB String | **177 ops/sec (100.00%)** |
 
-<sup>Generated at 2020-06-27 with Node.JS v14.4.0</sup>
+<sup>Generated at 2021-07-05 with Node.JS v16.4.1</sup>

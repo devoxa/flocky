@@ -32,33 +32,33 @@
  */
 
 // Return all keys of an object that have value types we can use as a map key
-type MapableKeys<T> = NonNullable<
+type MappableKeys<T> = NonNullable<
   {
     [K in keyof T]: T[K] extends string | number | undefined ? K : never
   }[keyof T]
 >
 
-export function toMap<Element extends Record<string, unknown>, Key extends MapableKeys<Element>>(
+export function toMap<Element extends Record<string, unknown>, Key extends MappableKeys<Element>>(
   array: Array<Element>,
   key: Key
 ): { [key: string]: Element | undefined }
 
 export function toMap<
   Element extends Record<string, unknown>,
-  Key extends MapableKeys<Element>,
+  Key extends MappableKeys<Element>,
   Target extends keyof Element
 >(array: Array<Element>, key: Key, target: Target): { [key: string]: Element[Target] | undefined }
 
 export function toMap<
   Element extends Record<string, unknown>,
-  Key extends MapableKeys<Element>,
+  Key extends MappableKeys<Element>,
   Target extends keyof Element
 >(
   array: Array<Element>,
   key: Key,
   target?: Target
 ): { [key: string]: Element | Element[Target] | undefined } {
-  const map: { [key: string]: Element | Element[Target] } = {}
+  const map: { [key: string]: Element | Element[Target] | undefined } = {}
 
   array.map((element) => {
     if (!element[key]) return

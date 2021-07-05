@@ -1,7 +1,7 @@
 /**
  * ### randomString(length)
  *
- * Generate a random alphanumeric string with length `length`.
+ * Generate a random alphanumeric string with `length` characters.
  *
  * ```js
  * flocky.randomString(5)

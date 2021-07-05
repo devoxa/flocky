@@ -7,7 +7,7 @@ describe('hash', () => {
     expect(hash('Never gonna give you up')).toEqual('x1bvo9jc')
   })
 
-  it('can hash any input', () => {
+  it('can hash any input type', () => {
     expect(hash('string')).toEqual('xcmbrgs')
     expect(hash(7)).toEqual('x1fq1y7a')
     expect(hash(true)).toEqual('x1rowxc0')

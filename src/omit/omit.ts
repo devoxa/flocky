@@ -10,22 +10,22 @@
  * ```
  */
 
-type Omit<T, U> = Pick<T, Exclude<keyof T, U>>
+type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
 
-export function omit<T extends Record<string, unknown>, U extends keyof T>(
+export function omit<T extends Record<string, unknown>, K extends keyof T>(
   object: T,
-  keys: Array<U>
-): Omit<T, U> {
+  keys: Array<K>
+): Omit<T, K> {
   const objectKeys = Object.keys(object) as Array<keyof T>
 
   const result: Partial<T> = {}
   for (let i = 0; i !== objectKeys.length; i++) {
-    const objectKey = objectKeys[i] as U
+    const objectKey = objectKeys[i] as K
 
-    if (!keys.includes(objectKey)) {
+    if (keys.indexOf(objectKey) === -1) {
       result[objectKey] = object[objectKey]
     }
   }
 
-  return result as Omit<T, U>
+  return result as Omit<T, K>
 }

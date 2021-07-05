@@ -3,7 +3,7 @@ import { TAnyFunction } from '../typeHelpers'
 /**
  * ### debounce(func, wait)
  *
- * Creates a debounced function that delays invoking `func` until `wait` milliseconds
+ * Create a debounced function that delays invoking `func` until `wait` milliseconds
  * have elapsed since the last time the debounced function was invoked.
  *
  * ```js

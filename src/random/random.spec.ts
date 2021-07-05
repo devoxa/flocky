@@ -27,6 +27,7 @@ describe('random (fuzzing)', () => {
     for (let i = 0; i !== ITERATIONS; i++) {
       const number = random(2, 10)
       expect(number >= 2 && number <= 10).toBeTruthy()
+      expect(number % 1 === 0).toBeTruthy()
     }
   })
 

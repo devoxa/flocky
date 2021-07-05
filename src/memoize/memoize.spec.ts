@@ -220,8 +220,6 @@ describe('memoize', () => {
     expect(b).toBeInstanceOf(Promise)
     expect(calls).toEqual(1)
 
-    await sleep(20)
-
     expect(await a).toEqual('A')
     expect(await b).toEqual('A')
     expect(calls).toEqual(1)

@@ -20,7 +20,7 @@ async function run() {
       const subText: Array<string> = []
 
       // Link to the source
-      subText.push(`[Source](./src/${module.name}/index.ts)`)
+      subText.push(`[Source](./src/${module.name}/${module.name}.ts)`)
 
       // Link to the benchmark
       const benchmarkPath = path.join(__dirname, `./${module.name}/BENCHMARK.md`)
@@ -49,8 +49,6 @@ async function run() {
 
   fs.writeFileSync('./README.md', README, 'utf-8')
 }
-
-// ----------------------------------------------------------------------------
 
 async function calculateModuleSizes(name: string) {
   const content = fs.readFileSync(path.join(__dirname, `../dist/esm/${name}/${name}.js`), 'utf-8')

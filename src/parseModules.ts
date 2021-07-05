@@ -30,7 +30,7 @@ function getModulePaths() {
 function parseModule(filePath: string): ModuleFile | false {
   const name = parseModuleName(filePath)
   const docs = parseModuleDocs(filePath)
-  const examples = parseExamples(filePath, docs)
+  const examples = parseModuleExamples(filePath, docs)
 
   return { filePath, name, docs, examples }
 }
@@ -47,7 +47,7 @@ function parseModuleDocs(filePath: string): string {
     throw new Error(`The module at path '${filePath}' has no JSDoc`)
   }
 
-  // Parse the initial comment as the documentation
+  // Parse the initial JSDoc comment as the documentation
   return fileContent
     .split('\n')
     .filter((line) => line.startsWith(' *'))
@@ -55,7 +55,7 @@ function parseModuleDocs(filePath: string): string {
     .join('\n')
 }
 
-function parseExamples(filePath: string, docs: string): Array<Example> {
+function parseModuleExamples(filePath: string, docs: string): Array<Example> {
   const exampleMatch = docs.match(EXAMPLE_REGEX)
 
   // istanbul ignore next
@@ -63,10 +63,10 @@ function parseExamples(filePath: string, docs: string): Array<Example> {
     throw new Error(`The module at path '${filePath}' has no examples`)
   }
 
-  return exampleMatch[1].split('\n\n').map(parseExample)
+  return exampleMatch[1].split('\n\n').map(parseModuleExample)
 }
 
-function parseExample(example: string): Example {
+function parseModuleExample(example: string): Example {
   // Get the code (the parts without "// -> " at the start)
   const code = example
     .split('\n')

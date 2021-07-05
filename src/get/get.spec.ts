@@ -23,7 +23,7 @@ describe('get', () => {
     expect(object).toEqual({ foo: { bar: { herp: 123 } } })
   })
 
-  it('should return `undefined` if part of an path of an object is falsy', () => {
+  it('should return `undefined` if part of an path of an object is undefined', () => {
     const object = { foo: null }
     expect(get(object, 'foo')).toEqual(null)
     expect(get(object, 'foo.bar')).toEqual(undefined)

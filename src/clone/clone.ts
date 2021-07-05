@@ -1,3 +1,5 @@
+import { JSONValue } from '../typeHelpers'
+
 /**
  * ### clone(value)
  *
@@ -11,10 +13,6 @@
  * // -> false
  * ```
  */
-
-type JSONValue = string | number | boolean | null | undefined | JSONObject | JSONArray
-type JSONObject = { [key: string]: JSONValue }
-type JSONArray = Array<JSONValue>
 
 export function clone<T extends JSONValue>(value: T): T {
   return JSON.parse(JSON.stringify(value))

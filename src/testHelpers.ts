@@ -34,3 +34,8 @@ export const dateNow = {
     Date.now = globalDateNow
   },
 }
+
+export function expectApproximateDuration(start: Date, end: Date, duration: number) {
+  expect(end.getTime() - start.getTime()).toBeGreaterThan(duration - 5)
+  expect(end.getTime() - start.getTime()).toBeLessThan(duration + 5)
+}

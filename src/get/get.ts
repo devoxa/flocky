@@ -24,8 +24,8 @@
  * ```
  */
 
-const REPLACE_EMPTY = /]|^\[/g
-const REPLACE_DOT = /\.?\[/g
+const REPLACE_EMPTY_REGEX = /]|^\[/g
+const REPLACE_DOT_REGEX = /\.?\[/g
 
 export function get(
   object: Record<string, unknown> | Array<unknown> | null | undefined,
@@ -46,7 +46,7 @@ export function get(
 }
 
 function parsePath(path: string): Array<string> {
-  return path.replace(REPLACE_EMPTY, '').replace(REPLACE_DOT, '.').split('.')
+  return path.replace(REPLACE_EMPTY_REGEX, '').replace(REPLACE_DOT_REGEX, '.').split('.')
 }
 
 function getWithArrayPath(

@@ -16,9 +16,9 @@ export function pick<T extends Record<string, unknown>, U extends keyof T>(
 ): Pick<T, U> {
   const result: Partial<T> = {}
 
-  keys.forEach((key) => {
-    result[key] = object[key]
-  })
+  for (let i = 0; i !== keys.length; i++) {
+    result[keys[i]] = object[keys[i]]
+  }
 
   return result as Pick<T, U>
 }

@@ -1,3 +1,5 @@
+import { JSONValue } from '../typeHelpers'
+
 /**
  * ### hash(data)
  *
@@ -26,10 +28,6 @@
  *   - https://github.com/whitequark/murmurhash3-js/blob/master/murmurhash3.js
  * </details>
  */
-
-type JSONValue = string | number | boolean | null | undefined | JSONObject | JSONArray
-type JSONObject = { [key: string]: JSONValue }
-type JSONArray = Array<JSONValue>
 
 export function hash(data: JSONValue): string {
   // Convert any data into a string

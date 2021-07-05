@@ -3,19 +3,21 @@ import { TAnyFunction } from '../typeHelpers'
 /**
  * ### memoize(func, options?)
  *
- * Creates a function that memoizes the result of `func`.
+ * Create a function that memoizes the return value of `func`.
  *
  * ```js
  * const func = (a, b) => a + b
  * const memoizedFunc = flocky.memoize(func)
  * const memoizedFuncWithTtl = flocky.memoize(func, { ttl: 30 * 1000 })
+ * memoizedFunc(1, 2)
+ * // -> 3
  * ```
  *
  * <details>
  *   <summary>Implementation Details</summary>
  *
- *   This method's implementation is based on [fast-memoize](https://github.com/caiogondim/fast-memoize.js), with some improvements for variadic
- *   performance and additional support for a TTL based cache.
+ *   This method's implementation is based on [fast-memoize](https://github.com/caiogondim/fast-memoize.js),
+ *   with some improvements for variadic performance and additional support for a TTL based cache.
  * </details>
  */
 
@@ -58,13 +60,13 @@ function monadic<TThis, TReturn, TFunc extends TAnyFunction<TReturn>>(
 ) {
   const cacheKey = isPrimitive(arg) ? arg : serializer(arg)
 
-  let computedValue = cache.get(cacheKey)
-  if (typeof computedValue === 'undefined') {
-    computedValue = func.call(this, arg)
-    cache.set(cacheKey, computedValue)
+  let value = cache.get(cacheKey)
+  if (typeof value === 'undefined') {
+    value = func.call(this, arg)
+    cache.set(cacheKey, value)
   }
 
-  return computedValue
+  return value
 }
 
 function variadic<TThis, TReturn, TFunc extends TAnyFunction<TReturn>>(
@@ -76,13 +78,13 @@ function variadic<TThis, TReturn, TFunc extends TAnyFunction<TReturn>>(
 ) {
   const cacheKey = serializer(args)
 
-  let computedValue = cache.get(cacheKey)
-  if (typeof computedValue === 'undefined') {
-    computedValue = func.apply(this, args)
-    cache.set(cacheKey, computedValue)
+  let value = cache.get(cacheKey)
+  if (typeof value === 'undefined') {
+    value = func.apply(this, args)
+    cache.set(cacheKey, value)
   }
 
-  return computedValue
+  return value
 }
 
 function defaultSerializer(data: unknown) {
@@ -111,10 +113,10 @@ function ttlCache<TReturn>(ttl: number): MemoizeCache<TReturn> {
   return {
     get: (key) => cache[key],
     set: (key, value) => {
+      cache[key] = value
+
       // Note: We do not need to clear the timeout because we never set a key
       // if it still exists in the cache.
-
-      cache[key] = value
       setTimeout(() => {
         delete cache[key]
       }, ttl)

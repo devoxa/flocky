@@ -1,7 +1,7 @@
 /**
  * ### escapeRegExp(string)
  *
- * Escapes special characters in a string for use in a regular expression.
+ * Escape special characters in a string for use in a regular expression.
  *
  * ```js
  * flocky.escapeRegExp('Hey. (1 + 1 = 2)')

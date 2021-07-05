@@ -40,7 +40,9 @@ benchmark.add({
   func: () => flockyMonadicPrimitiveFunc(1),
 })
 
-const lodashMonadicSerializedFunc = lodash.memoize(monadicSerializedFunc)
+const lodashMonadicSerializedFunc = lodash.memoize(monadicSerializedFunc, (...args) =>
+  JSON.stringify(args)
+)
 benchmark.add({
   library: 'lodash',
   input: 'monadic (serialized)',

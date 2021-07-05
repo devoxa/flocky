@@ -27,7 +27,7 @@ describe('documentation examples', () => {
     const { name, examples } = module
 
     describe(name, () => {
-      examples.forEach((example, index: number) => {
+      examples.forEach((example, index) => {
         it(`Example #${index + 1}`, async () => {
           const actual = await eval(example.code)
           expect(actual).toEqual(example.expected)

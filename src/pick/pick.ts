@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-types */
+
 /**
  * ### pick(object, keys)
  *
@@ -10,10 +12,7 @@
  * ```
  */
 
-export function pick<T extends Record<string, unknown>, U extends keyof T>(
-  object: T,
-  keys: Array<U>
-): Pick<T, U> {
+export function pick<T extends object, U extends keyof T>(object: T, keys: Array<U>): Pick<T, U> {
   const result: Partial<T> = {}
 
   for (let i = 0; i !== keys.length; i++) {

@@ -8,4 +8,17 @@ describe('pick', () => {
     expect(original).toEqual({ a: 1, b: 2, c: 3, d: 4, e: 5 })
     expect(picked).toEqual({ a: 1, b: 2, d: 4 })
   })
+
+  it('has the correct type behavior', () => {
+    interface StackProps {
+      children: string
+      gap: string
+    }
+
+    function pickFromProps(props: StackProps) {
+      return pick(props, ['gap'])
+    }
+
+    expect(pickFromProps({ children: 'foo', gap: 'bar' })).toEqual({ gap: 'bar' })
+  })
 })

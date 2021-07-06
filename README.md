@@ -52,7 +52,7 @@ yarn add @devoxa/flocky
 ## Usage
 
 ```ts
-import { sum } from 'flocky'
+import { sum } from '@devoxa/flocky'
 sum([1, 2, 3])
 // -> 6
 ```

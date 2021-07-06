@@ -36,6 +36,8 @@ export const dateNow = {
 }
 
 export function expectApproximateDuration(start: Date, end: Date, duration: number) {
-  expect(end.getTime() - start.getTime()).toBeGreaterThan(duration - 5)
-  expect(end.getTime() - start.getTime()).toBeLessThan(duration + 5)
+  const BUFFER = 10
+
+  expect(end.getTime() - start.getTime()).toBeGreaterThan(duration - BUFFER)
+  expect(end.getTime() - start.getTime()).toBeLessThan(duration + BUFFER)
 }

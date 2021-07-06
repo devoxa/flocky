@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-types */
+
 /**
  * ### toMap(array, key, target?)
  *
@@ -38,19 +40,19 @@ type MappableKeys<T> = NonNullable<
   }[keyof T]
 >
 
-export function toMap<Element extends Record<string, unknown>, Key extends MappableKeys<Element>>(
+export function toMap<Element extends object, Key extends MappableKeys<Element>>(
   array: Array<Element>,
   key: Key
 ): { [key: string]: Element | undefined }
 
 export function toMap<
-  Element extends Record<string, unknown>,
+  Element extends object,
   Key extends MappableKeys<Element>,
   Target extends keyof Element
 >(array: Array<Element>, key: Key, target: Target): { [key: string]: Element[Target] | undefined }
 
 export function toMap<
-  Element extends Record<string, unknown>,
+  Element extends object,
   Key extends MappableKeys<Element>,
   Target extends keyof Element
 >(

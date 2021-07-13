@@ -37,7 +37,7 @@
     "benchmark": "2.1.4",
     "eslint": "7.30.0",
     "fast-memoize": "2.5.2",
-    "filesize": "6.4.0",
+    "filesize": "7.0.0",
     "glob": "7.1.7",
     "jest": "27.0.6",
     "lodash": "4.17.21",

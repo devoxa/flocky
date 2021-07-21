@@ -43,7 +43,7 @@
     "lodash": "4.17.21",
     "pako": "2.0.3",
     "prettier": "2.3.2",
-    "rollup": "2.53.2",
+    "rollup": "2.53.3",
     "rollup-plugin-typescript2": "0.30.0",
     "terser": "5.7.1",
     "ts-jest": "27.0.3",

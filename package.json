@@ -35,7 +35,7 @@
     "@types/node": "16.0.0",
     "@types/pako": "1.0.2",
     "benchmark": "2.1.4",
-    "eslint": "7.31.0",
+    "eslint": "7.32.0",
     "fast-memoize": "2.5.2",
     "filesize": "7.0.0",
     "glob": "7.1.7",

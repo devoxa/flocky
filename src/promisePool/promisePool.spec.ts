@@ -37,7 +37,7 @@ describe('promisePool', () => {
 
   it('errors when the first promise function errors', async () => {
     const ERRORING_PROMISE_FUNCTIONS = Object.assign([], PROMISE_FUNCTIONS, {
-      5: () => Promise.reject('Something went wrong.'),
+      5: () => Promise.reject(new Error('Something went wrong.')),
     })
 
     const start = new Date()
@@ -49,7 +49,7 @@ describe('promisePool', () => {
     }
     const end = new Date()
 
-    expect(error).toEqual('Something went wrong.')
+    expect(error.message).toEqual('Something went wrong.')
     expectApproximateDuration(start, end, 2 * 20)
   })
 })

@@ -313,6 +313,21 @@ await flocky.promisePool([
 
 <sup>[Source](./src/promisePool/promisePool.ts) • Minify: 182 B • Minify & GZIP: 142 B<sup>
 
+### promiseTimeout(promise, timeoutMs)
+
+Reject a promise if it does not resolve within `timeoutMs`.
+
+:warning: **When the timeout is hit, a promise rejection will be thrown. However,
+since promises are not cancellable, the execution of the promise itself will continue
+until it resolves or rejects.**
+
+```js
+await flocky.promiseTimeout(Promise.resolve(1), 10)
+// -> 1
+```
+
+<sup>[Source](./src/promiseTimeout/promiseTimeout.ts) • Minify: 305 B • Minify & GZIP: 181 B<sup>
+
 ### random(lower, upper, float?)
 
 Generate a random number between `lower` and `upper` (inclusive).

@@ -3,6 +3,10 @@
  *
  * Reject a promise if it does not resolve within `timeoutMs`.
  *
+ * :warning: **When the timeout is hit, a promise rejection will be thrown. However,
+ * since promises are not cancellable, the execution of the promise itself will continue
+ * until it resolves or rejects.**
+ *
  * ```js
  * await flocky.promiseTimeout(Promise.resolve(1), 10)
  * // -> 1

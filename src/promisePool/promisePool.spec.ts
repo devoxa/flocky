@@ -3,7 +3,7 @@ import { expectApproximateDuration } from '../testHelpers'
 import { promisePool } from './promisePool'
 
 const PROMISE_FUNCTIONS = new Array(9).fill('').map((_, i) => async () => {
-  await sleep(20)
+  await sleep(100)
   return i
 })
 
@@ -14,7 +14,7 @@ describe('promisePool', () => {
     const end = new Date()
 
     expect(result).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8])
-    expectApproximateDuration(start, end, 20)
+    expectApproximateDuration(start, end, 100)
   })
 
   it('runs the promise functions in parallel with a limit', async () => {
@@ -23,7 +23,7 @@ describe('promisePool', () => {
     const end = new Date()
 
     expect(result).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8])
-    expectApproximateDuration(start, end, 3 * 20)
+    expectApproximateDuration(start, end, 3 * 100)
   })
 
   it('runs the promise functions in series', async () => {
@@ -32,7 +32,7 @@ describe('promisePool', () => {
     const end = new Date()
 
     expect(result).toEqual([0, 1, 2, 3, 4, 5, 6, 7, 8])
-    expectApproximateDuration(start, end, 9 * 20)
+    expectApproximateDuration(start, end, 9 * 100)
   })
 
   it('errors when the first promise function errors', async () => {
@@ -50,6 +50,6 @@ describe('promisePool', () => {
     const end = new Date()
 
     expect(error.message).toEqual('Something went wrong.')
-    expectApproximateDuration(start, end, 2 * 20)
+    expectApproximateDuration(start, end, 2 * 100)
   })
 })

@@ -1,5 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
 
+type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
+
 /**
  * ### omit(object, keys)
  *
@@ -11,8 +13,6 @@
  * // -> { b: 2, c: 3 }
  * ```
  */
-
-type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
 
 export function omit<T extends object, K extends keyof T>(object: T, keys: Array<K>): Omit<T, K> {
   const objectKeys = Object.keys(object) as Array<keyof T>

@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
+const REPLACE_EMPTY_REGEX = /]|^\[/g
+const REPLACE_DOT_REGEX = /\.?\[/g
+
 /**
  * ### get(object, path, defaultValue?)
  *
@@ -24,9 +27,6 @@
  * // -> 'default'
  * ```
  */
-
-const REPLACE_EMPTY_REGEX = /]|^\[/g
-const REPLACE_DOT_REGEX = /\.?\[/g
 
 export function get(
   object: object | null | undefined,

@@ -1,3 +1,5 @@
+type PromiseFunction<T> = () => Promise<T>
+
 /**
  * ### promisePool(promiseFunctions, limit)
  *
@@ -13,8 +15,6 @@
  * // -> [1, 2, 3, 4]
  * ```
  */
-
-type PromiseFunction<T> = () => Promise<T>
 
 export async function promisePool<T>(
   promiseFunctions: Array<PromiseFunction<T>>,

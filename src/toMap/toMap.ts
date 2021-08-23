@@ -1,5 +1,12 @@
 /* eslint-disable @typescript-eslint/ban-types */
 
+// Return all keys of an object that have value types we can use as a map key
+type MappableKeys<T> = NonNullable<
+  {
+    [K in keyof T]: T[K] extends string | number | undefined ? K : never
+  }[keyof T]
+>
+
 /**
  * ### toMap(array, key, target?)
  *
@@ -32,13 +39,6 @@
  * // -> { Stanley: 64, Juliet: 57, Alex: 19 }
  * ```
  */
-
-// Return all keys of an object that have value types we can use as a map key
-type MappableKeys<T> = NonNullable<
-  {
-    [K in keyof T]: T[K] extends string | number | undefined ? K : never
-  }[keyof T]
->
 
 export function toMap<Element extends object, Key extends MappableKeys<Element>>(
   array: Array<Element>,

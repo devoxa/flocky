@@ -1,5 +1,15 @@
 import { TAnyFunction } from '../typeHelpers'
 
+interface MemoizeOptions {
+  strategy?: MemoizeStrategy
+  serializer?: MemoizeSerializer
+  ttl?: number
+}
+
+type MemoizeStrategy = 'monadic' | 'variadic'
+
+type MemoizeSerializer = (data: unknown) => string
+
 /**
  * ### memoize(func, options?)
  *
@@ -20,16 +30,6 @@ import { TAnyFunction } from '../typeHelpers'
  *   with some improvements for variadic performance and additional support for a TTL based cache.
  * </details>
  */
-
-interface MemoizeOptions {
-  strategy?: MemoizeStrategy
-  serializer?: MemoizeSerializer
-  ttl?: number
-}
-
-type MemoizeStrategy = 'monadic' | 'variadic'
-
-type MemoizeSerializer = (data: unknown) => string
 
 export function memoize<TThis, TReturn, TFunc extends TAnyFunction<TReturn>>(
   this: TThis,

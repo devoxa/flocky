@@ -1,3 +1,5 @@
+const CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+
 /**
  * ### randomString(length)
  *
@@ -8,8 +10,6 @@
  * // -> 'tfl0g'
  * ```
  */
-
-const CHARACTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 
 export function randomString(length: number): string {
   let string = ''

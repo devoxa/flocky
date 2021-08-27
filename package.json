@@ -39,7 +39,7 @@
     "fast-memoize": "2.5.2",
     "filesize": "8.0.0",
     "glob": "7.1.7",
-    "jest": "27.0.6",
+    "jest": "27.1.0",
     "lodash": "4.17.21",
     "pako": "2.0.4",
     "prettier": "2.3.2",

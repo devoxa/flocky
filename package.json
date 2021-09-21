@@ -28,7 +28,7 @@
     "@devoxa/prettier-config": "1.0.1",
     "@types/benchmark": "2.1.1",
     "@types/glob": "7.1.4",
-    "@types/jest": "27.0.1",
+    "@types/jest": "27.0.2",
     "@types/lodash": "4.14.173",
     "@types/node": "16.0.0",
     "@types/pako": "1.0.2",

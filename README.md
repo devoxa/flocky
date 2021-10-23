@@ -357,6 +357,23 @@ flocky.randomString(5)
 
 <sup>[Source](./src/randomString/randomString.ts) • Minify: 245 B • Minify & GZIP: 207 B<sup>
 
+### range(start, end, step?)
+
+Generate an array of numbers progressing from `start` up to and including `end`.
+
+```js
+flocky.range(0, 5)
+// -> [0, 1, 2, 3, 4, 5]
+
+flocky.range(-5, -10)
+// -> [-5, -6, -7, -8, -9, -10]
+
+flocky.range(-6, -12, 2)
+// -> [-6, -8, -10, -12]
+```
+
+<sup>[Source](./src/range/range.ts) • Minify: 131 B • Minify & GZIP: 111 B<sup>
+
 ### roundTo(number, precision)
 
 Round a floating point number to `precision` decimal places.

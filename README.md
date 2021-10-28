@@ -119,7 +119,7 @@ const func = () => console.log('Heavy processing happening')
 const debouncedFunc = flocky.debounce(func, 250)
 ```
 
-<sup>[Source](./src/debounce/debounce.ts) • Minify: 138 B • Minify & GZIP: 117 B<sup>
+<sup>[Source](./src/debounce/debounce.ts) • Minify: 131 B • Minify & GZIP: 113 B<sup>
 
 ### duplicates(array, identity?)
 

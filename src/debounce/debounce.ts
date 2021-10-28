@@ -13,10 +13,10 @@ import { TAnyFunction } from '../typeHelpers'
  */
 
 export function debounce<TFunc extends TAnyFunction<void>>(func: TFunc, wait: number) {
-  let timeoutID: number | null = null
+  let timeoutID: NodeJS.Timeout | null = null
 
   return function (this: unknown, ...args: unknown[]) {
     timeoutID && clearTimeout(timeoutID)
-    timeoutID = window.setTimeout(() => func.apply(this, args), wait)
+    timeoutID = setTimeout(() => func.apply(this, args), wait)
   } as (...args: Parameters<TFunc>) => void
 }

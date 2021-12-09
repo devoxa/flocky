@@ -8,7 +8,7 @@ import { parseModules } from './parseModules'
 const START_TOKEN = '<!-- START GENERATED FROM FILES -->'
 const END_TOKEN = '<!-- END GENERATED FROM FILES -->'
 
-run()
+run().catch((err) => console.error(err))
 
 async function run() {
   // Parse the module documentations

@@ -40,6 +40,7 @@
     "filesize": "8.0.7",
     "glob": "8.0.1",
     "jest": "28.0.3",
+    "jest-environment-jsdom": "28.0.2",
     "lodash": "4.17.21",
     "pako": "2.0.4",
     "prettier": "2.6.2",

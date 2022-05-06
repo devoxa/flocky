@@ -34,7 +34,7 @@
     "@types/pako": "1.0.3",
     "benchmark": "2.1.4",
     "esbuild": "0.14.38",
-    "eslint": "8.14.0",
+    "eslint": "8.15.0",
     "fast-glob": "3.2.11",
     "fast-memoize": "2.5.2",
     "filesize": "8.0.7",

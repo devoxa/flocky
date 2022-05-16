@@ -38,7 +38,7 @@
     "fast-glob": "3.2.11",
     "fast-memoize": "2.5.2",
     "filesize": "8.0.7",
-    "glob": "8.0.1",
+    "glob": "8.0.3",
     "jest": "28.1.0",
     "jest-environment-jsdom": "28.1.0",
     "lodash": "4.17.21",

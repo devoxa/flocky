@@ -44,7 +44,7 @@
     "lodash": "4.17.21",
     "pako": "2.0.4",
     "prettier": "2.6.2",
-    "terser": "5.13.1",
+    "terser": "5.14.0",
     "ts-jest": "28.0.3",
     "ts-node": "10.8.0",
     "typescript": "4.7.2"

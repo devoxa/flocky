@@ -37,7 +37,7 @@
     "eslint": "8.17.0",
     "fast-glob": "3.2.11",
     "fast-memoize": "2.5.2",
-    "filesize": "9.0.1",
+    "filesize": "9.0.2",
     "glob": "8.0.3",
     "jest": "28.1.1",
     "jest-environment-jsdom": "28.1.1",

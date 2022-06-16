@@ -43,7 +43,7 @@
     "jest-environment-jsdom": "28.1.1",
     "lodash": "4.17.21",
     "pako": "2.0.4",
-    "prettier": "2.7.0",
+    "prettier": "2.7.1",
     "terser": "5.14.1",
     "ts-jest": "28.0.5",
     "ts-node": "10.8.1",

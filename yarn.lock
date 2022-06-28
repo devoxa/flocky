@@ -2128,10 +2128,10 @@ file-entry-cache@^6.0.1:
   dependencies:
     flat-cache "^3.0.4"
 
-filesize@9.0.9:
-  version "9.0.9"
-  resolved "https://registry.yarnpkg.com/filesize/-/filesize-9.0.9.tgz#f2e487c85280d3a2fa800d404c23cd454291c5d4"
-  integrity sha512-1p0ZaDrILQ9fmkDnxITzF9O+EjnsEsr+aNEC45DL+3dxO2g5ypmhf9+b2i1hg264F+glTLQBM4bK/sadk8KVrA==
+filesize@9.0.11:
+  version "9.0.11"
+  resolved "https://registry.yarnpkg.com/filesize/-/filesize-9.0.11.tgz#4ac3a42c084232dd9b2a1da0107f32d42fcfa5e4"
+  integrity sha512-gTAiTtI0STpKa5xesyTA9hA3LX4ga8sm2nWRcffEa1L/5vQwb4mj2MdzMkoHoGv4QzfDshQZuYscQSf8c4TKOA==
 
 fill-range@^7.0.1:
   version "7.0.1"

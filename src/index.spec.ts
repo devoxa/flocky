@@ -9,6 +9,10 @@ describe('index file', () => {
   it('exports the modules', () => {
     expect(Object.keys(flocky).length).toBeGreaterThanOrEqual(5)
   })
+
+  it('exports custom errors', () => {
+    expect(new _flocky.PromiseTimeoutError()).toBeInstanceOf(Error)
+  })
 })
 
 describe('documentation examples', () => {

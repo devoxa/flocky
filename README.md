@@ -285,6 +285,17 @@ flocky.omit(object, ['a'])
 
 <sup>[Source](./src/omit/omit.ts) • [Benchmark](./src/omit/BENCHMARK.md) • Minify: 143 B • Minify & GZIP: 129 B<sup>
 
+### percentile(array, k)
+
+Compute the kth percentile of the values in an array.
+
+```js
+flocky.percentile([90, 85, 65, 72, 82, 96, 70, 79, 68, 84], 0.9)
+// -> 90.6
+```
+
+<sup>[Source](./src/percentile/percentile.ts) • Minify: 217 B • Minify & GZIP: 156 B<sup>
+
 ### pick(object, keys)
 
 Create an object composed of the specified `keys`.

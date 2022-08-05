@@ -22,6 +22,6 @@ export function percentile(array: Array<number>, k: number): number {
     return values[baseIndex]
   }
 
-  const rest = position - baseIndex
-  return values[baseIndex] + (values[baseIndex + 1] - values[baseIndex]) * rest
+  const restPosition = position - baseIndex
+  return values[baseIndex] + (values[baseIndex + 1] - values[baseIndex]) * restPosition
 }

@@ -29,7 +29,7 @@
     "@types/benchmark": "2.1.1",
     "@types/glob": "7.2.0",
     "@types/jest": "28.1.7",
-    "@types/lodash": "4.14.183",
+    "@types/lodash": "4.14.184",
     "@types/node": "16.11.49",
     "@types/pako": "2.0.0",
     "benchmark": "2.1.4",

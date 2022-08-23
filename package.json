@@ -30,7 +30,7 @@
     "@types/glob": "7.2.0",
     "@types/jest": "28.1.7",
     "@types/lodash": "4.14.184",
-    "@types/node": "16.11.52",
+    "@types/node": "16.11.53",
     "@types/pako": "2.0.0",
     "benchmark": "2.1.4",
     "esbuild": "0.15.5",

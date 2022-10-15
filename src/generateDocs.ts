@@ -1,4 +1,4 @@
-import fileSize from 'filesize'
+import { filesize as fileSize } from 'filesize'
 import fs from 'fs'
 import pako from 'pako'
 import path from 'path'

@@ -33,7 +33,7 @@
     "@types/node": "18.11.18",
     "@types/pako": "2.0.0",
     "benchmark": "2.1.4",
-    "esbuild": "0.16.16",
+    "esbuild": "0.16.17",
     "eslint": "8.31.0",
     "fast-glob": "3.2.12",
     "fast-memoize": "2.5.2",

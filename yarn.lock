@@ -532,10 +532,12 @@
     eslint-config-prettier "8.6.0"
     eslint-plugin-react "7.32.0"
 
-"@devoxa/prettier-config@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@devoxa/prettier-config/-/prettier-config-1.0.2.tgz#0ccde044ec67d5702655f3eac5de2aae7d9005d6"
-  integrity sha512-dAGMCT9uZgcsxfAVVVPf7dQ8ftJUSAfih/Vupy8srSjm6vop4ItImUUch2zFekjKQ97CkxxcYizo21gVb1+U3w==
+"@devoxa/prettier-config@2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@devoxa/prettier-config/-/prettier-config-2.0.1.tgz#902d9d73570033bf6c714946d49aa9a25af0ab33"
+  integrity sha512-OXjVzQcCiBMP7qZLre7OVZPg79CTjLeu3X1KUyHn4kHZ/YHGeYbS+GO6DSk8CkQE0Ncsj6j2Xg1unZd/LnB7VQ==
+  dependencies:
+    prettier-plugin-organize-imports "3.2.2"
 
 "@esbuild/android-arm64@0.17.0":
   version "0.17.0"
@@ -3875,6 +3877,11 @@ prelude-ls@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.1.2.tgz#21932a549f5e52ffd9a827f570e04be62a97da54"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
+
+prettier-plugin-organize-imports@3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-organize-imports/-/prettier-plugin-organize-imports-3.2.2.tgz#91993365e017daa5d0d28d8183179834224d8dd1"
+  integrity sha512-e97lE6odGSiHonHJMTYC0q0iLXQyw0u5z/PJpvP/3vRy6/Zi9kLBwFAbEGjDzIowpjQv8b+J04PDamoUSQbzGA==
 
 prettier@2.8.3:
   version "2.8.3"

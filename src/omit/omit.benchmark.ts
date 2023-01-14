@@ -1,6 +1,6 @@
 import { Benchmark } from '../benchmarkHelper'
-import { omit } from './omit'
 import { randomString } from '../randomString/randomString'
+import { omit } from './omit'
 
 const benchmark = new Benchmark('omit')
 

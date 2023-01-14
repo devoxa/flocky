@@ -1,5 +1,5 @@
-import lodash from 'lodash'
 import fastMemoize from 'fast-memoize'
+import lodash from 'lodash'
 import { Benchmark } from '../benchmarkHelper'
 import { memoize } from './memoize'
 

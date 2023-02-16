@@ -24,7 +24,7 @@
   },
   "prettier": "@devoxa/prettier-config",
   "devDependencies": {
-    "@devoxa/eslint-config": "3.0.8",
+    "@devoxa/eslint-config": "3.0.9",
     "@devoxa/prettier-config": "2.0.1",
     "@types/benchmark": "2.1.2",
     "@types/glob": "8.0.1",

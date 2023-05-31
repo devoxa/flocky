@@ -27,7 +27,7 @@
     "@devoxa/eslint-config": "3.0.10",
     "@devoxa/prettier-config": "2.0.1",
     "@types/benchmark": "2.1.2",
-    "@types/jest": "29.5.1",
+    "@types/jest": "29.5.2",
     "@types/lodash": "4.14.195",
     "@types/node": "18.16.16",
     "@types/pako": "2.0.0",

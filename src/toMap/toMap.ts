@@ -48,13 +48,13 @@ export function toMap<Element extends object, Key extends MappableKeys<Element>>
 export function toMap<
   Element extends object,
   Key extends MappableKeys<Element>,
-  Target extends keyof Element
+  Target extends keyof Element,
 >(array: Array<Element>, key: Key, target: Target): { [key: string]: Element[Target] | undefined }
 
 export function toMap<
   Element extends object,
   Key extends MappableKeys<Element>,
-  Target extends keyof Element
+  Target extends keyof Element,
 >(
   array: Array<Element>,
   key: Key,

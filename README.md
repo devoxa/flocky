@@ -366,7 +366,7 @@ flocky.randomString(5)
 // -> 'tfl0g'
 ```
 
-<sup>[Source](./src/randomString/randomString.ts) • Minify: 245 B • Minify & GZIP: 207 B<sup>
+<sup>[Source](./src/randomString/randomString.ts) • Minify: 230 B • Minify & GZIP: 201 B<sup>
 
 ### range(start, end, step?)
 

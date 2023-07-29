@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     // Output Options
-    "target": "es2019",
+    "target": "es2022",
     "module": "esnext",
     "jsx": "react",
     "noEmitOnError": true,
@@ -16,7 +16,7 @@
     "incremental": true,
 
     // Type-Checking Options
-    "lib": ["esnext", "dom"],
+    "lib": ["es2022", "dom"],
     "strict": true,
     "skipLibCheck": true,
     "strictPropertyInitialization": false,

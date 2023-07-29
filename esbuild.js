@@ -8,7 +8,7 @@ build({
   format: 'cjs',
   bundle: true,
   sourcemap: true,
-  target: 'node12',
+  target: 'node18.17',
 }).catch(() => process.exit(1))
 
 // Output the es modules files
@@ -17,5 +17,5 @@ build({
   outdir: 'dist/esm',
   format: 'esm',
   sourcemap: true,
-  target: 'chrome58',
+  target: 'chrome90',
 }).catch(() => process.exit(1))

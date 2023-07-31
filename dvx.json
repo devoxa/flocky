@@ -1,0 +1,7 @@
+{
+  "npmDependencyRules": [
+    // Allow dependencies for benchmark comparisons that are usually explicitly denied
+    { "action": "allow", "name": "fast-memoize", "levels": ["dev"] },
+    { "action": "allow", "name": "lodash", "levels": ["dev"] }
+  ]
+}

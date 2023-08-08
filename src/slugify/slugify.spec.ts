@@ -1,7 +1,7 @@
 import { slugify } from './slugify'
 
 describe('slugify', () => {
-  it('generates correct slugs', () => {
+  test('generates correct slugs', () => {
     expect(slugify('Hi There')).toEqual('hi-there')
     expect(slugify('Hi-- There')).toEqual('hi-there')
     expect(slugify('   Hi 123_      There   ')).toEqual('hi-123-there')

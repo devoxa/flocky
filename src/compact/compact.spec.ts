@@ -1,7 +1,7 @@
 import { compact } from './compact'
 
 describe('compact', () => {
-  it('compacts numeric arrays', () => {
+  test('compacts numeric arrays', () => {
     const original = [1, false, 2, null, 3, 0, 4, '', 5, undefined]
     const compacted = compact(original)
 
@@ -9,7 +9,7 @@ describe('compact', () => {
     expect(compacted).toEqual([1, 2, 3, 4, 5])
   })
 
-  it('compacts string arrays', () => {
+  test('compacts string arrays', () => {
     const original = ['a', false, 'b', null, 'c', 0, 'd', '', 'e', undefined]
     const compacted = compact(original)
 
@@ -17,7 +17,7 @@ describe('compact', () => {
     expect(compacted).toEqual(['a', 'b', 'c', 'd', 'e'])
   })
 
-  it('compacts object arrays', () => {
+  test('compacts object arrays', () => {
     const original = [
       { a: 1 },
       false,
@@ -47,7 +47,7 @@ describe('compact', () => {
     expect(compacted).toEqual([{ a: 1 }, { b: 1 }, { c: 1 }, { d: 1 }, { e: 1 }])
   })
 
-  it('compacts completely falsy arrays', () => {
+  test('compacts completely falsy arrays', () => {
     const original = [false, null, 0, NaN, undefined, '']
     const compacted = compact(original)
 

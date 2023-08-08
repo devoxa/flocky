@@ -1,7 +1,7 @@
 import { toMap } from './toMap'
 
 describe('toMap', () => {
-  it('generates a map with no target', () => {
+  test('generates a map with no target', () => {
     const input = [
       { id: 1, name: 'Anna', age: 64 },
       { id: 2, name: 'Bertha', age: 57 },
@@ -47,7 +47,7 @@ describe('toMap', () => {
     })
   })
 
-  it('generates a map with a target', () => {
+  test('generates a map with a target', () => {
     const input = [
       { id: 1, name: 'Anna', age: 64 },
       { id: 2, name: 'Bertha', age: 57 },
@@ -73,7 +73,7 @@ describe('toMap', () => {
     })
   })
 
-  it('filters elements if the key does not exist', () => {
+  test('filters elements if the key does not exist', () => {
     const input = [
       { id: 1, name: 'Anna', age: 64 },
       { id: 2, name: 'Bertha', age: 57 },
@@ -88,7 +88,7 @@ describe('toMap', () => {
     })
   })
 
-  it('does not mutate the input', () => {
+  test('does not mutate the input', () => {
     const input = [
       { id: 1, name: 'Anna' },
       { id: 2, name: 'Bertha' },

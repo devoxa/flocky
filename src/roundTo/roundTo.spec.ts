@@ -1,7 +1,7 @@
 import { roundTo } from './roundTo'
 
 describe('roundTo', () => {
-  it('rounds the number to the expected precision', () => {
+  test('rounds the number to the expected precision', () => {
     // General usage with integers
     expect(roundTo(1, 0)).toEqual(1)
     expect(roundTo(1, 3)).toEqual(1)

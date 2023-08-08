@@ -1,16 +1,16 @@
 import { duplicates } from './duplicates'
 
 describe('duplicates', () => {
-  it('filters the duplicate occurrences of an array of numbers', () => {
+  test('filters the duplicate occurrences of an array of numbers', () => {
     expect(duplicates([1, 4, 2, 0])).toEqual([])
     expect(duplicates([1, 1, 4, 2, 0, 2, 0])).toEqual([1, 2, 0])
   })
 
-  it('filters the duplicate occurrences of an array of strings', () => {
+  test('filters the duplicate occurrences of an array of strings', () => {
     expect(duplicates(['foo', 'bar', 'foo', 'foobar', 'foo', 'foo'])).toEqual(['foo', 'foo', 'foo'])
   })
 
-  it('filters the duplicate occurrences of an array of objects with an identity function', () => {
+  test('filters the duplicate occurrences of an array of objects with an identity function', () => {
     const input = [
       { id: 1, name: 'Foo1' },
       { id: 2, name: 'Foo2' },
@@ -27,7 +27,7 @@ describe('duplicates', () => {
     expect(duplicates(input, (element) => element.id)).toEqual(expected)
   })
 
-  it('does not mutate the input', () => {
+  test('does not mutate the input', () => {
     const input = [1, 2, 3, 1]
     duplicates(input)
     expect(input).toEqual([1, 2, 3, 1])

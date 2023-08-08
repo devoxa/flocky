@@ -10,7 +10,7 @@ describe('sample', () => {
     mathRandom.reset()
   })
 
-  it('samples primitive arrays', () => {
+  test('samples primitive arrays', () => {
     const original = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     const element = sample(original)
 
@@ -18,7 +18,7 @@ describe('sample', () => {
     expect(element).toEqual(8)
   })
 
-  it('samples object arrays', () => {
+  test('samples object arrays', () => {
     const original = [{ a: 1 }, { b: 1 }, { c: 1 }, { d: 1 }, { e: 1 }]
     const element = sample(original)
 
@@ -30,7 +30,7 @@ describe('sample', () => {
 describe('sample (fuzzing)', () => {
   const ITERATIONS = 1000
 
-  it('does not get out of bound elements', () => {
+  test('does not get out of bound elements', () => {
     for (let i = 0; i !== ITERATIONS; i++) {
       const number = sample([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
       expect(number).toBeTruthy()

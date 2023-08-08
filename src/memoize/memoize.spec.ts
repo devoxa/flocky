@@ -4,7 +4,7 @@ import { memoize } from './memoize'
 type NumberObject = { n: number }
 
 describe('memoize', () => {
-  it('memoizes function calls with no arguments', () => {
+  test('memoizes function calls with no arguments', () => {
     const calls: Array<[]> = []
     const func = () => {
       calls.push([])
@@ -18,7 +18,7 @@ describe('memoize', () => {
     expect(calls).toEqual([[]])
   })
 
-  it('memoizes function calls with a single primitive argument', () => {
+  test('memoizes function calls with a single primitive argument', () => {
     const calls: Array<Array<number>> = []
     const func = (x: number) => {
       calls.push([x])
@@ -34,7 +34,7 @@ describe('memoize', () => {
     expect(calls).toEqual([[1], [2]])
   })
 
-  it('memoizes function calls with a single non-primitive argument', () => {
+  test('memoizes function calls with a single non-primitive argument', () => {
     const calls: Array<Array<NumberObject>> = []
     const func = (x: NumberObject) => {
       calls.push([x])
@@ -50,7 +50,7 @@ describe('memoize', () => {
     expect(calls).toEqual([[{ n: 1 }], [{ n: 2 }]])
   })
 
-  it('memoizes function calls with multiple primitive arguments', () => {
+  test('memoizes function calls with multiple primitive arguments', () => {
     const calls: Array<Array<number>> = []
     const func = (a: number, b: number) => {
       calls.push([a, b])
@@ -71,7 +71,7 @@ describe('memoize', () => {
     ])
   })
 
-  it('memoizes function calls with multiple non-primitive arguments', () => {
+  test('memoizes function calls with multiple non-primitive arguments', () => {
     const calls: Array<Array<NumberObject>> = []
     const func = (a: NumberObject, b: NumberObject) => {
       calls.push([a, b])
@@ -92,7 +92,7 @@ describe('memoize', () => {
     ])
   })
 
-  it('memoizes function calls with spread primitive arguments', () => {
+  test('memoizes function calls with spread primitive arguments', () => {
     const calls: Array<Array<number>> = []
     const func = (multiplier: number, ...numbers: Array<number>) => {
       calls.push([multiplier, ...numbers])
@@ -112,7 +112,7 @@ describe('memoize', () => {
     ])
   })
 
-  it('memoizes function calls with spread non-primitive arguments', () => {
+  test('memoizes function calls with spread non-primitive arguments', () => {
     const calls: Array<Array<NumberObject>> = []
     const func = (multiplier: NumberObject, ...numbers: Array<NumberObject>) => {
       calls.push([multiplier, ...numbers])
@@ -132,7 +132,7 @@ describe('memoize', () => {
     ])
   })
 
-  it('passes arguments as their original primitive', () => {
+  test('passes arguments as their original primitive', () => {
     const func = (x: unknown) => (typeof x === 'object' && x ? x.constructor.name : typeof x)
 
     const memoizedFunc = memoize(func)
@@ -142,7 +142,7 @@ describe('memoize', () => {
     expect(memoizedFunc({ n: 3 })).toEqual('Object')
   })
 
-  it('can define a custom strategy (monadic)', () => {
+  test('can define a custom strategy (monadic)', () => {
     const calls: Array<Array<number>> = []
     const func = (a: number, b: number) => {
       calls.push([a, b])
@@ -165,7 +165,7 @@ describe('memoize', () => {
     ])
   })
 
-  it('can define a custom strategy (variadic)', () => {
+  test('can define a custom strategy (variadic)', () => {
     const calls: Array<Array<number>> = []
     const func = (x: number) => {
       calls.push([x])
@@ -183,7 +183,7 @@ describe('memoize', () => {
     expect(calls).toEqual([[1], [2]])
   })
 
-  it('can define a custom serializer', () => {
+  test('can define a custom serializer', () => {
     let serializerCalls = 0
     function serializer(data: unknown) {
       serializerCalls++
@@ -204,7 +204,7 @@ describe('memoize', () => {
     expect(serializerCalls).toEqual(5)
   })
 
-  it('memoizes function calls that return promises', async () => {
+  test('memoizes function calls that return promises', async () => {
     let calls = 0
     const func = async () => {
       calls++
@@ -225,7 +225,7 @@ describe('memoize', () => {
     expect(calls).toEqual(1)
   })
 
-  it('memoizes function calls with a maximum TTL', async () => {
+  test('memoizes function calls with a maximum TTL', async () => {
     const calls: Array<Array<number>> = []
     const func = (a: number, b: number) => {
       calls.push([a, b])
@@ -254,7 +254,7 @@ describe('memoize', () => {
     ])
   })
 
-  it('has the correct type', async () => {
+  test('has the correct type', async () => {
     const func = (a: number, b: number): number => {
       return a + b
     }

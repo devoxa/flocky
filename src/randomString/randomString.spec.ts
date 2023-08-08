@@ -10,7 +10,7 @@ describe('randomString', () => {
     mathRandom.reset()
   })
 
-  it('generates a random string', () => {
+  test('generates a random string', () => {
     expect(randomString(5)).toEqual('tfl0g')
     expect(randomString(10)).toEqual('9JmILmsJRU')
     expect(randomString(3)).toEqual('vPY')

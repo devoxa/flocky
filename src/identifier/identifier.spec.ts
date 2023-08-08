@@ -14,7 +14,7 @@ describe('identifier', () => {
     dateNow.reset()
   })
 
-  it('generates a random identifier', () => {
+  test('generates a random identifier', () => {
     expect(identifier()).toEqual('bfc8d57e-b9ab-4245-836e-d1fd99602e30')
   })
 })
@@ -22,7 +22,7 @@ describe('identifier', () => {
 describe('identifier (fuzzing)', () => {
   const ITERATIONS = 1000
 
-  it('generates only valid UUIDs', () => {
+  test('generates only valid UUIDs', () => {
     for (let i = 0; i !== ITERATIONS; i++) {
       const id = identifier()
       expect(id.match(UUID_FORMAT)).toBeTruthy()

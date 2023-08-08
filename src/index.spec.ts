@@ -6,11 +6,11 @@ import { dateNow, mathRandom } from './testHelpers'
 const flocky = _flocky
 
 describe('index file', () => {
-  it('exports the modules', () => {
+  test('exports the modules', () => {
     expect(Object.keys(flocky).length).toBeGreaterThanOrEqual(5)
   })
 
-  it('exports custom errors', () => {
+  test('exports custom errors', () => {
     expect(new _flocky.PromiseTimeoutError()).toBeInstanceOf(Error)
   })
 })
@@ -32,7 +32,7 @@ describe('documentation examples', () => {
 
     describe(name, () => {
       examples.forEach((example, index) => {
-        it(`Example #${index + 1}`, async () => {
+        test(`Example #${index + 1}`, async () => {
           const actual = await eval(example.code)
           expect(actual).toEqual(example.expected)
         })

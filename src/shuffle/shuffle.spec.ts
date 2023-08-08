@@ -10,7 +10,7 @@ describe('shuffle', () => {
     mathRandom.reset()
   })
 
-  it('shuffles primitive arrays', () => {
+  test('shuffles primitive arrays', () => {
     const original = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     const shuffled = shuffle(original)
 
@@ -18,7 +18,7 @@ describe('shuffle', () => {
     expect(shuffled).toEqual([3, 7, 2, 1, 10, 4, 6, 9, 5, 8])
   })
 
-  it('shuffles object arrays', () => {
+  test('shuffles object arrays', () => {
     const original = [{ a: 1 }, { b: 1 }, { c: 1 }, { d: 1 }, { e: 1 }]
     const shuffled = shuffle(original)
 

@@ -2,7 +2,7 @@ import { sleep } from '../sleep/sleep'
 import { debounce } from './debounce'
 
 describe('debounce', () => {
-  it('debounces the function call', async () => {
+  test('debounces the function call', async () => {
     const func = jest.fn()
 
     const debouncedFunc = debounce(func, 25)
@@ -20,7 +20,7 @@ describe('debounce', () => {
     expect(func.mock.calls).toEqual([['abcd'], ['abcde']])
   })
 
-  it('has the correct type', async () => {
+  test('has the correct type', async () => {
     const func = (a: number, b: number): number => {
       return a + b
     }

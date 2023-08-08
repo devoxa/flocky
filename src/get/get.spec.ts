@@ -1,7 +1,7 @@
 import { get } from './get'
 
 describe('get', () => {
-  it('should work with the path of an object', () => {
+  test('should work with the path of an object', () => {
     const object = { foo: { bar: { herp: 123, derp: 0 } } }
     expect(get(object, 'foo.bar.herp')).toEqual(123)
     expect(get(object, ['foo', 'bar', 'herp'])).toEqual(123)
@@ -14,7 +14,7 @@ describe('get', () => {
     expect(object).toEqual({ foo: { bar: { herp: 123, derp: 0 } } })
   })
 
-  it('should return `undefined` if the path of an object does not exist', () => {
+  test('should return `undefined` if the path of an object does not exist', () => {
     const object = { foo: { bar: { herp: 123 } } }
     expect(get(object, 'foo.sup.flerp')).toEqual(undefined)
     expect(get(object, 'foo.sup.flerp.derp.merp')).toEqual(undefined)
@@ -23,7 +23,7 @@ describe('get', () => {
     expect(object).toEqual({ foo: { bar: { herp: 123 } } })
   })
 
-  it('should return `undefined` if part of an path of an object is undefined', () => {
+  test('should return `undefined` if part of an path of an object is undefined', () => {
     const object = { foo: null }
     expect(get(object, 'foo')).toEqual(null)
     expect(get(object, 'foo.bar')).toEqual(undefined)
@@ -41,7 +41,7 @@ describe('get', () => {
     expect(object2).toEqual({ foo: false })
   })
 
-  it('should return `undefined` if part of an path of an object is not an object', () => {
+  test('should return `undefined` if part of an path of an object is not an object', () => {
     const object = { foo: 'herp?' }
     expect(get(object, 'foo')).toEqual('herp?')
     expect(get(object, 'foo.bar')).toEqual(undefined)
@@ -50,7 +50,7 @@ describe('get', () => {
     expect(object).toEqual({ foo: 'herp?' })
   })
 
-  it('should return the default if the path of an object does not exist', () => {
+  test('should return the default if the path of an object does not exist', () => {
     const object = { foo: { bar: { herp: 123 } } }
     expect(get(object, 'foo.sup.flerp', 'the default')).toEqual('the default')
 
@@ -62,7 +62,7 @@ describe('get', () => {
     expect(object).toEqual({ foo: { bar: { herp: 123 } } })
   })
 
-  it('should work with the path of array elements', () => {
+  test('should work with the path of array elements', () => {
     const object = { foo: { bar: ['hi', { herp: 123 }] } }
     expect(get(object, 'foo.bar[1].herp')).toEqual(123)
     expect(get(object, 'foo.bar.[1].herp')).toEqual(123)
@@ -74,7 +74,7 @@ describe('get', () => {
     expect(object).toEqual({ foo: { bar: ['hi', { herp: 123 }] } })
   })
 
-  it('should work at the start of a path of array elements', () => {
+  test('should work at the start of a path of array elements', () => {
     const object = [{ foo: { bar: ['hi', { herp: 123 }] } }]
     expect(get(object, '[0].foo.bar[1].herp')).toEqual(123)
     expect(get(object, '[0].foo.bar.1.herp')).toEqual(123)
@@ -85,7 +85,7 @@ describe('get', () => {
     expect(object).toEqual([{ foo: { bar: ['hi', { herp: 123 }] } }])
   })
 
-  it('should return `undefined` if the path of array elements does not exist', () => {
+  test('should return `undefined` if the path of array elements does not exist', () => {
     const object = { foo: { bar: [{ herp: 123 }] } }
     expect(get(object, 'foo.bar[1].herp')).toEqual(undefined)
     expect(get(object, 'foo.bar.1.herp')).toEqual(undefined)
@@ -98,7 +98,7 @@ describe('get', () => {
     expect(object).toEqual({ foo: { bar: [{ herp: 123 }] } })
   })
 
-  it('should return the default if the path of array elements does not exist', () => {
+  test('should return the default if the path of array elements does not exist', () => {
     const object = { foo: { bar: [{ herp: 123 }] } }
     expect(get(object, 'foo.bar[1].herp', 'the default')).toEqual('the default')
     expect(get(object, 'foo.bar.1.herp', 'the default')).toEqual('the default')
@@ -109,18 +109,18 @@ describe('get', () => {
     expect(object).toEqual({ foo: { bar: [{ herp: 123 }] } })
   })
 
-  it('should return `undefined` if object does not exist', () => {
+  test('should return `undefined` if object does not exist', () => {
     expect(get(null, 'foo.bar')).toEqual(undefined)
     expect(get(undefined, 'foo.bar')).toEqual(undefined)
   })
 
-  it('should return `undefined` if object is not an object', () => {
+  test('should return `undefined` if object is not an object', () => {
     // @ts-expect-error Ignore the type check for the first argument and test this,
     // because this misuse can happen very easily in JavaScript land
     expect(get('wat', 'foo.bar')).toEqual(undefined)
   })
 
-  it('should return `undefined` if the path is malformed', () => {
+  test('should return `undefined` if the path is malformed', () => {
     const object = { foo: { bar: [{ herp: 123 }] } }
     expect(get(object, 'foo..')).toEqual(undefined)
     expect(get(object, 'foo.[].bar')).toEqual(undefined)

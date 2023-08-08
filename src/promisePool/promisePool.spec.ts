@@ -8,7 +8,7 @@ const PROMISE_FUNCTIONS = new Array(9).fill('').map((_, i) => async () => {
 })
 
 describe('promisePool', () => {
-  it('runs the promise functions in parallel', async () => {
+  test('runs the promise functions in parallel', async () => {
     const start = new Date()
     const result = await promisePool(PROMISE_FUNCTIONS, 100)
     const end = new Date()
@@ -17,7 +17,7 @@ describe('promisePool', () => {
     expectApproximateDuration(start, end, 100)
   })
 
-  it('runs the promise functions in parallel with a limit', async () => {
+  test('runs the promise functions in parallel with a limit', async () => {
     const start = new Date()
     const result = await promisePool(PROMISE_FUNCTIONS, 3)
     const end = new Date()
@@ -26,7 +26,7 @@ describe('promisePool', () => {
     expectApproximateDuration(start, end, 3 * 100)
   })
 
-  it('runs the promise functions in series', async () => {
+  test('runs the promise functions in series', async () => {
     const start = new Date()
     const result = await promisePool(PROMISE_FUNCTIONS, 1)
     const end = new Date()
@@ -35,7 +35,7 @@ describe('promisePool', () => {
     expectApproximateDuration(start, end, 9 * 100)
   })
 
-  it('errors when the first promise function errors', async () => {
+  test('errors when the first promise function errors', async () => {
     const ERRORING_PROMISE_FUNCTIONS = Object.assign([], PROMISE_FUNCTIONS, {
       5: () => Promise.reject(new Error('Something went wrong.')),
     })

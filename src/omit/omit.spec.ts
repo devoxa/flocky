@@ -1,7 +1,7 @@
 import { omit } from './omit'
 
 describe('omit', () => {
-  it('omits the specified keys of the object', () => {
+  test('omits the specified keys of the object', () => {
     const original = { a: 1, b: 2, c: 3, d: 4, e: 5 }
     const omitted = omit(original, ['a', 'b', 'd'])
 
@@ -9,7 +9,7 @@ describe('omit', () => {
     expect(omitted).toEqual({ c: 3, e: 5 })
   })
 
-  it('has the correct type behavior', () => {
+  test('has the correct type behavior', () => {
     interface StackProps {
       children: string
       gap: string

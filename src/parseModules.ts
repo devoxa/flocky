@@ -42,7 +42,6 @@ function parseModuleName(filePath: string): string {
 function parseModuleDocs(filePath: string): string {
   const fileContent = fs.readFileSync(filePath, 'utf-8')
 
-  // istanbul ignore next
   if (!fileContent.includes('/**')) {
     throw new Error(`The module at path '${filePath}' has no JSDoc`)
   }
@@ -58,7 +57,6 @@ function parseModuleDocs(filePath: string): string {
 function parseModuleExamples(filePath: string, docs: string): Array<Example> {
   const exampleMatch = docs.match(EXAMPLE_REGEX)
 
-  // istanbul ignore next
   if (!exampleMatch) {
     throw new Error(`The module at path '${filePath}' has no examples`)
   }

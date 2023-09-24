@@ -32,7 +32,7 @@
     "@types/jest": "29.5.5",
     "@types/lodash": "4.14.199",
     "@types/node": "18.17.15",
-    "@types/pako": "2.0.0",
+    "@types/pako": "2.0.1",
     "benchmark": "2.1.4",
     "esbuild": "0.19.3",
     "eslint": "8.50.0",

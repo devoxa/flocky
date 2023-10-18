@@ -1264,10 +1264,10 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.18.6.tgz#26da694f75cdb057750f49d099da5e3f3824cb3e"
   integrity sha512-wf3Vz+jCmOQ2HV1YUJuCWdL64adYxumkrxtc+H1VUQlnQI04+5HtH+qZCOE21lBE7gIrt+CwX2Wv8Acrw5Ak6w==
 
-"@types/pako@2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@types/pako/-/pako-2.0.1.tgz#99e4b7ae6a8560c5928d7f31e89a394e1e6fd169"
-  integrity sha512-fXhui1fHdLrUR0KEyQsBzqdi3Z+MitnRcpI2eeFJyzaRdqO2miX/BDz2Hh0VdkBbrWprgcQ+ItFmbdKYdbMjvg==
+"@types/pako@2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/pako/-/pako-2.0.2.tgz#155edb098859d98dd598b805b27ec2bf96cc5354"
+  integrity sha512-AtTbzIwhvLMTEUPudP3hxUwNK50DoX3amfVJmmL7WQH5iF3Kfqs8pG1tStsewHqmh75ULmjjldKn/B70D6DNcQ==
 
 "@types/semver@^7.3.12":
   version "7.3.13"

@@ -36,7 +36,7 @@
     "benchmark": "2.1.4",
     "esbuild": "0.19.5",
     "eslint": "8.53.0",
-    "fast-glob": "3.3.1",
+    "fast-glob": "3.3.2",
     "fast-memoize": "2.5.2",
     "filesize": "10.1.0",
     "jest": "29.7.0",

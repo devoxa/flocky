@@ -466,6 +466,18 @@ flocky.sum([1, 4, 2, -4, 0])
 
 <sup>[Source](./src/sum/sum.ts) • Minify: 60 B • Minify & GZIP: 67 B<sup>
 
+### throttle(func, wait)
+
+Create a throttled function that invokes `func` at most every `wait` milliseconds.
+If the invocation is throttled, `func` will be invoked with the last arguments provided.
+
+```js
+const func = () => console.log('Heavy processing happening')
+const throttledFunc = flocky.throttle(func, 250)
+```
+
+<sup>[Source](./src/throttle/throttle.ts) • Minify: 209 B • Minify & GZIP: 156 B<sup>
+
 ### toMap(array, key, target?)
 
 Create a lookup map out of an `array` of objects, with a lookup `key` and an optional `target`.

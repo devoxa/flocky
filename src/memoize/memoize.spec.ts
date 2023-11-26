@@ -223,6 +223,10 @@ describe('memoize', () => {
     expect(await a).toEqual('A')
     expect(await b).toEqual('A')
     expect(calls).toEqual(1)
+
+    const c = memoizedFunc()
+    expect(await c).toEqual('A')
+    expect(calls).toEqual(1)
   })
 
   test('memoizes function calls with a maximum TTL', async () => {

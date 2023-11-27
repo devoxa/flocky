@@ -260,7 +260,7 @@ memoizedFunc(1, 2)
   with some improvements for variadic performance and additional support for a TTL based cache.
 </details>
 
-<sup>[Source](./src/memoize/memoize.ts) • [Benchmark](./src/memoize/BENCHMARK.md) • Minify: 820 B • Minify & GZIP: 393 B<sup>
+<sup>[Source](./src/memoize/memoize.ts) • [Benchmark](./src/memoize/BENCHMARK.md) • Minify: 962 B • Minify & GZIP: 441 B<sup>
 
 ### min(array)
 

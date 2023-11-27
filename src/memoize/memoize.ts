@@ -1,6 +1,6 @@
 import { TAnyFunction } from '../typeHelpers'
 
-interface MemoizeOptions {
+export interface MemoizeOptions {
   strategy?: MemoizeStrategy
   serializer?: MemoizeSerializer
   ttl?: number
@@ -63,6 +63,11 @@ function monadic<TThis, TReturn, TFunc extends TAnyFunction<TReturn>>(
   let value = cache.get(cacheKey)
   if (typeof value === 'undefined') {
     value = func.call(this, arg)
+
+    if (value instanceof Promise) {
+      value.catch(() => cache.remove(cacheKey))
+    }
+
     cache.set(cacheKey, value)
   }
 
@@ -81,6 +86,11 @@ function variadic<TThis, TReturn, TFunc extends TAnyFunction<TReturn>>(
   let value = cache.get(cacheKey)
   if (typeof value === 'undefined') {
     value = func.apply(this, args)
+
+    if (value instanceof Promise) {
+      value.catch(() => cache.remove(cacheKey))
+    }
+
     cache.set(cacheKey, value)
   }
 
@@ -94,6 +104,7 @@ function defaultSerializer(data: unknown) {
 interface MemoizeCache<TReturn> {
   get: (key: string) => TReturn | undefined
   set: (key: string, value: TReturn) => void
+  remove: (key: string) => void
 }
 
 function defaultCache<TReturn>(): MemoizeCache<TReturn> {
@@ -104,6 +115,7 @@ function defaultCache<TReturn>(): MemoizeCache<TReturn> {
     set: (key, value) => {
       cache[key] = value
     },
+    remove: (key) => delete cache[key],
   }
 }
 
@@ -121,5 +133,6 @@ function ttlCache<TReturn>(ttl: number): MemoizeCache<TReturn> {
         delete cache[key]
       }, ttl)
     },
+    remove: (key) => delete cache[key],
   }
 }

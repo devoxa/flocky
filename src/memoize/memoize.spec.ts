@@ -1,5 +1,5 @@
 import { sleep } from '../sleep/sleep'
-import { memoize } from './memoize'
+import { MemoizeOptions, memoize } from './memoize'
 
 type NumberObject = { n: number }
 
@@ -223,6 +223,10 @@ describe('memoize', () => {
     expect(await a).toEqual('A')
     expect(await b).toEqual('A')
     expect(calls).toEqual(1)
+
+    const c = memoizedFunc()
+    expect(await c).toEqual('A')
+    expect(calls).toEqual(1)
   })
 
   test('memoizes function calls with a maximum TTL', async () => {
@@ -253,6 +257,45 @@ describe('memoize', () => {
       [1, 2],
     ])
   })
+
+  test.each([
+    ['monadic', { strategy: 'monadic' }],
+    ['variadic', { strategy: 'variadic' }],
+    ['ttl', { ttl: 50 }],
+  ] as Array<[string, MemoizeOptions]>)(
+    'smartly memoizes function calls that return promise rejections (%s)',
+    async (_: string, options: MemoizeOptions) => {
+      let calls = 0
+      const func = async () => {
+        calls++
+        await sleep(10)
+
+        if (calls === 1) {
+          throw new Error('Uh oh')
+        }
+
+        return 'A'
+      }
+
+      const memoizedFunc = memoize(func, options)
+
+      // We want to memoize the second call because the Promise is still pending
+      const a = memoizedFunc()
+      expect(a).toBeInstanceOf(Promise)
+      const b = memoizedFunc()
+      expect(b).toBeInstanceOf(Promise)
+      expect(calls).toEqual(1)
+
+      await expect(a).rejects.toThrow('Uh oh')
+      await expect(b).rejects.toThrow('Uh oh')
+      expect(calls).toEqual(1)
+
+      // We don't want to memoize the third call because the Promise has rejected
+      const c = memoizedFunc()
+      expect(await c).toEqual('A')
+      expect(calls).toEqual(2)
+    }
+  )
 
   test('has the correct type', async () => {
     const func = (a: number, b: number): number => {

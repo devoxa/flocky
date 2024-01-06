@@ -8,7 +8,7 @@ build({
   format: 'cjs',
   bundle: true,
   sourcemap: true,
-  target: 'node18.17',
+  target: 'node20.10',
 }).catch(() => process.exit(1))
 
 // Output the es modules files

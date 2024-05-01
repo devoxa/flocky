@@ -4405,10 +4405,10 @@ symbol-tree@^3.2.4:
   resolved "https://registry.yarnpkg.com/symbol-tree/-/symbol-tree-3.2.4.tgz#430637d248ba77e078883951fb9aa0eed7c63fa2"
   integrity sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==
 
-terser@5.28.1:
-  version "5.28.1"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-5.28.1.tgz#bf00f7537fd3a798c352c2d67d67d65c915d1b28"
-  integrity sha512-wM+bZp54v/E9eRRGXb5ZFDvinrJIOaTapx3WUokyVGZu5ucVCK55zEgGd5Dl2fSr3jUo5sDiERErUWLY6QPFyA==
+terser@5.31.0:
+  version "5.31.0"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-5.31.0.tgz#06eef86f17007dbad4593f11a574c7f5eb02c6a1"
+  integrity sha512-Q1JFAoUKE5IMfI4Z/lkE/E6+SwgzO+x4tq4v1AyBLRj8VSYvRO6A/rQrPg1yud4g0En9EKI1TvFRF2tQFcoUkg==
   dependencies:
     "@jridgewell/source-map" "^0.3.3"
     acorn "^8.8.2"

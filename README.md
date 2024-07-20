@@ -180,7 +180,8 @@ flocky.get(object, 'x.x.x', 'default')
 
 Create a hashed string representation of the passed in data.
 
-:warning: **This function is not cryptographically secure, use [bcrypt](https://www.npmjs.com/package/bcrypt)
+:warning: **This function is not cryptographically secure, use
+[`Argon2id`, `scrypt` or `bcrypt`](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#password-hashing-algorithms)
 for anything security related.**
 
 ```js
@@ -203,7 +204,7 @@ flocky.hash({id: 'AAA', name: 'BBB'})
   - https://github.com/whitequark/murmurhash3-js/blob/master/murmurhash3.js
 </details>
 
-<sup>[Source](./src/hash/hash.ts) • [Benchmark](./src/hash/BENCHMARK.md) • Minify: 554 B • Minify & GZIP: 334 B<sup>
+<sup>[Source](./src/hash/hash.ts) • [Benchmark](./src/hash/BENCHMARK.md) • Minify: 552 B • Minify & GZIP: 332 B<sup>
 
 ### identifier()
 
@@ -405,7 +406,7 @@ flocky.roundTo(1111.1, -2)
 
   This method avoids floating-point errors by adjusting the exponent part of
   the string representation of a number instead of multiplying and dividing
-  with powers of 10. The implementation is based on [this example](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round$revision/1383484#A_better_solution)
+  with powers of 10. The implementation is based on [this example](https://stackoverflow.com/a/60098416)
   by Lam Wei Li.
 </details>
 
@@ -424,13 +425,19 @@ flocky.sample([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
 ### shuffle(array)
 
-Create an array of shuffled values, using a version of the
-[Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm).
+Create an array of shuffled values.
 
 ```js
 flocky.shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 // -> [3, 7, 2, 1, 10, 4, 6, 9, 5, 8]
 ```
+
+<details>
+  <summary>Implementation Details</summary>
+
+  This method uses a modern version of the
+  [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm).
+</details>
 
 <sup>[Source](./src/shuffle/shuffle.ts) • Minify: 152 B • Minify & GZIP: 131 B<sup>
 

@@ -19,7 +19,7 @@
  *
  *   This method avoids floating-point errors by adjusting the exponent part of
  *   the string representation of a number instead of multiplying and dividing
- *   with powers of 10. The implementation is based on [this example](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/round$revision/1383484#A_better_solution)
+ *   with powers of 10. The implementation is based on [this example](https://stackoverflow.com/a/60098416)
  *   by Lam Wei Li.
  * </details>
  */

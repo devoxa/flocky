@@ -5,7 +5,8 @@ import { JSONValue } from '../typeHelpers'
  *
  * Create a hashed string representation of the passed in data.
  *
- * :warning: **This function is not cryptographically secure, use [bcrypt](https://www.npmjs.com/package/bcrypt)
+ * :warning: **This function is not cryptographically secure, use
+ * [`Argon2id`, `scrypt` or `bcrypt`](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html#password-hashing-algorithms)
  * for anything security related.**
  *
  * ```js

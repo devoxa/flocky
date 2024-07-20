@@ -1,13 +1,19 @@
 /**
  * ### shuffle(array)
  *
- * Create an array of shuffled values, using a version of the
- * [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm).
+ * Create an array of shuffled values.
  *
  * ```js
  * flocky.shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
  * // -> [3, 7, 2, 1, 10, 4, 6, 9, 5, 8]
  * ```
+ *
+ * <details>
+ *   <summary>Implementation Details</summary>
+ *
+ *   This method uses a modern version of the
+ *   [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle#The_modern_algorithm).
+ * </details>
  */
 
 export function shuffle<T>(array: Array<T>): Array<T> {

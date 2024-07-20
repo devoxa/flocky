@@ -10,7 +10,7 @@
   },
   "scripts": {
     "test": "jest",
-    "benchmark": "run(){ ts-node -O '{\"module\":\"commonjs\"}' src/$1/$1.benchmark.ts; }; run",
+    "benchmark": "sh benchmark.sh",
     "format": "prettier --ignore-path='.gitignore' --list-different --write .",
     "format:check": "prettier --ignore-path='.gitignore' --check .",
     "lint": "eslint --ignore-path='.gitignore' '{src,tests}/**/*.ts'",

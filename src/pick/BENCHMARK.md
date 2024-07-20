@@ -1,10 +1,10 @@
 ### Benchmark for `pick`
 
-[Source for this benchmark](./benchmark.ts)
+[Source for this benchmark](./pick.benchmark.ts)
 
 |                          | flocky                           |
 | ------------------------ | -------------------------------- |
-| 5 properties / 3 picked  | **11,022,180 ops/sec (100.00%)** |
-| 26 properties / 3 picked | **8,466,802 ops/sec (100.00%)**  |
+| 5 properties / 3 picked  | **10,428,966 ops/sec (100.00%)** |
+| 26 properties / 3 picked | **7,488,734 ops/sec (100.00%)**  |
 
-<sup>Generated at 2021-07-05 with Node.JS v16.4.1</sup>
+<sup>Generated at 2024-07-20 with Node.JS v20.9.0</sup>

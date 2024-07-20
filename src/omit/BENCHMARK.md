@@ -1,11 +1,11 @@
 ### Benchmark for `omit`
 
-[Source for this benchmark](./benchmark.ts)
+[Source for this benchmark](./omit.benchmark.ts)
 
 |                            | flocky                          |
 | -------------------------- | ------------------------------- |
-| 5 properties / 3 omitted   | **9,458,825 ops/sec (100.00%)** |
-| 26 properties / 3 omitted  | **438,844 ops/sec (100.00%)**   |
-| 10 properties / 55 omitted | **1,308,029 ops/sec (100.00%)** |
+| 5 properties / 3 omitted   | **8,553,947 ops/sec (100.00%)** |
+| 26 properties / 3 omitted  | **460,434 ops/sec (100.00%)**   |
+| 10 properties / 55 omitted | **1,238,164 ops/sec (100.00%)** |
 
-<sup>Generated at 2021-07-05 with Node.JS v16.4.1</sup>
+<sup>Generated at 2024-07-20 with Node.JS v20.9.0</sup>

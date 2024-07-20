@@ -61,7 +61,7 @@ export class Benchmark {
     const content = [
       `### Benchmark for \`${this.name}\``,
       '',
-      `[Source for this benchmark](./benchmark.ts)`,
+      `[Source for this benchmark](./${this.name}.benchmark.ts)`,
       '',
       this.generateResultTable(),
       '',

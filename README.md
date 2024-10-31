@@ -518,6 +518,17 @@ flocky.toMap(
 
 <sup>[Source](./src/toMap/toMap.ts) • Minify: 95 B • Minify & GZIP: 95 B<sup>
 
+### unflatten(object)
+
+Unflattens an object with dot notation keys into a nested object.
+
+```js
+flocky.unflatten({ 'a.b': 1, 'a.c': 2, 'd.e.f': 3 })
+// -> { a: { b: 1, c: 2 }, d: { e: { f: 3 } } }
+```
+
+<sup>[Source](./src/unflatten/unflatten.ts) • Minify: 199 B • Minify & GZIP: 145 B<sup>
+
 ### unique(array, identity?)
 
 Create a duplicate-free version of an array, in which only the first occurrence of each element is kept.

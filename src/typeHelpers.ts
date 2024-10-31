@@ -4,3 +4,17 @@ type JSONArray = Array<JSONValue>
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type TAnyFunction<TReturn> = (...args: any[]) => TReturn
+
+export type Simplify<T> = T extends unknown ? { [K in keyof T]: Simplify<T[K]> } : never
+
+export type RecursiveUnionToIntersection<TObjectWithUnions> = {
+  [TKey in keyof TObjectWithUnions]: TObjectWithUnions[TKey] extends object
+    ? RecursiveUnionToIntersection<UnionToIntersection<TObjectWithUnions[TKey]>>
+    : TObjectWithUnions[TKey]
+}
+
+export type UnionToIntersection<TUnion> = (
+  TUnion extends any ? (k: TUnion) => void : never
+) extends (k: infer TIntersection) => void
+  ? TIntersection
+  : never

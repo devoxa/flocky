@@ -11,11 +11,11 @@ import { RecursiveUnionToIntersection, Simplify } from '../typeHelpers'
  * ```
  */
 
-type UnflattedObject<TObject extends Record<string, unknown>> = {
+type UnflattenObject<TObject extends Record<string, unknown>> = {
   [TKey in keyof TObject as TKey extends `${infer TKeyPrefix}.${string}`
     ? TKeyPrefix
     : TKey]: TKey extends `${string}.${infer TKeySuffix}`
-    ? UnflattedObject<{ [key in TKeySuffix]: TObject[TKey] }>
+    ? UnflattenObject<{ [key in TKeySuffix]: TObject[TKey] }>
     : TObject[TKey]
 } extends infer TResult
   ? { [TResultKey in keyof TResult]: TResult[TResultKey] }
@@ -40,5 +40,5 @@ export function unflatten<TObject extends Record<string, unknown>>(object: TObje
     }
   }
 
-  return result as Simplify<RecursiveUnionToIntersection<UnflattedObject<TObject>>>
+  return result as Simplify<RecursiveUnionToIntersection<UnflattenObject<TObject>>>
 }

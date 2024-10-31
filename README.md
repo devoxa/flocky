@@ -152,6 +152,17 @@ flocky.escapeRegExp('Hey. (1 + 1 = 2)')
 
 <sup>[Source](./src/escapeRegExp/escapeRegExp.ts) • Minify: 93 B • Minify & GZIP: 90 B<sup>
 
+### flatten(object)
+
+Flattens a nested object into an object with dot notation keys.
+
+```js
+flocky.flatten({ a: { b: 1, c: 2 }, d: { e: { f: 3 } } })
+// -> { 'a.b': 1, 'a.c': 2, 'd.e.f': 3 }
+```
+
+<sup>[Source](./src/flatten/flatten.ts) • Minify: 172 B • Minify & GZIP: 136 B<sup>
+
 ### get(object, path, defaultValue?)
 
 Get the value at a `path` of an `object` (with an optional `defaultValue`)

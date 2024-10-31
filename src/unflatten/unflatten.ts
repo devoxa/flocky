@@ -22,6 +22,7 @@ type UnflattenObject<TObject extends Record<string, unknown>> = {
   : never
 
 export function unflatten<TObject extends Record<string, unknown>>(object: TObject) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const result: any = {}
 
   for (const key in object) {

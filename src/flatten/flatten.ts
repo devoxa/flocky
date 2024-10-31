@@ -9,9 +9,9 @@
  * ```
  */
 
-type Entry = { key: string; value: any; optional: boolean }
+type Entry = { key: string; value: unknown; optional: boolean }
 
-type Explode<T> = _Explode<T extends readonly any[] ? { '0': T[number] } : T>
+type Explode<T> = _Explode<T extends readonly unknown[] ? { '0': T[number] } : T>
 
 type _Explode<T> = T extends object
   ? {
@@ -22,7 +22,7 @@ type _Explode<T> = T extends object
                 key: `${K}${E['key'] extends '' ? '' : '.'}${E['key']}`
                 value: E['value']
                 optional: E['key'] extends ''
-                  ? {} extends Pick<T, K>
+                  ? object extends Pick<T, K>
                     ? true
                     : false
                   : E['optional']
@@ -42,6 +42,8 @@ type Collapse<T extends Entry> = {
 type FlattenObject<T> = Collapse<Explode<T>>
 
 export function flatten<TObject extends Record<string, unknown>>(object: TObject) {
+  const result: Record<string, unknown> = {}
+
   function recurse(current: Record<string, unknown>, prefix = '') {
     for (const key in current) {
       const value = current[key]
@@ -55,7 +57,6 @@ export function flatten<TObject extends Record<string, unknown>>(object: TObject
     }
   }
 
-  const result: Record<string, unknown> = {}
   recurse(object)
   return result as FlattenObject<TObject>
 }

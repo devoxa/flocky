@@ -41,15 +41,16 @@ describe('promisePool', () => {
     })
 
     const start = new Date()
-    let error
+    let error: Error | undefined
     try {
       await promisePool(ERRORING_PROMISE_FUNCTIONS, 2)
     } catch (err) {
+      if (!(err instanceof Error)) throw err
       error = err
     }
     const end = new Date()
 
-    expect(error.message).toEqual('Something went wrong.')
+    expect(error?.message).toEqual('Something went wrong.')
     expectApproximateDuration(start, end, 2 * 100)
   })
 })

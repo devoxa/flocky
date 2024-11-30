@@ -22,7 +22,6 @@
     "strictPropertyInitialization": false,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "useUnknownInCatchVariables": false,
 
     // Module Resolution Options
     "moduleResolution": "node",

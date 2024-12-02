@@ -21,9 +21,10 @@ type UnflattenObject<TObject extends Record<string, unknown>> = {
   ? { [TResultKey in keyof TResult]: TResult[TResultKey] }
   : never
 
-export function unflatten<TObject extends Record<string, unknown>>(object: TObject) {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const result: any = {}
+export function unflatten<TObject extends Record<string, unknown>>(
+  object: TObject
+): Simplify<RecursiveUnionToIntersection<UnflattenObject<TObject>>> {
+  const result: Record<string | number, unknown> = {}
 
   for (const key in object) {
     const keys = key.split('.')
@@ -36,7 +37,7 @@ export function unflatten<TObject extends Record<string, unknown>>(object: TObje
         current[part] = object[key]
       } else {
         if (!current[part]) current[part] = {}
-        current = current[part]
+        current = current[part] as Record<string | number, unknown>
       }
     }
   }

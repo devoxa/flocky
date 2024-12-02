@@ -15,7 +15,7 @@ describe('pick', () => {
       gap: string
     }
 
-    function pickFromProps(props: StackProps) {
+    function pickFromProps(props: StackProps): Pick<StackProps, 'gap'> {
       return pick(props, ['gap'])
     }
 

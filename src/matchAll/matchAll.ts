@@ -12,14 +12,20 @@
  * ```
  */
 
-export function matchAll(regExp: RegExp, string: string) {
+export interface MatchAllMatch {
+  match: string
+  subMatches: Array<string>
+  index: number
+}
+
+export function matchAll(regExp: RegExp, string: string): Array<MatchAllMatch> {
   return Array.from(string.matchAll(regExp)).map(formatMatch)
 }
 
-function formatMatch(match: RegExpMatchArray) {
+function formatMatch(match: RegExpMatchArray): MatchAllMatch {
   return {
     match: match[0],
     subMatches: match.slice(1, match.length),
-    index: match.index,
+    index: match.index!,
   }
 }

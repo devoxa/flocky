@@ -23,7 +23,7 @@ describe('throttle', () => {
     expect(func.mock.calls).toEqual([['a'], ['abcd'], ['abcde'], ['abcdef']])
   })
 
-  test('has the correct type', async () => {
+  test('has the correct type', () => {
     const func = (a: number, b: number): number => {
       return a + b
     }
@@ -37,9 +37,9 @@ describe('throttle', () => {
     throttledFunc(2, 'a')
 
     // @ts-expect-error The return value is void
-    throttledFunc(2, 2)?.concat
+    throttledFunc(2, 2)?.concat()
 
     // @ts-expect-error The return value is void
-    throttledFunc(2, 2)?.toFixed
+    throttledFunc(2, 2)?.toFixed()
   })
 })

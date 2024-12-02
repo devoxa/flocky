@@ -1,9 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
-const REPLACE_EMPTY_REGEX = /]|^\[/g
-const REPLACE_DOT_REGEX = /\.?\[/g
-
 /**
  * ### get(object, path, defaultValue?)
  *
@@ -28,11 +22,14 @@ const REPLACE_DOT_REGEX = /\.?\[/g
  * ```
  */
 
+const REPLACE_EMPTY_REGEX = /]|^\[/g
+const REPLACE_DOT_REGEX = /\.?\[/g
+
 export function get(
   object: object | null | undefined,
   path: string | Array<string | number>,
-  defaultValue?: any
-): any {
+  defaultValue?: unknown
+): unknown {
   // Handle the case that the object is undefined or not an object
   if (!object || Object(object) !== object) {
     return defaultValue
@@ -50,13 +47,13 @@ function parsePath(path: string): Array<string> {
   return path.replace(REPLACE_EMPTY_REGEX, '').replace(REPLACE_DOT_REGEX, '.').split('.')
 }
 
-function getWithArrayPath(object: object, path: Array<string | number>): any {
+function getWithArrayPath(object: object, path: Array<string | number>): unknown {
   const length = path.length
   let index = 0
-  let current: any = object
+  let current = object as Record<string | number, unknown> | null
 
   while (current != null && index < length) {
-    current = current[path[index++]]
+    current = current[path[index++]] as Record<string | number, unknown> | null
   }
 
   return index === length ? current : undefined

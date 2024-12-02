@@ -10,7 +10,7 @@ const END_TOKEN = '<!-- END GENERATED FROM FILES -->'
 
 run().catch((err) => console.error(err))
 
-async function run() {
+async function run(): Promise<void> {
   // Parse the module documentations
   let modules = parseModules().sort((a, b) => a.name.localeCompare(b.name))
 
@@ -50,7 +50,9 @@ async function run() {
   fs.writeFileSync('./README.md', README, 'utf-8')
 }
 
-async function calculateModuleSizes(name: string) {
+async function calculateModuleSizes(
+  name: string
+): Promise<{ size: string; minSize: string; minZipSize: string }> {
   const content = fs.readFileSync(path.join(__dirname, `../dist/esm/${name}/${name}.js`), 'utf-8')
 
   const contentMin = (await terser.minify(content)).code || ''

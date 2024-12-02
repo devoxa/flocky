@@ -20,7 +20,7 @@ describe('promiseTimeout', () => {
     result.foo.toString()
 
     // @ts-expect-error The return type does not have this property
-    result.bar
+    expect(result.bar).toBeUndefined()
   })
 
   test('rejects the promise when hitting the timeout', async () => {

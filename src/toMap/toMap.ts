@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-
 // Return all keys of an object that have value types we can use as a map key
 type MappableKeys<T> = NonNullable<
   {

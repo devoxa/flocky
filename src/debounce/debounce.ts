@@ -12,11 +12,16 @@ import { TAnyFunction } from '../typeHelpers'
  * ```
  */
 
-export function debounce<TFunc extends TAnyFunction<void>>(func: TFunc, wait: number) {
+type FunctionWithVoidReturn<TFunc extends TAnyFunction<void>> = (...args: Parameters<TFunc>) => void
+
+export function debounce<TFunc extends TAnyFunction<void>>(
+  func: TFunc,
+  wait: number
+): FunctionWithVoidReturn<TFunc> {
   let timeoutID: NodeJS.Timeout | null = null
 
   return function (this: unknown, ...args: unknown[]) {
-    timeoutID && clearTimeout(timeoutID)
+    if (timeoutID) clearTimeout(timeoutID)
     timeoutID = setTimeout(() => func.apply(this, args), wait)
-  } as (...args: Parameters<TFunc>) => void
+  } as FunctionWithVoidReturn<TFunc>
 }

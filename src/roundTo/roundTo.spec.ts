@@ -25,6 +25,6 @@ describe('roundTo', () => {
     // Edge cases for maximum floating point precision
     expect(roundTo(1e20, 1)).toEqual(1e20)
     expect(roundTo(10000000000000.123, 8)).toEqual(10000000000000.123)
-    expect(roundTo(0.37542323423423432432432432432, 8)).toEqual(0.37542323) // eslint-disable-line @typescript-eslint/no-loss-of-precision
+    expect(roundTo(0.37542323423423432432432432432, 8)).toEqual(0.37542323) // eslint-disable-line no-loss-of-precision
   })
 })

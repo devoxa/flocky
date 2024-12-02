@@ -21,7 +21,7 @@ export async function promiseTimeout<T>(promise: Promise<T>, timeoutMs: number):
 
   return Promise.race([promise, timeoutPromise]).then((result) => {
     clearTimeout(timeoutId)
-    return result as unknown as T
+    return result as T
   })
 }
 

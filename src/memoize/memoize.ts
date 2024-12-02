@@ -57,7 +57,7 @@ function monadic<TThis, TReturn, TFunc extends TAnyFunction<TReturn>>(
   cache: MemoizeCache<TReturn>,
   serializer: MemoizeSerializer,
   arg: unknown
-) {
+): TReturn {
   const cacheKey = isPrimitive(arg) ? arg : serializer(arg)
 
   let value = cache.get(cacheKey)
@@ -80,7 +80,7 @@ function variadic<TThis, TReturn, TFunc extends TAnyFunction<TReturn>>(
   cache: MemoizeCache<TReturn>,
   serializer: MemoizeSerializer,
   ...args: Array<unknown>
-) {
+): TReturn {
   const cacheKey = serializer(args)
 
   let value = cache.get(cacheKey)
@@ -97,7 +97,7 @@ function variadic<TThis, TReturn, TFunc extends TAnyFunction<TReturn>>(
   return value
 }
 
-function defaultSerializer(data: unknown) {
+function defaultSerializer(data: unknown): string {
   return JSON.stringify(data)
 }
 
@@ -108,11 +108,11 @@ interface MemoizeCache<TReturn> {
 }
 
 function defaultCache<TReturn>(): MemoizeCache<TReturn> {
-  const cache: Record<string, TReturn> = Object.create(null)
+  const cache = Object.create(null) as Record<string, TReturn>
 
   return {
     get: (key) => cache[key],
-    set: (key, value) => {
+    set: (key, value): void => {
       cache[key] = value
     },
     remove: (key) => delete cache[key],
@@ -120,11 +120,11 @@ function defaultCache<TReturn>(): MemoizeCache<TReturn> {
 }
 
 function ttlCache<TReturn>(ttl: number): MemoizeCache<TReturn> {
-  const cache: Record<string, TReturn> = Object.create(null)
+  const cache = Object.create(null) as Record<string, TReturn>
 
   return {
     get: (key) => cache[key],
-    set: (key, value) => {
+    set: (key, value): void => {
       cache[key] = value
 
       // Note: We do not need to clear the timeout because we never set a key

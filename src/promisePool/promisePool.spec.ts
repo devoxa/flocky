@@ -2,7 +2,7 @@ import { sleep } from '../sleep/sleep'
 import { expectApproximateDuration } from '../testHelpers'
 import { promisePool } from './promisePool'
 
-const PROMISE_FUNCTIONS = new Array(9).fill('').map((_, i) => async () => {
+const PROMISE_FUNCTIONS = new Array(9).fill('').map((_, i) => async (): Promise<number> => {
   await sleep(100)
   return i
 })

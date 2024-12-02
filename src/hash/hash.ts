@@ -76,7 +76,7 @@ export function hash(data: JSONValue): string {
 }
 
 // Multiply two 32-bit numbers
-function mul32(m: number, n: number) {
+function mul32(m: number, n: number): number {
   const nLow = n & 0xffff
   const nHigh = n - nLow
 

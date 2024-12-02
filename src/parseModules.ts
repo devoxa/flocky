@@ -22,7 +22,7 @@ export function parseModules(): Array<ModuleFile> {
     .filter((x): x is ModuleFile => Boolean(x))
 }
 
-function getModulePaths() {
+function getModulePaths(): Array<string> {
   const paths = glob.sync(path.join(__dirname, '../src/*/*.ts'))
   return paths.filter((path) => path.match(/src\/(.*?)\/\1.ts/))
 }
@@ -50,7 +50,7 @@ function parseModuleDocs(filePath: string): string {
   return fileContent
     .split('\n')
     .filter((line) => line.startsWith(' *'))
-    .map((line) => line.replace(/^ \*[ \/]?/, ''))
+    .map((line) => line.replace(/^ \*[ /]?/, ''))
     .join('\n')
 }
 

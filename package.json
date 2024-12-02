@@ -13,14 +13,11 @@
     "benchmark": "sh benchmark.sh",
     "format": "prettier --ignore-path='.gitignore' --list-different --write .",
     "format:check": "prettier --ignore-path='.gitignore' --check .",
-    "lint": "eslint --ignore-path='.gitignore' '{src,tests}/**/*.ts'",
+    "lint": "eslint '{src,tests}/**/*.ts'",
     "build": "yarn build:esbuild && yarn build:docs",
     "build:esbuild": "rm -rf dist/ && node esbuild.js && tsc --emitDeclarationOnly",
     "build:docs": "ts-node -O '{\"module\":\"commonjs\"}' src/generateDocs.ts",
     "preversion": "yarn build"
-  },
-  "eslintConfig": {
-    "extends": "@devoxa"
   },
   "prettier": "@devoxa/prettier-config",
   "devDependencies": {

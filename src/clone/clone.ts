@@ -15,5 +15,5 @@ import { JSONValue } from '../typeHelpers'
  */
 
 export function clone<T extends JSONValue>(value: T): T {
-  return JSON.parse(JSON.stringify(value))
+  return JSON.parse(JSON.stringify(value)) as T
 }

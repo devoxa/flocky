@@ -3,15 +3,15 @@ import lodash from 'lodash'
 import { Benchmark } from '../benchmarkHelper'
 import { memoize } from './memoize'
 
-function monadicPrimitiveFunc(a: number) {
+function monadicPrimitiveFunc(a: number): number {
   return a + 1
 }
 
-function monadicSerializedFunc(a: string) {
+function monadicSerializedFunc(a: string): string {
   return a + '1'
 }
 
-function variadicFunc(a: number, b: number) {
+function variadicFunc(a: number, b: number): number {
   return a + b
 }
 

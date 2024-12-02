@@ -27,11 +27,11 @@ export class Benchmark {
     this.results = []
   }
 
-  add(options: BenchmarkSample) {
+  add(options: BenchmarkSample): void {
     this.suite.add(options.library + ' | ' + options.input, options.func)
   }
 
-  run() {
+  run(): void {
     this.suite.on('cycle', (event: Event) => this.addResult(event))
     this.suite.on('complete', () => this.writeResults())
     this.suite.run({ async: true })
@@ -39,8 +39,8 @@ export class Benchmark {
 
   // Parse the string output of BenchmarkJS because that seems easier than trying
   // to understand their API and doing all the calculations ourselves...
-  addResult(event: Event) {
-    const eventString = String(event.target)
+  addResult(event: Event): void {
+    const eventString = String(event.target) // eslint-disable-line @typescript-eslint/no-base-to-string
 
     const [name, runtimeInfo] = eventString.split(' x ')
     const [library, input] = name.split(' | ')

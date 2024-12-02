@@ -20,7 +20,7 @@ describe('debounce', () => {
     expect(func.mock.calls).toEqual([['abcd'], ['abcde']])
   })
 
-  test('has the correct type', async () => {
+  test('has the correct type', () => {
     const func = (a: number, b: number): number => {
       return a + b
     }
@@ -34,9 +34,9 @@ describe('debounce', () => {
     debouncedFunc(2, 'a')
 
     // @ts-expect-error The return value is void
-    debouncedFunc(2, 2)?.concat
+    debouncedFunc(2, 2)?.concat()
 
     // @ts-expect-error The return value is void
-    debouncedFunc(2, 2)?.toFixed
+    debouncedFunc(2, 2)?.toFixed()
   })
 })

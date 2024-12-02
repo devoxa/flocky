@@ -13,12 +13,12 @@ let randomIndex = 0
 let globalMathRandom = Math.random
 
 export const mathRandom = {
-  setup: () => {
+  setup: (): void => {
     randomIndex = 0
     globalMathRandom = Math.random
-    Math.random = () => RANDOM_OUTPUT[randomIndex++]
+    Math.random = (): number => RANDOM_OUTPUT[randomIndex++]
   },
-  reset: () => {
+  reset: (): void => {
     Math.random = globalMathRandom
   },
 }
@@ -26,16 +26,16 @@ export const mathRandom = {
 let globalDateNow = Date.now
 
 export const dateNow = {
-  setup: () => {
+  setup: (): void => {
     globalDateNow = Date.now
-    Date.now = () => 1551647486832
+    Date.now = (): number => 1551647486832
   },
-  reset: () => {
+  reset: (): void => {
     Date.now = globalDateNow
   },
 }
 
-export function expectApproximateDuration(start: Date, end: Date, duration: number) {
+export function expectApproximateDuration(start: Date, end: Date, duration: number): void {
   const BUFFER = 25
 
   expect(end.getTime() - start.getTime()).toBeGreaterThan(duration - BUFFER)

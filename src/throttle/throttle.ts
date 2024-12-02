@@ -12,16 +12,21 @@ import { TAnyFunction } from '../typeHelpers'
  * ```
  */
 
-export function throttle<TFunc extends TAnyFunction<void>>(func: TFunc, wait: number) {
+type FunctionWithVoidReturn<TFunc extends TAnyFunction<void>> = (...args: Parameters<TFunc>) => void
+
+export function throttle<TFunc extends TAnyFunction<void>>(
+  func: TFunc,
+  wait: number
+): FunctionWithVoidReturn<TFunc> {
   let timeoutID: NodeJS.Timeout | null = null
   let lastCall = 0
 
   return function (this: unknown, ...args: unknown[]) {
-    timeoutID && clearTimeout(timeoutID)
+    if (timeoutID) clearTimeout(timeoutID)
 
     const remainingWait = wait - (Date.now() - lastCall)
 
-    const callFunc = () => {
+    const callFunc = (): void => {
       func.apply(this, args)
       lastCall = Date.now()
     }
@@ -32,5 +37,5 @@ export function throttle<TFunc extends TAnyFunction<void>>(func: TFunc, wait: nu
     }
 
     timeoutID = setTimeout(() => callFunc(), remainingWait)
-  } as (...args: Parameters<TFunc>) => void
+  } as FunctionWithVoidReturn<TFunc>
 }

@@ -2,7 +2,7 @@ import lodash from 'lodash'
 import { Benchmark } from '../benchmarkHelper'
 import { unique } from './unique'
 
-function generateArrayOfSize(size: number) {
+function generateArrayOfSize(size: number): Array<number> {
   const array: Array<number> = []
 
   for (let i = 0; i !== size; i++) {

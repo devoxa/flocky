@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-
 type Omit<T, K> = Pick<T, Exclude<keyof T, K>>
 
 /**

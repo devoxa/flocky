@@ -15,7 +15,7 @@ describe('omit', () => {
       gap: string
     }
 
-    function omitFromProps(props: StackProps) {
+    function omitFromProps(props: StackProps): Omit<StackProps, 'gap'> {
       return omit(props, ['gap'])
     }
 

@@ -41,10 +41,12 @@ type Collapse<T extends Entry> = {
 
 type FlattenObject<T> = Collapse<Explode<T>>
 
-export function flatten<TObject extends Record<string, unknown>>(object: TObject) {
+export function flatten<TObject extends Record<string, unknown>>(
+  object: TObject
+): FlattenObject<TObject> {
   const result: Record<string, unknown> = {}
 
-  function recurse(current: Record<string, unknown>, prefix = '') {
+  function recurse(current: Record<string, unknown>, prefix = ''): void {
     for (const key in current) {
       const value = current[key]
       const nextKey = prefix ? `${prefix}.${key}` : key

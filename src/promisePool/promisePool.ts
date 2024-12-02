@@ -23,8 +23,8 @@ export async function promisePool<T>(
   const results: Array<T> = []
 
   const iterator = promiseFunctions.entries()
-  const workers = new Array(limit).fill(iterator).map(async (iterator) => {
-    for (const [index, func] of iterator) {
+  const workers = new Array(limit).fill(iterator).map(async (it: typeof iterator) => {
+    for (const [index, func] of it) {
       results[index] = await func()
     }
   })

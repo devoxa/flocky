@@ -9,13 +9,13 @@ const benchmark = new Benchmark('get')
 benchmark.add({
   library: 'lodash',
   input: 'array path',
-  func: () => lodash.get(OBJECT, ['foo', 'bar', 'herp' + Math.random()]),
+  func: (): unknown => lodash.get(OBJECT, ['foo', 'bar', 'herp' + Math.random()]),
 })
 
 benchmark.add({
   library: 'lodash',
   input: 'string path',
-  func: () => lodash.get(OBJECT, 'foo.bar.herp' + Math.random()),
+  func: (): unknown => lodash.get(OBJECT, 'foo.bar.herp' + Math.random()),
 })
 
 benchmark.add({

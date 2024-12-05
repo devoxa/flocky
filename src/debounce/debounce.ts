@@ -20,7 +20,7 @@ export function debounce<TFunc extends TAnyFunction<void>>(
 ): FunctionWithVoidReturn<TFunc> {
   let timeoutID: NodeJS.Timeout | null = null
 
-  return function (this: unknown, ...args: unknown[]) {
+  return function (this: unknown, ...args: Array<unknown>) {
     if (timeoutID) clearTimeout(timeoutID)
     timeoutID = setTimeout(() => func.apply(this, args), wait)
   } as FunctionWithVoidReturn<TFunc>

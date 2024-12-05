@@ -4,7 +4,7 @@ export type JSONValue = string | number | boolean | null | undefined | JSONObjec
 type JSONObject = { [key: string]: JSONValue }
 type JSONArray = Array<JSONValue>
 
-export type TAnyFunction<TReturn> = (...args: any[]) => TReturn
+export type TAnyFunction<TReturn> = (...args: Array<any>) => TReturn
 
 export type Simplify<T> = T extends unknown ? { [K in keyof T]: Simplify<T[K]> } : never
 

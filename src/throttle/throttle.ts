@@ -21,7 +21,7 @@ export function throttle<TFunc extends TAnyFunction<void>>(
   let timeoutID: NodeJS.Timeout | null = null
   let lastCall = 0
 
-  return function (this: unknown, ...args: unknown[]) {
+  return function (this: unknown, ...args: Array<unknown>) {
     if (timeoutID) clearTimeout(timeoutID)
 
     const remainingWait = wait - (Date.now() - lastCall)

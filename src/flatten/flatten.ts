@@ -11,7 +11,7 @@
 
 type Entry = { key: string; value: unknown; optional: boolean }
 
-type Explode<T> = _Explode<T extends readonly unknown[] ? { '0': T[number] } : T>
+type Explode<T> = _Explode<T extends ReadonlyArray<unknown> ? { '0': T[number] } : T>
 
 type _Explode<T> = T extends object
   ? {

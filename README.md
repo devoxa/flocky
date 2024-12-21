@@ -5,7 +5,7 @@
 
 <!-- Description -->
 <h4 align="center">
-  A utility library with clarity and efficiency at the core. 0 dependencies.
+  A utility library with clarity and efficiency at the core and no dependencies
 </h4>
 
 <!-- Badges -->

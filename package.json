@@ -1,6 +1,6 @@
 {
   "name": "@devoxa/flocky",
-  "description": "A utility library with clarity and efficiency at the core. 0 dependencies.",
+  "description": "A utility library with clarity and efficiency at the core and no dependencies",
   "version": "3.0.0",
   "main": "dist/index.js",
   "module": "dist/esm/index.js",

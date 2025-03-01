@@ -84,6 +84,23 @@ flocky.chunk([1, 2, 3, 4, 5, 6, 7], 3)
 
 <sup>[Source](./src/chunk/chunk.ts) • Minify: 105 B • Minify & GZIP: 101 B<sup>
 
+### clamp(value, min, max)
+
+Clamps a value within a minimum and maximum range (inclusive).
+
+```js
+flocky.clamp(3, 0, 5)
+// -> 3
+
+flocky.clamp(10, 0, 5)
+// -> 5
+
+flocky.clamp(-10, 0, 5)
+// -> 0
+```
+
+<sup>[Source](./src/clamp/clamp.ts) • Minify: 69 B • Minify & GZIP: 66 B<sup>
+
 ### clone(value)
 
 Create a deep clone of `value`.

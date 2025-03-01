@@ -1,5 +1,6 @@
 export { average } from './average/average'
 export { chunk } from './chunk/chunk'
+export { clamp } from './clamp/clamp'
 export { clone } from './clone/clone'
 export { compact } from './compact/compact'
 export { debounce } from './debounce/debounce'

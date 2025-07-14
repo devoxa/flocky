@@ -23,8 +23,8 @@
   "devDependencies": {
     "@devoxa/eslint-config": "4.0.2",
     "@devoxa/prettier-config": "2.0.3",
-    "@swc/core": "1.12.7",
-    "@swc/jest": "0.2.38",
+    "@swc/core": "1.12.14",
+    "@swc/jest": "0.2.39",
     "@types/benchmark": "2.1.5",
     "@types/jest": "29.5.14",
     "@types/lodash": "4.17.20",

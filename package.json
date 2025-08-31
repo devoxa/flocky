@@ -43,7 +43,7 @@
     "prettier": "3.6.2",
     "terser": "5.43.1",
     "ts-node": "10.9.2",
-    "typescript": "5.8.2"
+    "typescript": "5.9.2"
   },
   "publishConfig": {
     "access": "public"

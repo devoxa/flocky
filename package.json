@@ -35,7 +35,7 @@
     "eslint": "9.39.3",
     "fast-glob": "3.3.3",
     "fast-memoize": "2.5.2",
-    "filesize": "10.1.6",
+    "filesize": "11.0.13",
     "jest": "29.7.0",
     "jest-environment-jsdom": "29.7.0",
     "lodash": "4.17.23",
